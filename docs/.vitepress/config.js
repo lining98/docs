@@ -5,8 +5,8 @@ const sidebarConf = require("./config/sidebarConf");
 
 module.exports = {
   base: "/docs/",
-  title: "docs",
-  description: "一个前端小子的笔记",
+  title: "lemon's blog",
+  description: "学习并分享各类前端的项目和知识",
   head: headConf,
   // plugins: pluginsConf,
   themeConfig: {
