@@ -1,5 +1,5 @@
 ---
-title: lemon's blog
+title: '主页'
 layout: home
 hero:
   name: 柠檬小窝
@@ -11,7 +11,11 @@ hero:
   actions:
     - theme: brand
       text: How to build vitepress →
-      link: /articles/basic/index
+      link: /vitepress
+    # - theme: alt  # 链接地址
+    #   text: View on GitHub
+    #   link: https://github.com/vuejs/vitepress
+
 
 features:
   - icon: ⚡️
@@ -26,3 +30,11 @@ features:
 
 footer: 非淡泊无以明志，非宁静无以致远
 ---
+
+<style>
+    :root {
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #bd34fe, #41d1ff);
+}
+</style>
+
