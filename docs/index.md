@@ -10,11 +10,15 @@ hero:
     alt: logo
   actions:
     - theme: brand
-      text: How to build vitepress →
+      # text: 如何使用vitepress建立博客网站 →
+      text: 如何建站 →
       link: /vitepress
-    # - theme: alt  # 链接地址
-    #   text: View on GitHub
-    #   link: https://github.com/vuejs/vitepress
+    - theme: alt
+      text: 前端导航
+      link: /nav
+    # - theme: alt
+    #   text: 其他
+    #   link: /aaa
 
 
 features:
@@ -32,7 +36,7 @@ footer: 非淡泊无以明志，非宁静无以致远
 ---
 
 <style>
-    :root {
+:root {
   --vp-home-hero-name-color: transparent;
   --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #bd34fe, #41d1ff);
 }

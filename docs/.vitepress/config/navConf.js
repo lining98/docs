@@ -14,8 +14,8 @@ module.exports = [
       {
         text: "基础",
         items: [
-          { text: "HTML5", link: "/frontEnd/html/" },
-          { text: "CSS3", link: "/frontEnd/css/" },
+          { text: "HTML5", link: "/frontEnd/html5/" },
+          { text: "CSS3", link: "/frontEnd/css3/" },
           { text: "JavaScript", link: "/frontEnd/javaScript/" },
         ],
       },
@@ -31,7 +31,7 @@ module.exports = [
         items: [
           { text: "git", link: "/frontEnd/git/" },
           { text: "echarts", link: "/frontEnd/echarts/" },
-          // { text: "node", link: "/frontEnd/node/index" },
+          // { text: "threejs", link: "/frontEnd/threejs/index" },
           // { text: "vite", link: "/frontEnd/vite/index" },
         ],
       },
