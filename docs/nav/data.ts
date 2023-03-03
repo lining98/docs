@@ -77,9 +77,9 @@ export const NAV_DATA: NavData[] = [
         link: "https://segmentfault.com",
       },
       {
+        icon: "https://notes.fe-mm.com/icons/cnblogs.svg",
         title: "博客园",
         // icon: 'https://common.cnblogs.com/favicon.ico',
-        icon: "/icons/cnblogs.svg",
         desc: "博客园是一个面向开发者的知识分享社区",
         link: "https://www.cnblogs.com",
       },
@@ -292,7 +292,7 @@ export const NAV_DATA: NavData[] = [
         link: "http://mockjs.com/",
       },
       {
-        icon: "https://www.swiper.com.cn/templets/default/images/logo.png",
+        icon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAAtFBMVEUAAAAZTeAYTOAZTeAZTeAZTeAZTeAZTeAZTeAZTeAZTeAZTeAZTeD///8aT+EUSeAIP94dUeEANNwANtwAMdsALtsMQ98DO90AOd3L1/i3x/aAnO7G0/izxPWuwPSds/JYfelFb+YRRt8AKNr2+P7o7fzW4PrQ2vmOqPB5mO1eg+pRd+dLdOc7aOU0YuQvXuMnWOIAINjt8fzd5Pq7y/ahtvKUrPGIpO92lu13lOxghOlQeOcxA9krAAAADHRSTlMA8t2TWwjq2LKsYFFcuDlSAAABBklEQVQY02WRV47DMAxEbcepJtXl3mKn92wv97/XSlok+Qg/CPCBA45GnqvhbDr2/fF0NvTuFQZAaJLKtAvCGxsAgIh326KljAweTB3WeZPj64mBo5Fhco9fQugjbjVAZG6MALp4kV8pgWv5YeBo6IUAkBzxsycA7HcemzH0JhaecMl7SnjCuBknXmA6TStc7lPdEbAVeL7phMU1YrZj0lHfQeBMthlieXbUt3K7S1V6WOHizJx84hYZJ1QnOTbKHnKW4rm1QvQF36S15MyL940mQCTHjbLm3TNFte61UKJ8oUYR/QciClwV30WWXVIOt5gobeuqbn4Syx4hS6WUSCi5h/z8HX/uFRgwHT/1cgAAAABJRU5ErkJggg==",
         title: "swiper",
         desc: "开源、免费、强大的触摸滑动插件",
         link: "https://www.swiper.com.cn/",

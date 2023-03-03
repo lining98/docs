@@ -16,6 +16,3 @@ import { NAV_DATA } from './nav/data'
 
 <MNavLinks v-for="{title,items} in NAV_DATA" :title='title' :items="items"/>
 
-<!-- ## React 生态
-
-<MNavLinks :items="[]"/> -->

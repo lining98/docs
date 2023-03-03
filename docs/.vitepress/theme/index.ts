@@ -1,6 +1,7 @@
 import { h, App } from "vue";
 import { useData } from "vitepress";
 import Theme from "vitepress/theme";
+// import "./stylus";
 
 export default Object.assign({}, Theme, {
   Layout: () => {
