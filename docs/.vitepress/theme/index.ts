@@ -1,9 +1,16 @@
 import { h, App } from "vue";
 import { useData } from "vitepress";
+// import DefaultTheme from 'vitepress/theme'
 import Theme from "vitepress/theme";
-// import "./stylus";
+import toTop from '../components/toTop.vue'
+import "./assets/style/index.scss";
 
 export default Object.assign({}, Theme, {
+  ...Theme,
+  enhanceApp({ app }) {
+    app.component('toTop', toTop)
+    // Theme.enhanceApp(app)
+  },
   Layout: () => {
     const props: Record<string, any> = {};
     // 获取 frontmatter

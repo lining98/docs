@@ -1,9 +1,26 @@
-## about1
+<script setup>
+// import toTop from './components/toTop.vue'
+</script>
+
+# about1
+
+This is a .md using a custom component
+
+## More docs
+
+...
+
+
+## docs
 aaaaaa
 
 aaaaaa
 
-### aaaaaaa
+## 测试组件
+<toTop />
+
+
+## 测试组件结束
 ## about11
 aaaaaa
 
@@ -49,118 +66,3 @@ aaaaaa
 ### aaaaaaa
 aaaaaa
 
-aaaaaa
-
-### aaaaaaa
-## about2
-aaaaaa
-
-aaaaaa
-
-### aaaaaaa
-aaaaaa
-
-aaaaaa
-
-### aaaaaaa
-aaaaaa
-
-aaaaaa
-
-### aaaaaaa
-## about22
-aaaaaa
-
-aaaaaa
-
-### aaaaaaa
-aaaaaa
-
-aaaaaa
-
-### aaaaaaa
-aaaaaa
-
-aaaaaa
-
-### aaaaaaa
-## about222
-aaaaaa
-
-aaaaaa
-
-### aaaaaaa
-aaaaaa
-
-aaaaaa
-
-### aaaaaaa
-aaaaaa
-
-aaaaaa
-
-### aaaaaaa
-## about2222
-aaaaaa
-
-aaaaaa
-
-### aaaaaaa
-aaaaaa
-
-aaaaaa
-
-### aaaaaaa
-aaaaaa
-
-aaaaaa
-
-### aaaaaaa
-## about3
-aaaaaa
-
-aaaaaa
-
-### aaaaaaa
-aaaaaa
-
-aaaaaa
-
-### aaaaaaa
-aaaaaa
-
-aaaaaa
-
-### aaaaaaa
-## about33
-aaaaaa
-
-aaaaaa
-
-### aaaaaaa
-aaaaaa
-
-aaaaaa
-
-### aaaaaaa
-aaaaaa
-
-aaaaaa
-
-### aaaaaaa
-## about333
-aaaaaa
-
-aaaaaa
-
-### aaaaaaa
-aaaaaa
-
-aaaaaa
-
-### aaaaaaa
-aaaaaa
-
-aaaaaa
-
-### aaaaaaa

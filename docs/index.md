@@ -34,19 +34,3 @@ features:
 
 footer: 非淡泊无以明志，非宁静无以致远
 ---
-
-<style>
-:root {
-  --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #bd34fe, #41d1ff);
-
-}
-    .outline-link:hover{
-      font-weight:bloder;
-      color: #2859B1 !important;
-    }
-  .outline-link.active{
-    color: #6495ED !important;
-  }
-</style>
-
