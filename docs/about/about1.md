@@ -1,7 +1,3 @@
-<script setup>
-// import toTop from './components/toTop.vue'
-</script>
-
 # about1
 
 This is a .md using a custom component

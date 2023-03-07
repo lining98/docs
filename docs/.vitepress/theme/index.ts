@@ -1,16 +1,14 @@
 import { h, App } from "vue";
 import { useData } from "vitepress";
-// import DefaultTheme from 'vitepress/theme'
 import Theme from "vitepress/theme";
-import toTop from '../components/toTop.vue'
-import "./assets/style/index.scss";
+
+import Visitor from './components/Visitor.vue'
+import Copyright from './components/Copyright.vue'
+import toTop from './components/toTop.vue'
+
+import "./style/index.scss";
 
 export default Object.assign({}, Theme, {
-  ...Theme,
-  enhanceApp({ app }) {
-    app.component('toTop', toTop)
-    // Theme.enhanceApp(app)
-  },
   Layout: () => {
     const props: Record<string, any> = {};
     // 获取 frontmatter
@@ -21,6 +19,18 @@ export default Object.assign({}, Theme, {
       props.class = frontmatter.value.layoutClass;
     }
 
-    return h(Theme.Layout, props);
+    return h(Theme.Layout, props,{
+      /**
+       * 相关插槽
+       * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/Layout.vue
+       * 随便找个插槽的名字，注册全局组件
+       */
+       'aside-top': () => h(toTop),
+       'nav-bar-title-after': () => h(Visitor),
+       'doc-after': () => h(Copyright),
+    });
   },
+  enhanceApp({ app }: { app: App }) {
+    app.provide('DEV', process.env.NODE_ENV === 'development')
+  }
 });

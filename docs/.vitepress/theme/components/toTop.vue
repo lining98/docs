@@ -36,9 +36,6 @@ onMounted(()=>{
 </template>
 
 <style lang="scss" scoped>
-.display {
-  opacity: 0;
-}
 .top {
   text-align: center;
   position: fixed;
@@ -48,7 +45,7 @@ onMounted(()=>{
   background: red;
   border: 1px solid #ccc;
   right: 40px;
-  bottom: 100px;
+  bottom: 120px;
   cursor: pointer;
   color: green;
 }
