@@ -13,7 +13,6 @@ aaaaaa
 aaaaaa
 
 ## 测试组件
-<toTop />
 
 
 ## 测试组件结束

@@ -20,5 +20,11 @@
     "sass": "^1.58.3",
     "vitepress": "^1.0.0-alpha.48",
     "vue": "^3.2.47"
-  }
+  },
+  "lint-staged": {
+    "*.{js,ts,css,md,json}": [
+      "prettier --write"
+    ]
+  },
+  "prettier": "@femm/prettier"
 }

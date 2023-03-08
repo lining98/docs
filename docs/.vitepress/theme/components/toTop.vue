@@ -1,58 +1,68 @@
 <script setup lang="ts">
-import { ref, onMounted, reactive } from "vue";
-let isShow = ref('top hide');
-const visibilityHeight = ref(200)
+import { ref, onMounted, reactive } from 'vue'
+let isShow = ref('top hide')
+const visibilityHeight = ref(500)
 
-function handleScroll(){
-    isShow.value = getScrollTop() > visibilityHeight.value ? 'top show' : 'top hide'
+function handleScroll() {
+  isShow.value = getScrollTop() > visibilityHeight.value ? 'top show' : 'top hide'
 }
 
-function getScrollTop(){
+function getScrollTop() {
   return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
-  }
+}
 
 // 返回顶部
 function goBack() {
-//   window.scrollTo({ top: 0, behavior: 'smooth' })
+  //   window.scrollTo({ top: 0, behavior: 'smooth' })
 
   //  设置一个定时器
   const upRoll = setInterval(() => {
-    const top = document.documentElement.scrollTop; // 每次获取页面被卷去的部分
-    const speed = Math.ceil(top / 10); // 每次滚动多少 （步长值）
+    const top = document.documentElement.scrollTop // 每次获取页面被卷去的部分
+    const speed = Math.ceil(top / 10) // 每次滚动多少 （步长值）
     if (document.documentElement.scrollTop > 0) {
-      document.documentElement.scrollTop -= speed; // 不在顶部 每次滚动到的位置
+      document.documentElement.scrollTop -= speed // 不在顶部 每次滚动到的位置
     } else {
-      clearInterval(upRoll); // 回到顶部清除定时器
+      clearInterval(upRoll) // 回到顶部清除定时器
     }
-  }, 10);
+  }, 10)
 }
-onMounted(()=>{
-  window.addEventListener('scroll',handleScroll,true)
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll, true)
 })
 </script>
 
 <template>
-  <div @click="goBack" :class="isShow">↑</div>
+  <div @click="goBack" :class="isShow">
+    <img class="img" src="../assets/images/top.png" alt="" />
+  </div>
 </template>
 
 <style lang="scss" scoped>
 .top {
-  text-align: center;
   position: fixed;
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
-  background: red;
-  border: 1px solid #ccc;
   right: 40px;
   bottom: 120px;
   cursor: pointer;
-  color: green;
+  .img {
+    animation: Bob 1s linear 0s infinite;
+    width: 30px;
+  }
 }
 .show {
   opacity: 1;
 }
 .hide {
   opacity: 0;
+}
+@keyframes Bob {
+  0% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(-8px);
+  }
 }
 </style>

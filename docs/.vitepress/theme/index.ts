@@ -23,7 +23,6 @@ export default Object.assign({}, Theme, {
       /**
        * 相关插槽
        * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/Layout.vue
-       * 随便找个插槽的名字，注册全局组件
        */
        'aside-top': () => h(toTop),
        'nav-bar-title-after': () => h(Visitor),

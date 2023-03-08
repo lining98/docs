@@ -71,6 +71,12 @@ export const NAV_DATA: NavData[] = [
         link: "https://juejin.cn",
       },
       {
+        title: "CSDN",
+        icon: "https://g.csdnimg.cn/static/logo/favicon32.ico",
+        desc: "CSDN是全球知名中文IT技术交流平台,创建于1999年,包含原创博客、精品问答、职业培训、技术论坛、资源下载等产品服务",
+        link: "https://www.csdn.net/",
+      },
+      {
         title: "SegmentFault 思否",
         icon: "https://static.segmentfault.com/main_site_next/0dc4bace/touch-icon.png",
         desc: "技术问答开发者社区",
@@ -127,9 +133,9 @@ export const NAV_DATA: NavData[] = [
       },
       {
         icon: "https://nuxt.com/icon.png",
-        title: "Nuxt.js",
+        title: "Nuxt.js中文网",
         desc: "一个基于 Vue.js 的通用应用框架",
-        link: "https://nuxt.com",
+        link: "https://nuxt.com.cn",
       },
       {
         icon: "https://vueuse.org/favicon.svg",

@@ -6,9 +6,15 @@
 >
 > [VitePress 中文网](https://vitejs.cn/vitepress/)
 
-## 一、 基本配置
+
+## 一、 创建项目
+
+
+## 二、 基本配置
 
 ### 1. 创建项目
+
+- 在gitbub上新建项目，建议勾选Add a README file
 
 - 新建文件夹 blog
   可以使用 npm，yarn，pnpm，如果没有安装 pnpm 可以全局安装
@@ -163,7 +169,7 @@ features:
 ---
 ```
 
-### 二、 部署到 github.io
+## 三、 部署到 github.io
 
 新建脚本文件 deploy.sh，与 docs 文件夹处于同一级
 

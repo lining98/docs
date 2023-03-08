@@ -30,7 +30,7 @@ module.exports = {
 
     // 页脚配置
     footer: {
-      message: "如有转载或 CV 的请标注本站原文地址",
+      message: "lemon's personal blog.",
       copyright: "Copyright © 2023-present lemon/lining",
     },
     docFooter: {
