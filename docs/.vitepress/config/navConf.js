@@ -1,5 +1,5 @@
 module.exports = [
-  { text: "主页", link: "/" },
+  { text: '主页', link: '/' },
   // {
   //   text: "计算机",
   //   items: [
@@ -9,50 +9,57 @@ module.exports = [
   //   ],
   // },
   {
-    text: "前端",
+    text: '前端',
     items: [
       {
-        text: "基础",
+        text: '基础',
         items: [
-          { text: "HTML5", link: "/frontEnd/html5/" },
-          { text: "CSS3", link: "/frontEnd/css3/" },
-          { text: "JavaScript", link: "/frontEnd/javaScript/" },
+          { text: 'HTML5', link: '/frontEnd/html5/', activeMatch: '^/frontEnd/html5' },
+          { text: 'CSS3', link: '/frontEnd/css3/', activeMatch: '^/frontEnd/css3' },
+          {
+            text: 'JavaScript',
+            link: '/frontEnd/javaScript/',
+            activeMatch: '^/frontEnd/javaScript'
+          }
         ],
+        activeMatch: '^/frontEnd'
       },
       {
-        text: "框架",
+        text: '框架',
         items: [
-          { text: "vue", link: "/frontEnd/vue/" },
-          { text: "react", link: "/frontEnd/react/" },
+          { text: 'vue', link: '/frontEnd/vue/' },
+          { text: 'react', link: '/frontEnd/react/' }
         ],
+        activeMatch: '^/frontEnd'
       },
       {
-        text: "其他",
+        text: '其他',
         items: [
-          { text: "git", link: "/frontEnd/git/" },
-          { text: "echarts", link: "/frontEnd/echarts/" },
+          { text: 'git', link: '/frontEnd/git/' },
+          { text: 'echarts', link: '/frontEnd/echarts/' }
           // { text: "threejs", link: "/frontEnd/threejs/index" },
           // { text: "vite", link: "/frontEnd/vite/index" },
-        ],
-      },
-    ],
+        ]
+      }
+    ]
   },
   {
-    text: "后端",
+    text: '后端',
     items: [
-      { text: "nodejs", link: "/backEnd/nodejs/" },
-      { text: "mysql", link: "/backEnd/mysql/" },
+      { text: 'nodejs', link: '/backEnd/nodejs/', activeMatch: '^/backEnd/nodejs' },
+      { text: 'mysql', link: '/backEnd/mysql/', activeMatch: '^/backEnd/mysql' }
     ],
+    activeMatch: '^/backEnd'
   },
-  { text: "算法", link: "/algorithms/index" },
+  { text: '算法', link: '/algorithms/demo1', activeMatch: '^/algorithms' },
   {
-    text: "关于",
+    text: '关于',
     items: [
       // { text: "关于我", link: "/about" },
-      { text: "关于11", link: "/about/about1" },
-      { text: "关于222", link: "/about/about2" },
-      { text: "github", link: "https://github.com/lining98/docs" },
-      { text: "leetcode", link: "https://leetcode.cn/u/l_ning98/" },
+      { text: '关于', link: '/about/' },
+      { text: 'github', link: 'https://github.com/lining98/docs' },
+      { text: 'leetcode', link: 'https://leetcode.cn/u/l_ning98/' }
     ],
-  },
-];
+    activeMatch: '^/about'
+  }
+]

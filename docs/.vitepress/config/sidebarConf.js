@@ -6,6 +6,9 @@ module.exports = {
   "/backEnd/nodejs/": require("../../backEnd/nodejs/sidebar"),
   "/backEnd/mysql/": require("../../backEnd/mysql/sidebar"),
 
+  // algorithms
+  "/algorithms/": require("../../algorithms/sidebar"),
+
   // '/frontEnd/git': require('../../frontEnd/git/sidebar'),
 };
 // module.exports = {
