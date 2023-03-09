@@ -18,11 +18,10 @@ module.exports = [
           { text: 'CSS3', link: '/frontEnd/css3/', activeMatch: '^/frontEnd/css3' },
           {
             text: 'JavaScript',
-            link: '/frontEnd/javaScript/',
-            activeMatch: '^/frontEnd/javaScript'
+            link: '/frontEnd/JavaScript/',
+            activeMatch: '^/frontEnd/JavaScript'
           }
         ],
-        activeMatch: '^/frontEnd'
       },
       {
         text: '框架',
@@ -30,18 +29,19 @@ module.exports = [
           { text: 'vue', link: '/frontEnd/vue/' },
           { text: 'react', link: '/frontEnd/react/' }
         ],
-        activeMatch: '^/frontEnd'
       },
       {
         text: '其他',
         items: [
+          { text: 'TypeScript', link: '/frontEnd/TypeScript/', activeMatch: '^/frontEnd/TypeScript'},
           { text: 'git', link: '/frontEnd/git/' },
-          { text: 'echarts', link: '/frontEnd/echarts/' }
+          { text: 'echarts', link: '/frontEnd/echarts/' },
           // { text: "threejs", link: "/frontEnd/threejs/index" },
+          // { text: "webpack", link: "/frontEnd/webpack/index" },
           // { text: "vite", link: "/frontEnd/vite/index" },
         ]
       }
-    ]
+    ], activeMatch: '^/frontEnd'
   },
   {
     text: '后端',

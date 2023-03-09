@@ -4,8 +4,8 @@ module.exports = [
     collapsible: false, //是不是可以动态展开
     collapsed: false, //默认是不是展开
     items: [
-      { text: "h5新语法", link: "/frontEnd/html/" },
-      { text: "canvans", link: "/frontEnd/css/" },
+      { text: "h5新语法", link: "/frontEnd/html5/" },
+      { text: "canvans", link: "/frontEnd/css3/" },
       { text: "svg", link: "/frontEnd/javaScript/" },
       {
         text: "vidio",
@@ -23,8 +23,8 @@ module.exports = [
     collapsible: false, //是不是可以动态展开
     collapsed: false, //默认是不是展开
     items: [
-      { text: "HTML5", link: "/frontEnd/html/" },
-      { text: "CSS3", link: "/frontEnd/css/" },
+      { text: "HTML5", link: "/frontEnd/html5/" },
+      { text: "CSS3", link: "/frontEnd/css3/" },
       { text: "JavaScript", link: "/frontEnd/javaScript/" },
     ],
   },

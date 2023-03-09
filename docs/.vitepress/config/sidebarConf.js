@@ -1,6 +1,10 @@
 module.exports = {
   "/about/": require("../../about/sidebar"),
-  "/frontEnd/": require("../../frontEnd/sidebar"),
+
+
+  // "/frontEnd/": require("../../frontEnd/sidebar"),
+  "/frontEnd/TypeScript/": require("../../frontEnd/TypeScript/sidebar"),
+  "/frontEnd/JavaScript/": require("../../frontEnd/JavaScript/sidebar"),
 
   // backEnd
   "/backEnd/nodejs/": require("../../backEnd/nodejs/sidebar"),
