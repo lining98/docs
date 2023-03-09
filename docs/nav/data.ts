@@ -551,6 +551,12 @@ export const NAV_DATA: NavData[] = [
         link: "https://www.runoob.com",
       },
       {
+        icon: "https://devdocs.io/favicon.ico",
+        title: "DevDocs API--Web开发技术文档",
+        desc: "查询所有web技术api的文档",
+        link: "https://devdocs.io/",
+      },
+      {
         icon: "https://www.lingtiku.com/favicon.ico",
         title: "灵题库-前端题库",
         desc: "",
