@@ -2,6 +2,10 @@ module.exports = {
   "/about/": require("../../about/sidebar"),
   "/frontEnd/": require("../../frontEnd/sidebar"),
 
+  // backEnd
+  "/backEnd/nodejs/": require("../../backEnd/nodejs/sidebar"),
+  "/backEnd/mysql/": require("../../backEnd/mysql/sidebar"),
+
   // '/frontEnd/git': require('../../frontEnd/git/sidebar'),
 };
 // module.exports = {
