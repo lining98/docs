@@ -1,14 +1,14 @@
-const headConf = require("./config/headConf");
-// const pluginsConf = require("./config/pluginsConf");
-const navsConf = require("./config/navConf");
-const sidebarConf = require("./config/sidebarConf");
+import { defineConfig } from 'vitepress'
 
-module.exports = {
+import { head, nav, sidebar } from './configs'
+
+export default defineConfig({
+  outDir: '../dist',
+
   base: "/docs/",
   title: "lemon's blog",
   description: "学习并分享各类前端的项目和知识",
-  head: headConf,
-  // plugins: pluginsConf,
+  head,
   lastUpdated: true,
   cleanUrls: true,
   markdown: {
@@ -17,8 +17,8 @@ module.exports = {
   themeConfig: {
     siteTitle: "柠檬小窝", //左上角的
     logo: "/img/logo.png", //左上角的logo,注意：它的路径是从public文件夹开始的，所以这里引用的是public/logo.jpg这张图
-    nav: navsConf,
-    sidebar: sidebarConf,
+    nav,
+    sidebar,
     /* 右侧大纲配置 */
     outline: {
       level: "deep",
@@ -34,8 +34,8 @@ module.exports = {
       copyright: "Copyright © 2023-present lemon/lining",
     },
     docFooter: {
-      prev: "上一页",
-      next: "下一页",
+      prev: "上一篇",
+      next: "下一篇",
     },
 
     /* Algolia DocSearch 配置 */
@@ -84,4 +84,4 @@ module.exports = {
       },
     },
   },
-};
+})

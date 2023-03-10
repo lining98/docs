@@ -1,5 +1,7 @@
-module.exports = [
-  { text: '主页', link: '/' },
+import type { DefaultTheme } from 'vitepress'
+
+export const nav: DefaultTheme.Config['nav'] = [
+  { text: '导航', link: '/nav' },
   // {
   //   text: "计算机",
   //   items: [
@@ -34,8 +36,8 @@ module.exports = [
         text: '其他',
         items: [
           { text: 'TypeScript', link: '/frontEnd/TypeScript/', activeMatch: '^/frontEnd/TypeScript'},
-          { text: 'git', link: '/frontEnd/git/' },
-          { text: 'echarts', link: '/frontEnd/echarts/' },
+          { text: 'git', link: '/frontEnd/git/' , activeMatch: '^/frontEnd/git'},
+          { text: 'echarts', link: '/frontEnd/echarts/' , activeMatch: '^/frontEnd/echarts'},
           // { text: "threejs", link: "/frontEnd/threejs/index" },
           // { text: "webpack", link: "/frontEnd/webpack/index" },
           // { text: "vite", link: "/frontEnd/vite/index" },
