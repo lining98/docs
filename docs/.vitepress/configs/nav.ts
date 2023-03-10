@@ -25,19 +25,19 @@ export const nav: DefaultTheme.Config['nav'] = [
           }
         ],
       },
-      {
-        text: '框架',
-        items: [
-          { text: 'vue', link: '/frontEnd/vue/' },
-          { text: 'react', link: '/frontEnd/react/' }
-        ],
-      },
+      // {
+      //   text: '框架',
+      //   items: [
+      //     { text: 'vue', link: '/frontEnd/vue/' },
+      //     { text: 'react', link: '/frontEnd/react/' }
+      //   ],
+      // },
       {
         text: '其他',
         items: [
+          { text: 'git', link: '/frontEnd/git/install' , activeMatch: '^/frontEnd/git'},
+          { text: 'echarts', link: '/frontEnd/echarts/canvas' , activeMatch: '^/frontEnd/echarts'},
           { text: 'TypeScript', link: '/frontEnd/TypeScript/', activeMatch: '^/frontEnd/TypeScript'},
-          { text: 'git', link: '/frontEnd/git/' , activeMatch: '^/frontEnd/git'},
-          { text: 'echarts', link: '/frontEnd/echarts/' , activeMatch: '^/frontEnd/echarts'},
           // { text: "threejs", link: "/frontEnd/threejs/index" },
           // { text: "webpack", link: "/frontEnd/webpack/index" },
           // { text: "vite", link: "/frontEnd/vite/index" },
