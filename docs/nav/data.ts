@@ -445,13 +445,13 @@ export const NAV_DATA: NavData[] = [
     title: "Node 相关",
     items: [
       {
-        icon: "https://nodejs.org/static/images/favicons/apple-touch-icon.png",
+        icon: "https://nodejs.org/static/images/favicons/favicon.png",
         title: "Node.js",
         desc: "Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境",
         link: "https://nodejs.org/zh-cn",
       },
       {
-        icon: "https://nodejs.org/static/images/favicons/apple-touch-icon.png",
+        icon: "https://nodejs.org/static/images/favicons/favicon.png",
         title: "Node.Js中文网",
         desc: "Node.js 是一个免费的、开源的、跨平台的 JavaScript 运行时环境，允许开发人员在浏览器之外编写命令行工具和服务器端脚本.",
         link: "http://nodejs.p2hp.com/",
