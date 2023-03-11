@@ -312,6 +312,23 @@ export const NAV_DATA: NavData[] = [
     ],
   },
   {
+    title: "文档",
+    items: [
+      {
+        icon: "https://www.tslang.cn/assets/images/icons/favicon.ico",
+        title:"TypeScript中文网",
+        desc: "TypeScript是JavaScript类型的超集，它可以编译成纯JavaScript。TypeScript可以在任何浏览器、任何计算机和任何操作系统上运行",
+        link: "https://www.tslang.cn/index.html",
+      },
+      // {
+      //   icon: "",
+      //   title:"",
+      //   desc: "",
+      //   link: "",
+      // },
+    ],
+  },
+  {
     title: "JavaScript学习",
     items: [
       {
