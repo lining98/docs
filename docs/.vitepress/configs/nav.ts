@@ -25,20 +25,19 @@ export const nav: DefaultTheme.Config['nav'] = [
           }
         ],
       },
-      // {
-      //   text: '框架',
-      //   items: [
-      //     { text: 'vue', link: '/frontEnd/vue/' },
-      //     { text: 'react', link: '/frontEnd/react/' }
-      //   ],
-      // },
+      {
+        text: '框架',
+        items: [
+          { text: 'vue', link: '/frontEnd/vue/' },
+          // { text: 'vue3', link: '/frontEnd/vue3/' },
+          { text: 'react', link: '/frontEnd/react/' }
+        ],
+      },
       {
         text: '其他',
         items: [
-          { text: 'git', link: '/frontEnd/git/install' , activeMatch: '^/frontEnd/git'},
-          { text: 'echarts', link: '/frontEnd/echarts/canvas' , activeMatch: '^/frontEnd/echarts'},
+          { text: 'axios', link: '/frontEnd/axios/' , activeMatch: '^/frontEnd/axios'},
           { text: 'TypeScript', link: '/frontEnd/TypeScript/', activeMatch: '^/frontEnd/TypeScript'},
-          // { text: "threejs", link: "/frontEnd/threejs/index" },
           // { text: "webpack", link: "/frontEnd/webpack/index" },
           // { text: "vite", link: "/frontEnd/vite/index" },
         ]
@@ -53,11 +52,19 @@ export const nav: DefaultTheme.Config['nav'] = [
     ],
     activeMatch: '^/backEnd'
   },
+  {
+    text: '其他',
+    items: [
+      { text: 'git', link: '/others/git/install', activeMatch: '^/others/git' },
+      { text: '可视化', link: '/others/visualization/canvas', activeMatch: '^/others/visualization' },
+      // { text: "threejs", link: "/frontEnd/threejs/index" },
+    ],
+    activeMatch: '^/others'
+  },
   { text: '算法', link: '/algorithms/demo1', activeMatch: '^/algorithms' },
   {
     text: '关于',
     items: [
-      // { text: "关于我", link: "/about" },
       { text: '关于', link: '/about/' },
       { text: 'github', link: 'https://github.com/lining98/docs' },
       { text: 'leetcode', link: 'https://leetcode.cn/u/l_ning98/' }

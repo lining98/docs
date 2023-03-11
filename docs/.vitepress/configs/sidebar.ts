@@ -1,18 +1,19 @@
 import type { DefaultTheme } from 'vitepress'
 
 export const sidebar: DefaultTheme.Config['sidebar'] = {
-  // "/frontEnd/": require("../../frontEnd/sidebar"),
-  // "/frontEnd/html5/": require("../../frontEnd/html5/sidebar"),
+
+  // frontEnd
   "/frontEnd/css3/": require("../../frontEnd/css3/sidebar"),
-  "/frontEnd/TypeScript/": require("../../frontEnd/TypeScript/sidebar"),
   "/frontEnd/JavaScript/": require("../../frontEnd/JavaScript/sidebar"),
-  // '/frontEnd/git': require('../../frontEnd/git/sidebar'),
-  '/frontEnd/echarts': require('../../frontEnd/echarts/sidebar'),
-  '/frontEnd/git': require('../../frontEnd/git/sidebar'),
+  "/frontEnd/TypeScript/": require("../../frontEnd/TypeScript/sidebar"),
 
   // backEnd
   "/backEnd/nodejs/": require("../../backEnd/nodejs/sidebar"),
   "/backEnd/mysql/": require("../../backEnd/mysql/sidebar"),
+
+  // others
+  '/others/visualization': require('../../others/visualization/sidebar'),
+  '/others/git': require('../../others/git/sidebar'),
 
   // algorithms
   "/algorithms/": require("../../algorithms/sidebar"),
