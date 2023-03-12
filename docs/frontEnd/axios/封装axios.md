@@ -163,3 +163,10 @@ getAction('/userList/',data).then(res=>console.log(res))
 getAction('/userList/',{userid:'123'}).then(res=>console.log(res))
 
 ```
+
+## 相关文章
+[关于 Axios 的再再再封装，总是会有所不一样](https://juejin.cn/post/7109115586219048996)
+
+[十分钟封装一个好用的axios，省时又省力他不香吗](https://juejin.cn/post/7090889657721815076)
+
+[前端架构带你 封装axios，一次封装终身受益「美团后端连连点赞」](https://juejin.cn/post/7124573626161954823)
