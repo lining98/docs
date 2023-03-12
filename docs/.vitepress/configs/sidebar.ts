@@ -5,6 +5,7 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
   // frontEnd
   "/frontEnd/css3/": require("../../frontEnd/css3/sidebar"),
   "/frontEnd/JavaScript/": require("../../frontEnd/JavaScript/sidebar"),
+  "/frontEnd/axios/": require("../../frontEnd/axios/sidebar"),
   "/frontEnd/TypeScript/": require("../../frontEnd/TypeScript/sidebar"),
 
   // backEnd
