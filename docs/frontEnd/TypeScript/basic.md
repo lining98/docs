@@ -230,3 +230,86 @@ function Never(): never {
 }
 ```
 
+
+## 交叉类型
+多种类型的集合，联合对象将具有所联合类型的所有成员
+```ts
+interface People {
+  age: number,
+  height： number
+}
+interface Man{
+  sex: string
+}
+const p = (man: People & Man) => {
+  console.log(man.age)
+  console.log(man.height)
+  console.log(man.sex)
+}
+p({age: 18,height: 180,sex: 'male'});
+```
+
+## 联合类型
+联合类型（Union Types）表示取值可以为多种类型中的一种
+```ts
+// a可以为数字或者布尔类型，不能为字符串类型，
+// 因为定义的联合类型只有数字和布尔值并没有字符串
+let a:num|boolean
+a = 123    // 编译成功
+a = false  // 编译成功
+a = 'abc'  // 报错
+```
+函数中使用联合类型
+```ts
+// 定义一个一个函数得到一个数字或字符串值的长度
+function getLength(x: number | string) {
+  // return x.length // error
+  if (x.length) { // error
+    return x.length
+  } else {
+    return x.toString().length
+  }
+}
+```
+
+## 类型断言
+通过类型断言这种方式可以告诉编译器，“相信我，我知道自己在干什么”。 类型断言好比其它语言里的类型转换，但是不进行特殊的数据检查和解构。 它没有运行时的影响，只是在编译阶段起作用。 TypeScript 会假设你，程序员，已经进行了必须的检查。
+
+语法：
+  - 方式一：值 as 类型　`value as string`
+  - 方式二：<类型>值 `<string>value`
+```ts
+let someValue: any = "this is a string";
+
+let strLength1:number = (<string>someValue).length
+let strLength2:number = (someValue as string).length
+
+
+/* 需求: 定义一个函数得到一个字符串或者数值数据的长度 */
+function getLength(x: number | string) {
+  if ((<string>x).length) {
+    return (x as string).length
+  } else {
+    return x.toString().length
+  }
+}
+console.log(getLength('abcd'), getLength(1234))
+```
+
+
+## 类型推断
+TypeScript里，在有些没有明确指出类型的地方，类型推论会帮助提供类型。
+```ts
+/* 定义变量时赋值了, 推断为对应的类型 */
+let n1 = 10 // number
+// n = 'abc'  // error  不能将类型“string”分配给类型“number”。
+
+/* 定义变量时没有赋值, 推断为any类型 */
+let n2  // any类型
+n2 = 123
+n2 = 'abc'
+```
+
+
+
+
