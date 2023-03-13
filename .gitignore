@@ -18,3 +18,4 @@ yarn-error.log*
 .env
 .env.test
 /docs/.vitepress/cache
+/package-lock.json

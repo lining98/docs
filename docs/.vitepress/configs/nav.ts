@@ -17,7 +17,7 @@ export const nav: DefaultTheme.Config['nav'] = [
         text: '基础',
         items: [
           { text: 'HTML5', link: '/frontEnd/html5/', activeMatch: '^/frontEnd/html5' },
-          { text: 'CSS3', link: '/frontEnd/css3/', activeMatch: '^/frontEnd/css3' },
+          { text: 'CSS3', link: '/frontEnd/css3/base/css选择器', activeMatch: '^/frontEnd/css3' },
           {
             text: 'JavaScript',
             link: '/frontEnd/JavaScript/',
