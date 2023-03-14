@@ -18,7 +18,7 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
   '/others/git': require('../../others/git/sidebar'),
 
   // algorithms
-  "/algorithms/": require("../../algorithms/sidebar"),
+  // "/algorithms/": require("../../algorithms/sidebar"),
 
   "/about/": require("../../about/sidebar"),
 };

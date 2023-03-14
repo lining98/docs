@@ -3,8 +3,8 @@ title: '主页'
 layout: home
 hero:
   name: 柠檬小窝
-  text: 笔记、博客、记录
-  tagline: 学习并分享各类前端的项目和知识
+  text: 学习并分享各类前端的项目和知识
+  tagline: 非淡泊无以明志，非宁静无以致远
   image:
     src: /img/web.png
     alt: logo

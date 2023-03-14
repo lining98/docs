@@ -61,7 +61,7 @@ export const nav: DefaultTheme.Config['nav'] = [
     ],
     activeMatch: '^/others'
   },
-  { text: '算法', link: '/algorithms/demo1', activeMatch: '^/algorithms' },
+  { text: '算法', link: '/algorithms/', activeMatch: '^/algorithms' },
   {
     text: '关于',
     items: [
