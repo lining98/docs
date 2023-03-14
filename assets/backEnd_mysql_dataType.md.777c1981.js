@@ -1,1 +1,0 @@
-import{_ as a,o as e,c as t}from"./app.5c74b3cf.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"backEnd/mysql/dataType.md","lastUpdated":1678365660000}'),s={name:"backEnd/mysql/dataType.md"};function r(c,n,o,d,p,_){return e(),t("div")}const l=a(s,[["render",r]]);export{i as __pageData,l as default};
