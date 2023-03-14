@@ -88,6 +88,22 @@ let man = new Man()
 // man.some // error 属性“some”受保护，只能在类“Person”及其子类中访问。
 ```
 
+
+## readonly 修饰符
+你可以使用 `readonly` 关键字将属性设置为只读的。 只读属性必须在声明时或构造函数里被初始化。
+```ts
+class Person {
+  readonly name: string = 'abc'
+  constructor(name: string) {
+    this.name = name
+  }
+}
+
+let john = new Person('John')
+// john.name = 'peter' // error
+```
+
+
 ## static 静态属性 和 静态方法
 我们用static 定义的属性 不可以通过this 去访问 只能通过类名去调用
 ```ts
@@ -125,3 +141,99 @@ class Person {
 }
 
 ```
+
+## interface 定义 类
+ts interface 定义类 使用关键字 `implements` 后面跟interface的名字多个用逗号隔开 继承还是用extends
+```ts
+
+interface PersonClass {
+    get(type: boolean): boolean
+}
+
+interface PersonClass2{
+    set():void,
+    asd:string
+}
+
+class A {
+    name: string
+    constructor() {
+        this.name = "123"
+    }
+}
+
+class Person extends A implements PersonClass,PersonClass2 {
+    asd: string
+    constructor() {
+        super()
+        this.asd = '123'
+    }
+    get(type:boolean) {
+        return type
+    }
+    set () {
+
+    }
+}
+```
+
+## 存储器
+`TypeScript` 支持通过 `getters/setters` 来截取对对象成员的访问。 它能帮助你有效的控制对对象成员的访问。
+
+下面来看如何把一个简单的类改写成使用 `get` 和 `set`。 首先，我们从一个没有使用存取器的例子开始。
+```ts
+class Person {
+  firstName: string = 'A'
+  lastName: string = 'B'
+  get fullName () {
+    return this.firstName + '-' + this.lastName
+  }
+  set fullName (value) {
+    const names = value.split('-')
+    this.firstName = names[0]
+    this.lastName = names[1]
+  }
+}
+
+const p = new Person()
+console.log(p.fullName)
+
+p.firstName = 'C'
+p.lastName =  'D'
+console.log(p.fullName)
+
+p.fullName = 'E-F'
+console.log(p.firstName, p.lastName)
+```
+
+
+## 抽象类
+抽象类做为其它派生类的基类使用。 它们一般**不会直接被实例化，只能实例化实现了所有抽象方法的子类**。 不同于接口，抽象类可以包含成员的实现细节。
+
+abstract: 用`abstract`关键字声明的类叫做`抽象类`，声明的方法叫做`抽象方法`。
+- 抽象类：指不能被实例化，因为它里面包含一个或多个抽象方法。
+- 抽象方法：是指不包含具体实现的方法。
+```ts
+    abstract class Person {
+      constructor(public name: string){}
+
+      // 抽象方法
+      abstract setAge(age: number) :void;
+    }
+
+    class Child extends Person {
+      constructor(name: string) {
+        super(name);
+      }
+
+      setAge(age: number): void {
+        console.log(`我的名字是${this.name},年龄是${age}`);
+      }
+    }
+
+    let res = new Person("zs") //error 无法创建抽象类的实例。
+    let res1 = new Child("zs");
+
+    res1.setAge(7) // "我的名字是zs,年龄是7"
+```
+
