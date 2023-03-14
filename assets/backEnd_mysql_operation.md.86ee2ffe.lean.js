@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as a}from"./app.a44cb4a5.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"backEnd/mysql/operation.md","lastUpdated":1678365660000}'),o={name:"backEnd/mysql/operation.md"};function r(n,s,c,p,d,i){return t(),a("div")}const l=e(o,[["render",r]]);export{m as __pageData,l as default};
