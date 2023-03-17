@@ -1,0 +1,30 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "deploy": "bash deploy.sh"
+  },
+  "devDependencies": {
+    "@femm/prettier": "^1.0.1",
+    "@mdit-vue/shared": "^0.12.0",
+    "@types/node": "^18.13.0",
+    "cross-env": "^7.0.3",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.2",
+    "node-sass": "^8.0.0",
+    "prettier": "^2.8.4",
+    "sass": "^1.58.3",
+    "vitepress": "^1.0.0-alpha.48",
+    "vue": "^3.2.47"
+  },
+  "lint-staged": {
+    "*.{js,ts,css,md,json}": [
+      "prettier --write"
+    ]
+  },
+  "prettier": "@femm/prettier"
+}

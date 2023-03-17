@@ -1,0 +1,21 @@
+.DS_Store
+node_modules
+dist
+.temp
+cache
+
+# Logs
+logs
+*.log
+yarn.lock
+package-lock.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+
+# dotenv environment variables file
+.env
+.env.test
+/docs/.vitepress/cache
+/package-lock.json
