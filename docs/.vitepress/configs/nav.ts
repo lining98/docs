@@ -16,7 +16,7 @@ export const nav: DefaultTheme.Config['nav'] = [
       {
         text: '基础',
         items: [
-          { text: 'HTML5', link: '/frontEnd/html5/', activeMatch: '^/frontEnd/html5' },
+          { text: 'HTML5', link: '/frontEnd/html5/audio_video', activeMatch: '^/frontEnd/html5' },
           { text: 'CSS3', link: '/frontEnd/css3/base/css选择器', activeMatch: '^/frontEnd/css3' },
           {
             text: 'JavaScript',
@@ -28,7 +28,7 @@ export const nav: DefaultTheme.Config['nav'] = [
       {
         text: '框架',
         items: [
-          { text: 'vue', link: '/frontEnd/vue/' },
+          { text: 'vue', link: '/frontEnd/vue/v3/' },
           // { text: 'vue3', link: '/frontEnd/vue3/' },
           { text: 'react', link: '/frontEnd/react/' }
         ],

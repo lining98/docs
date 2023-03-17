@@ -3,6 +3,7 @@ import type { DefaultTheme } from 'vitepress'
 export const sidebar: DefaultTheme.Config['sidebar'] = {
 
   // frontEnd
+  "/frontEnd/html5/": require("../../frontEnd/html5/sidebar"),
   "/frontEnd/css3/": require("../../frontEnd/css3/sidebar"),
   "/frontEnd/JavaScript/": require("../../frontEnd/JavaScript/sidebar"),
   "/frontEnd/vue/": require("../../frontEnd/vue/sidebar"),

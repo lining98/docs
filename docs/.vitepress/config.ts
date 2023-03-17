@@ -1,14 +1,20 @@
 import { defineConfig } from 'vitepress'
-
 import { head, nav, sidebar } from './configs'
+
+const base = '/docs/'
 
 export default defineConfig({
   outDir: '../dist',
 
-  base: "/docs/",
+  base,
   title: "lemon's blog",
   description: "学习并分享各类前端的项目和知识",
-  head,
+  head: [
+    // 打包后使用
+    ['link', { rel: 'icon', href: `${base}favicon.ico` }],
+    // 本地开发用
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
+  ],
   lastUpdated: true,
   cleanUrls: true,
   markdown: {
@@ -38,12 +44,11 @@ export default defineConfig({
       next: "下一篇",
     },
 
-    /* Algolia DocSearch 配置 */
-    algolia: {
-      appId: "",
-      apiKey: "",
-      indexName: "search",
-      placeholder: "搜索",
-    },
+
+    // 仅移动端生效
+    darkModeSwitchLabel: '外观',
+    sidebarMenuLabel: '菜单',
+    returnToTopLabel: '返回顶部'
+
   },
 })
