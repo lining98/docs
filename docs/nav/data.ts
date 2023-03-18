@@ -262,7 +262,7 @@ export const NAV_DATA: NavData[] = [
     title: "类库",
     items: [
       {
-        icon: "http://www.axios-js.com/icon/favicon-96x96.png",
+        icon: "/image/axios.png",
         title: "axios中文文档",
         desc: "易用、简洁且高效的http库",
         link: "http://www.axios-js.com/zh-cn/docs/",
@@ -280,8 +280,7 @@ export const NAV_DATA: NavData[] = [
       //   link: "",
       // },
       {
-        // icon: "",
-        icon: "http://momentjs.cn/static/img/moment-favicon.png",
+        icon: "/image/moment-favicon.png",
         title: "Monment",
         desc: "JavaScript 日期处理类库",
         link: "http://momentjs.cn/",
@@ -293,7 +292,7 @@ export const NAV_DATA: NavData[] = [
         link: "https://dayjs.fenxianglu.cn/",
       },
       {
-        icon: "http://mockjs.com/assets/img/logo-2.svg",
+        icon: "/image/mockjs.png",
         title: "mockjs",
         desc: "生成随机数据，拦截Ajax请求",
         link: "http://mockjs.com/",
@@ -434,7 +433,7 @@ export const NAV_DATA: NavData[] = [
         link: "https://echarts.apache.org/zh/index.html",
       },
       {
-        icon: "http://datav.jiaminghi.com/favicon.ico",
+        icon: "/image/favicon-datav.ico",
         title: "DataV",
         desc: "Vue 大屏数据展示组件库",
         link: "http://datav.jiaminghi.com/",
@@ -446,7 +445,7 @@ export const NAV_DATA: NavData[] = [
         link: "http://datav.aliyun.com/portal/school/atlas/area_selector",
       },
       {
-        icon: "http://webgl3d.cn/img/favicon.ico",
+        icon: "/image/favicon-threejs.ico",
         title: "Three.js中文网",
         desc: "Web3D可视化系统课程",
         link: "http://webgl3d.cn/",

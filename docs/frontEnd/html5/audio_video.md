@@ -85,9 +85,9 @@ control 属性供添加播放、暂停和音量控件。
 ### audio 音频
 
 ```js
-    ......html、css部分...........
+    // ......html、css部分...........
     //获取
-    let v = document.querySelector("video");
+    let v = document.querySelector("#video");
     //在视频被重新加载时触发。
     v.onabort = function () {
       console.log(1);
