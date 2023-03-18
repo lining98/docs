@@ -1,24 +1,2 @@
 @import './scrollbar.scss';
-:root {
-  --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(
-    120deg,
-    #bd34fe,
-    #41d1ff
-  );
-}
-.container p.text{
-  font-size: 38px;
-}
-.outline-link:hover {
-  font-weight: bloder;
-  color: #2859b1 !important;
-}
-.outline-link.active {
-  color: #6495ed !important;
-}
-
-.outline-marker{
-  width:4px !important;
-  background-color: #6495ed !important;
-}
+@import './vitepress.scss'
