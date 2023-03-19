@@ -11,8 +11,8 @@ module.exports = [
       items: [
         { text: '认识Vue3', link: '/frontEnd/vue/v3/' },
         { text: '创建Vue3项目', link: '/frontEnd/vue/v3/create' },
-        { text: 'Composition API(常用部分)', link: '/frontEnd/vue/v3/composition.md' },
-        { text: 'Composition API(其他部分)', link: '/frontEnd/vue/v3/composition_other.md.md' },
+        { text: 'vue3 API', link: '/frontEnd/vue/v3/api.md' },
+        // { text: 'Composition API(其他部分)', link: '/frontEnd/vue/v3/composition_other.md' },
         // { text: 'vue3', link: '/frontEnd/vue3/' },
       ]
     },
