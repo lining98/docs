@@ -1,5 +1,7 @@
 # vue3 API
 
+> [vue在线学习工具](https://sfc.vuejs.org/)
+
 > 在 vue3.2 中，我们只需在`script`标签中添加`setup`。就可以做到，组件只需引入不用注册，属性和方法也不用 return 才能于 template 中使用，也不用写`setup`函数，也不用写**export default** ，甚至是自定义指令也可以在我们的`template`中自动获得。
 >
 > 本篇内容基于`setup`语法糖下进行。
@@ -16,14 +18,14 @@
 </template>
 
 <script setup lang="ts">
-  const message = '我是小满'
+  const message = 'abcde'
 </script>
 ```
 
 ## ref 和 reactive
 
 - `ref()` 函数用来根据给定的值创建一个响应式的数据对象，`ref()` 函数调用的返回值是一个对象，这个对象上只包含一个 `value` 属性, 只在setup函数内部访问`ref`函数需要加`.value`，其用途创建独立的原始值
-- `reactive()` 函数接收一个普通对象，返回一个响应式的数据对象,
+- `reactive()` 函数接收一个普通对象，返回一个响应式的数据对象,使用reactive 去修改值无须`.value`。
 
 > ref其实也是内部调用 reactive 来实现的
 
@@ -210,4 +212,193 @@ function useDebouncedRef<T>(value: T, delay = 200) {
 ```
 
 ## reactive全家桶
+reactive是不可以绑定普通的**数据类型**这样是不允许 会给我们报错
+```js
+import { reactive} from 'vue'
+let person = reactive('zhangsan')
+// 控制台警告 value cannot be made reactive: zhangsan
+```
+
+### readonly
+readonly 接受一个对象 (不论是响应式还是普通的) 或是一个 ref，返回一个原值的只读代理。
+```vue
+<script setuo>
+import { readonly } from 'vue'
+  const student = readonly({
+      name: '橙某人'
+  });
+  student.name = 'YDYDYDQ'; // 不可修改
+</script>
+```
+
+### shallowReactive
+只能对浅层的数据 如果是深层的数据只会改变值 不会改变视图
+```vue
+<template>
+  <div>
+    <div>{{ state }}</div>
+    <button @click="change1">test1</button>
+    <button @click="change2">test2</button>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { shallowReactive } from 'vue'
+const state = shallowReactive({
+  a: 1,
+  first: {
+    b: 2,
+    second: {
+      c: 3
+    }
+  }
+})
+function change1() {
+  state.a ++
+}
+function change2() {
+  state.first.b ++
+  state.first.second.c = 9
+  console.log(state);
+}
+</script>
+```
+
+
+## to系列全家桶
+### toRef
+把一个响应式对象转换成普通对象，该普通对象的每个 property 都是一个 ref
+
+如果原始对象是**非响应式**的，数据是会变的，但不会更新视图。
+```vue
+<template>
+  <div>
+     <button @click="change">按钮</button>
+     {{state}}
+  </div>
+</template>
+
+<script setup lang="ts">
+import { reactive, toRef } from 'vue'
+
+const obj = {
+  name: '张三',
+  age: 20
+}
+
+const state = toRef(obj, 'age')
+
+const change = () => {
+  state.value++
+  console.log('obj:',obj,'state:', state);
+}
+</script>
+```
+
+### toRefs
+toRefs相当于对对象内每个属性调用toRef，toRefs返回的对象内的属性使用时需要加.value,主要是方便我们解构使用
+```vue
+<template>
+  <div>
+    <button @click="change">按钮</button>
+    name--{{name}}---age{{age}}
+  </div>
+</template>
+
+<script setup lang="ts">
+import { reactive, toRefs } from 'vue'
+
+const obj = reactive({
+  name: '张三',
+  age: 18
+})
+
+let { name, age } = toRefs(obj)
+
+const change = () => {
+  age.value++
+  name.value = '李四'
+  console.log('obj:', obj);
+  console.log('name:', name);
+  console.log('age:', age);
+}
+</script>
+```
+
+### toRaw
+将响应式对象修改为普通对象
+```vue
+<template>
+  <div>
+    <button @click="change">按钮</button>
+    {{data}}
+  </div>
+</template>
+
+<script setup lang="ts">
+import { reactive, toRaw } from 'vue'
+
+const obj = reactive({
+  name: '张三',
+  age: 18
+})
+
+const data = toRaw(obj)
+
+const change = () => {
+  data.age = 20
+  console.log('obj:', obj, 'data:', data);
+}
+</script>
+```
+
+
+## computed
+computed() 与 Vue2 中的 computed 作用基本一致，它可以接收一个函数或对象作为参数，会返回一个只读的 ref 对象。
+```vue
+<template>
+  <div>{{info}}</div>
+</template>
+
+<script setup>
+import { computed, reactive } from 'vue'
+    const person = reactive({
+      name: '张三',
+      age: 18
+    });
+    const info = computed(() => `姓名：${person.name}，年龄${person.age}`)
+</script>
+```
+
+
+## watch
+vue3 watch 的作用和 Vue2 中的 watch 作用是一样的，他们都是用来监听响应式状态发生变化的，当响应式状态发生变化时，就会触发一个回调函数。
+```vue
+watch(data,()=>{},{})
+```
+   - 参数一， 监听的数据
+   - 参数二， 数据改变时触发的回调函数（newVal,oldVal）
+   - 参数三， options配置项，为一个对象`{immediate,deep}`
+     - immediate:true //是否立即调用一次
+     - deep:true //是否开启深度监听
+
+
+### 1、监听ref定义的一个响应式数据
+
+
+
+### 2、监听多个ref
+
+
+
+### 3、监听Reactive定义的响应式对象
+
+
+
+### 4、监听reactive 定义响应式对象的单一属性
+
+
+
+
+
 
