@@ -15,7 +15,7 @@ hero:
       link: /vitepress
     - theme: alt
       text: 前端导航
-      link: /nav
+      link: /nav/
     # - theme: alt
     #   text: 其他
     #   link: /aaa

@@ -4,11 +4,11 @@ outline: [2,3,4]
 ---
 
 <script setup>
-import MNavLinks from './nav/components/MNavLinks.vue'
+import MNavLinks from './components/MNavLinks.vue'
 
-import { NAV_DATA } from './nav/data'
+import { NAV_DATA } from './data'
 </script>
-<style src="./nav/index.scss"></style>
+<style src="./index.scss"></style>
 
 # 前端导航
 
