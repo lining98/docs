@@ -384,20 +384,340 @@ watch(data,()=>{},{})
 
 
 ### 1、监听ref定义的一个响应式数据
+```js
+import { ref, watch } from 'vue'
+let message = ref({
+    nav:{
+        bar:{
+            name:""
+        }
+    }
+})
 
+watch(message, (newVal, oldVal) => {
+    console.log('新的值----', newVal);
+    console.log('旧的值----', oldVal);
+},{
+    immediate:true,
+    deep:true
+})
+```
 
 
 ### 2、监听多个ref
+写法变为数组的形式
+```js
+import { ref, watch ,reactive} from 'vue'
 
+let message = ref('')
+let message2 = ref('')
 
+watch([message,message2], (newVal, oldVal) => {
+    console.log('新的值----', newVal);
+    console.log('旧的值----', oldVal);
+})
+```
 
 ### 3、监听Reactive定义的响应式对象
+使用reactive监听深层对象开启和不开启deep 效果一样
+```js
+import { ref, watch ,reactive} from 'vue'
 
+let message = reactive({
+    nav:{
+        bar:{
+            name:""
+        }
+    }
+})
+
+watch(message, (newVal, oldVal) => {
+    console.log('新的值----', newVal);
+    console.log('旧的值----', oldVal);
+})
+```
 
 
 ### 4、监听reactive 定义响应式对象的单一属性
+```js
+import { ref, watch ,reactive} from 'vue'
+let message = reactive({
+    name:"",
+    name2:""
+})
+
+watch(()=>message.name, (newVal, oldVal) => {
+    console.log('新的值----', newVal);
+    console.log('旧的值----', oldVal);
+})
+```
+
+## WatchEffect
+- 立即执行传入的一个函数，同时**响应式**追踪其依赖，并在其依赖变更时重新运行该函数。
+- 不用直接指定要监视的数据, 回调函数中使用的哪些响应式数据就监视哪些响应式数据
+- 默认初始时就会执行第一次, 从而可以收集需要监视的数据
+```vue
+<script setup lang="ts">
+import { ref, watchEffect } from "vue";
+
+let num = ref(0)
+
+//3s后改变值
+setInterval(() => {
+  num.value++
+}, 3000)
+
+watchEffect(() => {
+  console.log('num 值改变：', num.value)
+})
+</script>
+```
+
+### 清除副作用
+- watchEffect 的第一个参数——effect函数——可以接收一个参数：叫onInvalidate，也是一个函数，用于清除 effect 产生的副作用
+- 就是在触发监听之前会调用一个函数可以处理你的逻辑，例如防抖
+```vue
+<script setup lang="ts">
+import { ref, watchEffect } from "vue";
+
+let num = ref(0)
+
+//3s后改变值
+setInterval(() => {
+  num.value++
+}, 3000)
+
+watchEffect((onInvalidate) => {
+  console.log(num.value)
+  onInvalidate(() => {
+    console.log('执行');
+  });
+})
+</script>
+```
+
+### 停止监听
+```vue
+- 当 watchEffect 在组件的 setup() 函数或生命周期钩子被调用时，侦听器会被链接到该组件的生命周期，并在组件卸载时自动停止。
+- 但是我们采用异步的方式创建了一个监听器，这个时候监听器没有与当前组件绑定，所以即使组件销毁了，监听器依然存在。
+<script setup lang="ts">
+import { watchEffect } from 'vue'
+// 它会自动停止
+watchEffect(() => {})
+// ...这个则不会！
+setInterval(() => {
+  watchEffect(() => {})
+}, 100)
+
+const stop = watchEffect(() => {
+  /* ... */
+})
+
+// 显式调用
+stop()
+</script>
+```
 
 
+### 配置选项
+- watchEffect的第二个参数，用来定义副作用刷新时机，可以作为一个调试器来使用
+
+- flush （更新时机）：
+   1. pre：组件更新前执行
+   2. sync：强制效果始终同步触发
+   3. post：组件更新后执行
+```vue
+<script setup lang="ts">
+import { ref, watchEffect } from "vue";
+let num = ref(0)
+
+//3s后改变值
+setInterval(() => {
+  num.value++
+}, 3000)
+
+watchEffect((onInvalidate) => {
+  console.log(num.value)
+  onInvalidate(() => {
+    console.log('执行');
+  });
+}, {
+  flush: "post", //此时这个函数会在组件更新之后去执行
+  onTrigger(e) { //作为一个调试工具，可在开发中方便调试
+    console.log('触发', e);
+  },
+})
+</script>
+```
+
+## 生命周期
+简单来说就是一个组件从创建 到 销毁的 过程 成为生命周期
+
+在我们使用`Vue3` 组合式API 是没有 `beforeCreate` 和 `created` 这两个生命周期的
+![img](./image/lifeCycle.png)
+
+
+## 自定义指令
+### Vue3指令的钩子函数
+- created 元素初始化的时候
+- beforeMount 指令绑定到元素后调用 只调用一次
+- mounted 元素插入父级dom调用
+- beforeUpdate 元素被更新之前调用
+- update 这个周期方法被移除 改用updated
+- beforeUnmount 在元素被移除前调用
+- unmounted 指令被移除后调用 只调用一次
+
+### 在setup内定义局部指令
+这里有一个需要注意的限制：必须以 vNameOfDirective 的形式来命名本地自定义指令，以使得它们可以直接在模板中使用。
+```vue
+
+const vMoveDirective: Directive = {
+  created: () => {
+    console.log("初始化====>");
+  },
+  beforeMount(...args: Array<any>) {
+    // 在元素上做些操作
+    console.log("初始化一次=======>");
+  },
+  mounted(el: any, dir: DirectiveBinding<Value>) {
+    el.style.background = dir.value.background;
+    console.log("初始化========>");
+  },
+  beforeUpdate() {
+    console.log("更新之前");
+  },
+  updated() {
+    console.log("更新结束");
+  },
+  beforeUnmount(...args: Array<any>) {
+    console.log(args);
+    console.log("======>卸载之前");
+  },
+  unmounted(...args: Array<any>) {
+    console.log(args);
+    console.log("======>卸载完成");
+  },
+};
+```
+
+### 生命周期钩子参数详解
+第一个 el  当前绑定的DOM 元素
+
+第二个 binding
+
+- instance：使用指令的组件实例。
+- value：传递给指令的值。例如，在 v-my-directive="1 + 1" 中，该值为 2。
+- oldValue：先前的值，仅在 beforeUpdate 和 updated 中可用。无论值是否有更改都可用。
+- arg：传递给指令的参数(如果有的话)。例如在 v-my-directive:foo 中，arg 为 "foo"。
+- modifiers：包含修饰符(如果有的话) 的对象。例如在 v-my-directive.foo.bar 中，修饰符对象为 {foo: true，bar: true}。
+- dir：一个对象，在注册指令时作为参数传递。例如，在以下指令中
+
+第三个 当前元素的虚拟DOM 也就是Vnode
+
+第四个 prevNode 上一个虚拟节点，仅在 beforeUpdate 和 updated 钩子中可用
+
+### 案列 - 自定义拖拽指令
+```vue
+<template>
+  <div v-move class="box">
+    <div class="header"></div>
+    <div>
+      内容
+    </div>
+  </div>
+</template>
+
+<script setup lang='ts'>
+import { Directive } from "vue";
+const vMove: Directive = {
+  mounted(el: HTMLElement) {
+    let moveEl = el.firstElementChild as HTMLElement;
+    const mouseDown = (e: MouseEvent) => {
+      //鼠标点击物体那一刻相对于物体左侧边框的距离=点击时的位置相对于浏览器最左边的距离-物体左边框相对于浏览器最左边的距离
+      console.log(e.clientX, e.clientY, "-----起始", el.offsetLeft);
+      let X = e.clientX - el.offsetLeft;
+      let Y = e.clientY - el.offsetTop;
+      const move = (e: MouseEvent) => {
+        el.style.left = e.clientX - X + "px";
+        el.style.top = e.clientY - Y + "px";
+        console.log(e.clientX, e.clientY, "---改变");
+      };
+      document.addEventListener("mousemove", move);
+      document.addEventListener("mouseup", () => {
+        document.removeEventListener("mousemove", move);
+      });
+    };
+    moveEl.addEventListener("mousedown", mouseDown);
+  },
+};
+</script>
+
+<style lang='less'>
+.box {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  border: 1px solid #ccc;
+  .header {
+    height: 20px;
+    background: black;
+    cursor: move;
+  }
+}
+</style>
+```
+
+
+## 自定义hooks
+在 vue2 中有个东西叫 mixins，他可以将多个组件中相同的逻辑抽离出来，实现一次写代码，多组件受益的效果。
+
+但是 mixins 的副作用就是引用的多了变量的来源就不清晰了，而且还会有变量来源不明确,不利于阅读，容易使代码变得难以维护。
+
+- Vue3 的 hook函数 相当于 vue2 的 mixin, 不同在与 hooks 是函数
+- Vue3 的 hook函数 可以帮助我们提高代码的复用性, 让我们能在不同的组件中都利用 hooks 函数
+
+案列 —— 实现一个窗口改变时获取宽高的 hook
+```js
+import { onMounted, onUnmounted, ref } from "vue";
+
+function useWindowResize() {
+  const width = ref(0);
+  const height = ref(0);
+  function onResize() {
+    width.value = window.innerWidth;
+    height.value = window.innerHeight;
+  }
+  onMounted(() => {
+    window.addEventListener("resize", onResize);
+    onResize();
+  });
+  onUnmounted(() => {
+    window.removeEventListener("resize", onResize);
+  });
+  return {
+    width,
+    height
+  };
+}
+
+export default useWindowResize;
+```
+使用
+```vue
+<template>
+  <h3>屏幕尺寸</h3>
+  <div>宽度：{{ width }}</div>
+  <div>高度：{{ height }}</div>
+</template>
+
+<script setup lang="ts">
+import useWindowResize from "../hooks/useWindowResize.ts";
+const { width, height } = useWindowResize();
+</script>
+```
 
 
 
