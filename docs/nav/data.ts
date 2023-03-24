@@ -604,21 +604,4 @@ export const NAV_DATA: NavData[] = [
       },
     ],
   },
-  {
-    title: "摸摸鱼",
-    items: [
-      {
-        icon: "https://handle.antfu.me/favicon.svg",
-        title: "汉字 - 汉字 Wordle",
-        desc: "一个根据拼音猜成语小游戏",
-        link: "https://handle.antfu.me/",
-      },
-      {
-        icon: "https://momoyu.cc/icon-192.png",
-        title: "摸摸鱼热榜",
-        // desc: '聚合每日热门、搞笑、有趣、适合摸鱼的资讯',
-        link: "https://momoyu.cc",
-      },
-    ],
-  },
 ];

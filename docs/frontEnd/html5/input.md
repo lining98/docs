@@ -1,4 +1,6 @@
-# input type="password" 浏览器自动填充账号和密码
+# input
+
+## input type="password" 浏览器自动填充账号和密码
 
 ```html
 <a-input type="password" placeholder="请输入登录密码" v-model="model.password" />
