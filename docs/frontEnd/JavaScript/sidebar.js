@@ -4,6 +4,7 @@ module.exports = [
       items: [
         { text: 'JavaScript简介', link: '/frontEnd/JavaScript/' },
         { text: '闭包', link: '/frontEnd/JavaScript/closure' },
+        // { text: '作用域', link: '/frontEnd/JavaScript/' },
       ]
     }
   ]
