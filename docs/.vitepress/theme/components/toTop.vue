@@ -33,7 +33,7 @@ onMounted(() => {
 
 <template>
   <div @click="goBack" :class="isShow">
-    <img class="img" src="../assets/images/top.png" alt="" />
+    <img class="img" src="../assets/images/totop.svg" alt="" />
   </div>
 </template>
 
@@ -45,7 +45,7 @@ onMounted(() => {
   cursor: pointer;
   .img {
     animation: Bob 1s linear 0s infinite;
-    width: 30px;
+    width: 50px;
   }
 }
 .show {
