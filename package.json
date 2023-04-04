@@ -13,12 +13,15 @@
     "@mdit-vue/shared": "^0.12.0",
     "@types/node": "^18.13.0",
     "cross-env": "^7.0.3",
+    "flexsearch": "^0.7.31",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.2",
+    "markdown-it": "^13.0.1",
     "node-sass": "^8.0.0",
     "prettier": "^2.8.4",
     "sass": "^1.58.3",
     "vitepress": "^1.0.0-alpha.48",
+    "vitepress-plugin-search": "^1.0.4-alpha.19",
     "vue": "^3.2.47"
   },
   "lint-staged": {

@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import { head, nav, sidebar } from './configs'
+import algolia from './configs/algolia'
 
 const base = '/docs/'
 
@@ -43,6 +44,9 @@ export default defineConfig({
       prev: "上一篇",
       next: "下一篇",
     },
+
+    // 搜索
+    // algolia,
 
 
     // 仅移动端生效

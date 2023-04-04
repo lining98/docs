@@ -6,7 +6,7 @@ import Visitor from './components/Visitor.vue'
 import Copyright from './components/Copyright.vue'
 import toTop from './components/toTop.vue'
 
-import "./style/index.scss";
+import "./styles/index.scss";
 
 export default Object.assign({}, Theme, {
   Layout: () => {
