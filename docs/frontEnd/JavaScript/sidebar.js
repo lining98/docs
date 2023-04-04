@@ -3,7 +3,9 @@ module.exports = [
       text: 'js基础',
       items: [
         { text: 'JavaScript简介', link: '/frontEnd/JavaScript/' },
-        // { text: 'JavaScript简介', link: '/frontEnd/JavaScript/js/' },
+        { text: '数据类型', link: '/frontEnd/JavaScript/js/data_type' },
+        { text: '数组方法', link: '/frontEnd/JavaScript/js/array' },
+        { text: 'Ajax', link: '/frontEnd/JavaScript/js/ajax' },
 
         // { text: '作用域', link: '/frontEnd/JavaScript/' },
       ]
