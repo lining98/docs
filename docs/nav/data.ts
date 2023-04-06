@@ -47,8 +47,8 @@ export const NAV_DATA: NavData[] = [
       {
         title: 'Mdn Web Docs',
         icon: 'https://developer.mozilla.org/favicon-48x48.cbbd161b.png',
-        desc: '',
-        link: 'https://www.w3school.com.cn/'
+        desc: '记录web技术的文档',
+        link: 'https://developer.mozilla.org/zh-CN/'
       },
       {
         title: 'w3school',
