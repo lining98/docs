@@ -18,10 +18,10 @@
     color: #2859b1 !important;
   }
   .outline-link.active {
-    color: #6495ed !important;
+    color: var(--vp-c-blue) !important;
   }
 
   .outline-marker{
     width:4px !important;
-    background-color: #6495ed !important;
+    background-color: var(--vp-c-blue) !important;
   }
