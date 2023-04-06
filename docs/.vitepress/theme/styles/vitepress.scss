@@ -6,9 +6,11 @@
       #41d1ff
     );
 
-    --vp-c-green-dark: #6495ed;
-    --vp-c-brand: var(--vp-c-blue);
     --vp-c-blue:#6495ed;
+    --vp-c-green-dark: var(--vp-c-blue);
+    --vp-c-brand: var(--vp-c-blue);
+    --vp-button-brand-border: var(--vp-c-blue);
+    --vp-c-green-darker:#2859b1;
   }
   .container p.text{
     font-size: 38px;
