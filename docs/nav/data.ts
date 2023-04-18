@@ -132,7 +132,7 @@ export const NAV_DATA: NavData[] = [
         title: 'Element Plus',
         icon: 'https://element-plus.org/images/element-plus-logo-small.svg',
         desc: '基于 Vue 3，面向设计师和开发者的组件库',
-        link: 'https://element-plus.org'
+        link: 'https://element-plus.org/zh-CN/'
       },
       {
         title: 'Ant Design Vue',
