@@ -6,7 +6,7 @@ hero:
   text: 学习并分享各类前端的项目和知识
   tagline: 非淡泊无以明志，非宁静无以致远
   image:
-    src: /img/web.png
+    src: /img/logo.png
     alt: logo
   actions:
     - theme: brand
@@ -25,12 +25,12 @@ features:
   - icon: ⚡️
     title: 知识点分享
     details: 前端八股，踩坑小贴士
-  - icon: 🖖
-    title: 算法分享
-    details: 用JS攻克leetode题库
   - icon: 🛠️
     title: 技术扩展
     details: 前端技术的扩展
+  # - icon: 🖖
+  #   title: 算法分享
+  #   details: 用JS攻克leetode题库
 
 footer: 非淡泊无以明志，非宁静无以致远
 ---

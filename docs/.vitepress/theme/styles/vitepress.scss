@@ -1,29 +1,40 @@
 :root {
-    --vp-home-hero-name-color: transparent;
-    --vp-home-hero-name-background: -webkit-linear-gradient(
-      120deg,
-      #bd34fe,
-      #41d1ff
-    );
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #bd34fe, #41d1ff);
 
-    --vp-c-blue:#6495ed;
-    --vp-c-green-dark: var(--vp-c-blue);
-    --vp-c-brand: var(--vp-c-blue);
-    --vp-button-brand-border: var(--vp-c-blue);
-    --vp-c-green-darker:#2859b1;
-  }
-  .container p.text{
-    font-size: 38px;
-  }
-  .outline-link:hover {
-    font-weight: bloder;
-    color: #2859b1 !important;
-  }
-  .outline-link.active {
-    color: var(--vp-c-blue) !important;
-  }
+  --vp-c-blue: #6495ed;
+  --vp-c-green-dark: var(--vp-c-blue);
+  --vp-c-brand: var(--vp-c-blue);
+  --vp-button-brand-border: var(--vp-c-blue);
+  --vp-c-green-darker: #2859b1;
+}
+.container p.text {
+  font-size: 38px;
+}
+.outline-link:hover {
+  font-weight: bloder;
+  color: #2859b1 !important;
+}
+.outline-link.active {
+  color: var(--vp-c-blue) !important;
+}
 
-  .outline-marker{
-    width:4px !important;
-    background-color: var(--vp-c-blue) !important;
+.outline-marker {
+  width: 4px !important;
+  background-color: var(--vp-c-blue) !important;
+}
+
+/* 首页样式修改 */
+.VPHero {
+  .image-bg {
+    opacity: 0.8;
+    transition: opacity 1s ease;
   }
+  .image-src {
+    border-radius: 50%;
+    box-shadow: 0 0 100px rgba($color: #52bbff, $alpha: 0.4);
+  }
+  .image-container:hover .image-bg {
+    opacity: 0.4;
+  }
+}

@@ -21,5 +21,5 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
   // algorithms
   // "/algorithms/": require("../../algorithms/sidebar"),
 
-  "/about/": require("../../about/sidebar"),
+  // "/about/": require("../../about/sidebar"),
 };

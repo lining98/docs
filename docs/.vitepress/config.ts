@@ -1,6 +1,5 @@
 import { defineConfig } from 'vitepress'
 import { head, nav, sidebar } from './configs'
-import algolia from './configs/algolia'
 
 const base = '/docs/'
 
@@ -35,6 +34,9 @@ export default defineConfig({
     // 最后更新时间
     lastUpdatedText: "上次更新",
 
+
+    socialLinks: [{ icon: 'github', link: 'https://github.com/lining98' }],
+
     // 页脚配置
     footer: {
       message: "lemon's personal blog.",
@@ -44,10 +46,6 @@ export default defineConfig({
       prev: "上一篇",
       next: "下一篇",
     },
-
-    // 搜索
-    // algolia,
-
 
     // 仅移动端生效
     darkModeSwitchLabel: '外观',

@@ -61,14 +61,14 @@ export const nav: DefaultTheme.Config['nav'] = [
     ],
     activeMatch: '^/others'
   },
-  { text: '算法', link: '/algorithms/', activeMatch: '^/algorithms' },
-  {
-    text: '关于',
-    items: [
-      { text: '关于', link: '/about/' },
-      { text: 'github', link: 'https://github.com/lining98/docs' },
-      { text: 'leetcode', link: 'https://leetcode.cn/u/l_ning98/' }
-    ],
-    activeMatch: '^/about'
-  }
+  // { text: '算法', link: '/algorithms/', activeMatch: '^/algorithms' },
+  // { text: '关于', link: '/about/', activeMatch: '^/about' },
+  // {
+  //   text: '关于',
+  //   items: [
+  //     { text: '关于', link: '/about/' },
+  //     { text: 'leetcode', link: 'https://leetcode.cn/u/l_ning98/' }
+  //   ],
+  //   activeMatch: '^/about'
+  // }
 ]
