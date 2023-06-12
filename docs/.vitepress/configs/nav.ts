@@ -56,12 +56,20 @@ export const nav: DefaultTheme.Config['nav'] = [
     text: '其他',
     items: [
       { text: 'git', link: '/others/git/install', activeMatch: '^/others/git' },
-      { text: '可视化', link: '/others/visualization/canvas', activeMatch: '^/others/visualization' },
+      { text: '可视化', link: '/others/visualization/svg', activeMatch: '^/others/visualization' },
       // { text: "threejs", link: "/frontEnd/threejs/index" },
     ],
     activeMatch: '^/others'
   },
   // { text: '算法', link: '/algorithms/', activeMatch: '^/algorithms' },
+  {
+    text: '项目',
+    items: [
+      { text: '项目配置', link: '/project/configuration', activeMatch: '^/project/configuration' },
+      { text: 'music', link: 'http://121.40.174.152/#/discover/recommend' },
+    ],
+    activeMatch: '^/project'
+  },
   // { text: '关于', link: '/about/', activeMatch: '^/about' },
   // {
   //   text: '关于',
