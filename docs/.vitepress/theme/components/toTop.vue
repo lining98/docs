@@ -42,6 +42,7 @@ onMounted(() => {
   position: fixed;
   right: 0px;
   bottom: 180px;
+  z-index: 9999;
   cursor: pointer;
   .img {
     animation: Bob 1s linear 0s infinite;
