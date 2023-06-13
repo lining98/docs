@@ -17,7 +17,6 @@
     "flexsearch": "^0.7.31",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.2",
-    "live2d": "^0.0.1",
     "markdown-it": "^13.0.1",
     "node-sass": "^8.0.0",
     "prettier": "^2.8.4",
