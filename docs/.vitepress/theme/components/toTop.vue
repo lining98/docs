@@ -40,8 +40,8 @@ onMounted(() => {
 <style lang="scss" scoped>
 .top {
   position: fixed;
-  right: 40px;
-  bottom: 120px;
+  right: 0px;
+  bottom: 180px;
   cursor: pointer;
   .img {
     animation: Bob 1s linear 0s infinite;
