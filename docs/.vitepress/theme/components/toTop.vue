@@ -40,8 +40,8 @@ onMounted(() => {
 <style lang="scss" scoped>
 .top {
   position: fixed;
-  right: 0px;
-  bottom: 180px;
+  right: 40px;
+  bottom: 80px;
   z-index: 9999;
   cursor: pointer;
   .img {
