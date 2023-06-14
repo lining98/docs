@@ -33,16 +33,18 @@ onMounted(() => {
 
 <template>
   <div @click="goBack" :class="isShow">
-    <img class="img" src="../assets/images/totop.svg" alt="" />
+    <!-- <img class="img" src="../assets/images/totop.svg" alt="" /> -->
+    <img class="img" src="../assets/images/go_top.png" alt="" />
   </div>
 </template>
 
 <style lang="scss" scoped>
 .top {
   position: fixed;
-  right: 40px;
-  bottom: 80px;
+  right: 80px;
+  top: -180px;
   z-index: 9999;
+  transition: all 0.3s;
   cursor: pointer;
   .img {
     animation: Bob 1s linear 0s infinite;
@@ -51,9 +53,11 @@ onMounted(() => {
 }
 .show {
   opacity: 1;
+  transform: translateY(0px);
 }
 .hide {
   opacity: 0;
+  transform: translateY(-200px);
 }
 @keyframes Bob {
   0% {
