@@ -27,7 +27,7 @@ export default Object.assign({}, Theme, {
        */
        'aside-top': () => h(toTop),
        'aside-bottom': () => h(Live2d),
-       'nav-bar-title-after': () => h(Visitor),
+       'nav-bar-title-before': () => h(Visitor),
        'doc-after': () => h(Copyright),
     });
   },

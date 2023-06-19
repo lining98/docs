@@ -23,7 +23,7 @@ export const nav: DefaultTheme.Config['nav'] = [
             link: '/frontEnd/JavaScript/',
             activeMatch: '^/frontEnd/JavaScript'
           }
-        ],
+        ]
       },
       {
         text: '框架',
@@ -31,18 +31,23 @@ export const nav: DefaultTheme.Config['nav'] = [
           { text: 'vue', link: '/frontEnd/vue/v3/' },
           // { text: 'vue3', link: '/frontEnd/vue3/' },
           { text: 'react', link: '/frontEnd/react/' }
-        ],
+        ]
       },
       {
         text: '其他',
         items: [
-          { text: 'axios', link: '/frontEnd/axios/' , activeMatch: '^/frontEnd/axios'},
-          { text: 'TypeScript', link: '/frontEnd/TypeScript/', activeMatch: '^/frontEnd/TypeScript'},
+          { text: 'axios', link: '/frontEnd/axios/', activeMatch: '^/frontEnd/axios' },
+          {
+            text: 'TypeScript',
+            link: '/frontEnd/TypeScript/',
+            activeMatch: '^/frontEnd/TypeScript'
+          }
           // { text: "webpack", link: "/frontEnd/webpack/index" },
           // { text: "vite", link: "/frontEnd/vite/index" },
         ]
       }
-    ], activeMatch: '^/frontEnd'
+    ],
+    activeMatch: '^/frontEnd'
   },
   {
     text: '后端',
@@ -53,10 +58,19 @@ export const nav: DefaultTheme.Config['nav'] = [
     activeMatch: '^/backEnd'
   },
   {
+    text: '可视化',
+    items: [
+      { text: 'canvas', link: '/visual/canvas/index/', activeMatch: '^/visual/canvas' },
+      { text: 'svg', link: '/visual/svg/', activeMatch: '^/visual/svg' },
+      { text: 'echarts', link: '/visual/echarts/', activeMatch: '^/visual/echarts' }
+
+      // { text: "threejs", link: "/frontEnd/threejs/index" },
+    ]
+  },
+  {
     text: '其他',
     items: [
-      { text: 'git', link: '/others/git/install', activeMatch: '^/others/git' },
-      { text: '可视化', link: '/others/visualization/svg', activeMatch: '^/others/visualization' },
+      { text: 'git', link: '/others/git/install', activeMatch: '^/others/git' }
       // { text: "threejs", link: "/frontEnd/threejs/index" },
     ],
     activeMatch: '^/others'
@@ -66,10 +80,10 @@ export const nav: DefaultTheme.Config['nav'] = [
     text: '项目',
     items: [
       { text: '项目配置', link: '/project/configuration', activeMatch: '^/project/configuration' },
-      { text: 'music', link: 'http://121.40.174.152/#/discover/recommend' },
+      { text: 'music', link: 'http://121.40.174.152/#/discover/recommend' }
     ],
     activeMatch: '^/project'
-  },
+  }
   // { text: '关于', link: '/about/', activeMatch: '^/about' },
   // {
   //   text: '关于',
