@@ -3,9 +3,9 @@ module.exports = [
     // text: 'canvas',
     items: [
       {
-        text: 'canvas学习',
+        text: 'canvas',
         items: [
-          { text: 'canvas', link: '/visual/canvas/index/' },
+          { text: 'canvas介绍', link: '/visual/canvas/index/' },
           // { text: 'canvas11', link: '/visual/canvas/index/11' }
         ]
       },
