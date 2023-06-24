@@ -7,7 +7,6 @@
 // import { Live2d } from '@tomiaa/live2d'
 
 // const live2dContentRef = ref()
-
 // onMounted(() => {
 //   new Live2d({
 //     el: live2dContentRef.value,
