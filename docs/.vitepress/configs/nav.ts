@@ -62,10 +62,10 @@ export const nav: DefaultTheme.Config['nav'] = [
     items: [
       { text: 'canvas', link: '/visual/canvas/index/', activeMatch: '^/visual/canvas' },
       { text: 'svg', link: '/visual/svg/', activeMatch: '^/visual/svg' },
-      { text: 'echarts', link: '/visual/echarts/', activeMatch: '^/visual/echarts' }
-
+      { text: 'echarts', link: '/visual/echarts/', activeMatch: '^/visual/echarts' },
       // { text: "threejs", link: "/frontEnd/threejs/index" },
-    ]
+    ],
+    activeMatch: '^/visual'
   },
   {
     text: '其他',

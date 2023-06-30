@@ -1,27 +1,34 @@
+
+
 :root {
   --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #bd34fe, #41d1ff);
-
-  --vp-c-blue: #6495ed;
-  --vp-c-green-dark: var(--vp-c-blue);
-  --vp-c-brand: var(--vp-c-blue);
-  --vp-button-brand-border: var(--vp-c-blue);
-  --vp-c-green-darker: #2859b1;
+  --vp-home-hero-name-background: -webkit-linear-gradient(
+    120deg,
+    var(--vp-c-brand) 30%,
+    var(--vp-c-brand-next)
+  );
+  --vp-home-hero-image-background-image: linear-gradient(
+    -45deg,
+    var(--vp-c-brand) 30%,
+    var(--vp-c-brand-next)
+  );
+  --vp-home-hero-image-filter: blur(80px);
 }
+
 .container p.text {
   font-size: 38px;
 }
 .outline-link:hover {
   font-weight: bloder;
-  color: #2859b1 !important;
+  color: var(--vp-c-brand-next) !important;
 }
 .outline-link.active {
-  color: var(--vp-c-blue) !important;
+  color: var(--vp-c-brand) !important;
 }
 
 .outline-marker {
   width: 4px !important;
-  background-color: var(--vp-c-blue) !important;
+  background-color: var(--vp-c-brand) !important;
 }
 
 /* 首页样式修改 */
@@ -36,5 +43,17 @@
   }
   .image-container:hover .image-bg {
     opacity: 0.4;
+  }
+}
+
+/*爱的魔力转圈圈*/
+.VPHero .VPImage {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+
+  &:hover {
+    transform: translate(-50%, -50%) rotate(666turn) !important;
+    transition: transform 59s 1s cubic-bezier(0.3, 0, 0.8, 1) !important;
   }
 }
