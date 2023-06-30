@@ -5,10 +5,8 @@
 <script setup lang="ts">
 // import { onMounted, ref } from 'vue'
 // import { Live2d } from '@tomiaa/live2d'
-// import Live2d from '@tomiaa/live2d'
 
 // const live2dContentRef = ref()
-
 // onMounted(() => {
 //   new Live2d({
 //     el: live2dContentRef.value,
