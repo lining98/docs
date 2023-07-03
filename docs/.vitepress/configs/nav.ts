@@ -60,11 +60,11 @@ export const nav: DefaultTheme.Config['nav'] = [
   {
     text: '可视化',
     items: [
-      { text: 'Canvas', link: '/visual/canvas/index/初始Canvas', activeMatch: '^/visual/canvas' },
+      { text: 'Canvas', link: '/visual/canvas/base/初始Canvas', activeMatch: '^/visual/canvas' },
       { text: 'Svg', link: '/visual/svg/', activeMatch: '^/visual/svg' },
-      // { text: 'PixiJs', link: '/visual/canvas/index/初始PixiJs', activeMatch: '^/visual/pixi' },
+      // { text: 'PixiJs', link: '/visual/canvas/base/初始PixiJs', activeMatch: '^/visual/pixi' },
       { text: 'Echarts', link: '/visual/echarts/', activeMatch: '^/visual/echarts' },
-      // { text: "threejs", link: "/frontEnd/threejs/index" },
+      // { text: "threejs", link: "/frontEnd/threejs/base" },
     ],
     activeMatch: '^/visual'
   },
