@@ -1,6 +1,5 @@
 <template>
   <div class="main">
-    <CBtn @click="again" text="再来一次" />
     <div class="ggk">{{ text }}</div>
     <canvas ref="canvas" width="600" height="400"></canvas>
   </div>
@@ -8,7 +7,6 @@
 
 <script setup lang="ts">
 import { ref, onMounted, computed } from 'vue'
-import CBtn from '@/docs/components/CBtn.vue'
 const canvas = ref<HTMLCanvasElement>()
 const context = computed(() => {
   // 定义计算属性，返回 canvas 元素的 2D 绘图上下文
@@ -45,7 +43,6 @@ const render = () => {
 
 const random = () => {
   let random = Math.random()
-  console.log(random)
   if (random < 0.1) {
     text.value = '一等奖'
   } else if (random < 0.2) {
@@ -55,12 +52,6 @@ const random = () => {
   } else {
     text.value = '谢谢惠顾'
   }
-}
-
-const again = () => {
-  context.value!.fillStyle = '#ccc'
-  context.value!.fillRect(0, 0, 600, 400)
-  random()
 }
 
 onMounted(() => {

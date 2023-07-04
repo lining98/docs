@@ -1,7 +1,5 @@
 <template>
-  <div>
     <button class="btn">{{ text }}</button>
-  </div>
 </template>
 
 <script setup lang="ts">
