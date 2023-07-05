@@ -2,397 +2,21 @@
 
 涉及到技术栈包含**_:vue3+TypeScript+vue-router+pinia+element-plus+axios+echarts_**等技术栈。
 
-## 一、vue3 组件通信方式
 
-<!-- **通信仓库地址:[项目地址](https://gitee.com/jch1011/vue3_communication.git)** -->
+## 一、搭建后台管理系统模板
 
-不管是 vue2 还是 vue3,组件通信方式很重要,不管是项目还是面试都是经常用到的知识点。
-
-**比如:vue2 组件通信方式**
-
-**props:**可以实现父子组件、子父组件、甚至兄弟组件通信
-
-**自定义事件**:可以实现子父组件通信
-
-**全局事件总线$bus**:可以实现任意组件通信
-
-**pubsub:**发布订阅模式实现任意组件通信
-
-**vuex**:集中式状态管理容器，实现任意组件通信
-
-**ref**:父组件获取子组件实例 VC,获取子组件的响应式数据以及方法
-
-**slot:**插槽(默认插槽、具名插槽、作用域插槽)实现父子组件通信........
-
-### 1.1 props
-
-props 可以实现父子组件通信,在 vue3 中我们可以通过 defineProps 获取父组件传递的数据。且在组件内部不需要引入 defineProps 方法可以直接使用！
-
-**父组件给子组件传递数据**
-
-```vue
-<Child info="我爱祖国" :money="money"></Child>
-```
-
-**子组件获取父组件传递数据:方式 1**
-
-```vue
-let props = defineProps({ info:{ type:String,//接受的数据类型 default:'默认参数',//接受默认数据 },
-money:{ type:Number, default:0 }})
-```
-
-**子组件获取父组件传递数据:方式 2**
-
-```vue
-let props = defineProps(["info",'money']);
-```
-
-子组件获取到 props 数据就可以在模板中使用了,但是切记 props 是只读的(只能读取，不能修改)
-
-### 1.2 自定义事件
-
-在 vue 框架中事件分为两种:一种是原生的 DOM 事件，另外一种自定义事件。
-
-原生 DOM 事件可以让用户与网页进行交互，比如 click、dbclick、change、mouseenter、mouseleave....
-
-自定义事件可以实现子组件给父组件传递数据
-
-#### 1.2.1 原生 DOM 事件
-
-代码如下:
-
-```vue
-<pre @click="handler">
-      我是祖国的老花骨朵
- </pre>
-```
-
-当前代码级给 pre 标签绑定原生 DOM 事件点击事件,默认会给事件回调注入 event 事件对象。当然点击事件想注入多个参数可以按照下图操作。但是切记注入的事件对象务必叫做$event.
-
-```vue
-<div @click="handler1(1, 2, 3, $event)">我要传递多个参数</div>
-```
-
-在 vue3 框架 click、dbclick、change(这类原生 DOM 事件),不管是在标签、自定义标签上(组件标签)都是原生 DOM 事件。
-
-**<!--vue2中却不是这样的,在vue2中组件标签需要通过native修饰符才能变为原生DOM事件-->**
-
-#### 1.2.2 自定义事件
-
-自定义事件可以实现子组件给父组件传递数据.在项目中是比较常用的。
-
-比如在父组件内部给子组件(Event2)绑定一个自定义事件
-
-```vue
-<Event2 @xxx="handler3"></Event2>
-```
-
-在 Event2 子组件内部触发这个自定义事件
-
-```vue
-<template>
-  <div>
-    <h1>我是子组件2</h1>
-    <button @click="handler">点击我触发xxx自定义事件</button>
-  </div>
-</template>
-
-<script setup lang="ts">
-let $emit = defineEmits(['xxx'])
-const handler = () => {
-  $emit('xxx', '法拉利', '茅台')
-}
-</script>
-<style scoped></style>
-```
-
-我们会发现在 script 标签内部,使用了 defineEmits 方法，此方法是 vue3 提供的方法,不需要引入直接使用。defineEmits 方法执行，传递一个数组，数组元素即为将来组件需要触发的自定义事件类型，此方执行会返回一个$emit 方法用于触发自定义事件。
-
-当点击按钮的时候，事件回调内部调用$emit 方法去触发自定义事件,第一个参数为触发事件类型，第二个、三个、N 个参数即为传递给父组件的数据。
-
-需要注意的是:代码如下
-
-```vue
-<Event2 @xxx="handler3" @click="handler"></Event2>
-```
-
-正常说组件标签书写@click 应该为原生 DOM 事件,但是如果子组件内部通过 defineEmits 定义就变为自定义事件了
-
-```vue
-let $emit = defineEmits(["xxx",'click']);
-```
-
-### 1.3 全局事件总线
-
-全局事件总线可以实现任意组件通信，在 vue2 中可以根据 VM 与 VC 关系推出全局事件总线。
-
-但是在 vue3 中没有 Vue 构造函数，也就没有 Vue.prototype.以及组合式 API 写法没有 this，
-
-那么在 Vue3 想实现全局事件的总线功能就有点不现实啦，如果想在 Vue3 中使用全局事件总线功能
-
-可以使用插件 mitt 实现。
-
-**mitt:官网地址:https://www.npmjs.com/package/mitt**
-
-### 1.4 v-model
-
-v-model 指令可是收集表单数据(数据双向绑定)，除此之外它也可以实现父子组件数据同步。
-
-而 v-model 实指利用 props[modelValue]与自定义事件[update:modelValue]实现的。
-
-下方代码:相当于给组件 Child 传递一个 props(modelValue)与绑定一个自定义事件 update:modelValue
-
-实现父子组件数据同步
-
-```vue
-<Child v-model="msg"></Child>
-```
-
-在 vue3 中一个组件可以通过使用多个 v-model,让父子组件多个数据同步,下方代码相当于给组件 Child 传递两个 props 分别是 pageNo 与 pageSize，以及绑定两个自定义事件 update:pageNo 与 update:pageSize 实现父子数据同步
-
-```vue
-<Child v-model:pageNo="msg" v-model:pageSize="msg1"></Child>
-```
-
-### 1.5 useAttrs
-
-在 Vue3 中可以利用 useAttrs 方法获取组件的属性与事件(包含:原生 DOM 事件或者自定义事件),次函数功能类似于 Vue2 框架中$attrs属性与$listeners 方法。
-
-比如:在父组件内部使用一个子组件 my-button
-
-```vue
-<my-button type="success" size="small" title="标题" @click="handler"></my-button>
-```
-
-子组件内部可以通过 useAttrs 方法获取组件属性与事件.因此你也发现了，它类似于 props,可以接受父组件传递过来的属性与属性值。需要注意如果 defineProps 接受了某一个属性，useAttrs 方法返回的对象身上就没有相应属性与属性值。
-
-```vue
-<script setup lang="ts">
-import { useAttrs } from 'vue'
-let $attrs = useAttrs()
-</script>
-```
-
-### 1.6 ref 与$parent
-
-ref,提及到 ref 可能会想到它可以获取元素的 DOM 或者获取子组件实例的 VC。既然可以在父组件内部通过 ref 获取子组件实例 VC，那么子组件内部的方法与响应式数据父组件可以使用的。
-
-比如:在父组件挂载完毕获取组件实例
-
-父组件内部代码:
-
-```vue
-<template>
-  <div>
-    <h1>ref与$parent</h1>
-    <Son ref="son"></Son>
-  </div>
-</template>
-<script setup lang="ts">
-import Son from './Son.vue'
-import { onMounted, ref } from 'vue'
-const son = ref()
-onMounted(() => {
-  console.log(son.value)
-})
-</script>
-```
-
-但是需要注意，如果想让父组件获取子组件的数据或者方法需要通过 defineExpose 对外暴露,因为 vue3 中组件内部的数据对外“关闭的”，外部不能访问
-
-```vue
-<script setup lang="ts">
-import { ref } from 'vue'
-//数据
-let money = ref(1000)
-//方法
-const handler = () => {}
-defineExpose({
-  money,
-  handler
-})
-</script>
-```
-
-$parent 可以获取某一个组件的父组件实例 VC,因此可以使用父组件内部的数据与方法。必须子组件内部拥有一个按钮点击时候获取父组件实例，当然父组件的数据与方法需要通过 defineExpose 方法对外暴露
-
-```html
-<button @click="handler($parent)">点击我获取父组件实例</button>
-```
-
-### 1.7 provide 与 inject
-
-**provide[提供]**
-
-**inject[注入]**
-
-vue3 提供两个方法 provide 与 inject,可以实现隔辈组件传递参数
-
-组件组件提供数据:
-
-provide 方法用于提供数据，此方法执需要传递两个参数,分别提供数据的 key 与提供数据 value
-
-```vue
-<script setup lang="ts">
-import { provide } from 'vue'
-provide('token', 'admin_token')
-</script>
-```
-
-后代组件可以通过 inject 方法获取数据,通过 key 获取存储的数值
-
-```vue
-<script setup lang="ts">
-import { inject } from 'vue'
-let token = inject('token')
-</script>
-```
-
-### 1.8 pinia
-
-**pinia 官网:https://pinia.web3doc.top/**
-
-pinia 也是集中式管理状态容器,类似于 vuex。但是核心概念没有 mutation、modules,使用方式参照官网
-
-### 1.9 slot
-
-插槽：默认插槽、具名插槽、作用域插槽可以实现父子组件通信.
-
-**默认插槽:**
-
-在子组件内部的模板中书写 slot 全局组件标签
-
-```vue
-<template>
-  <div>
-    <slot></slot>
-  </div>
-</template>
-<script setup lang="ts"></script>
-<style scoped></style>
-```
-
-在父组件内部提供结构：Todo 即为子组件,在父组件内部使用的时候，在双标签内部书写结构传递给子组件
-
-注意开发项目的时候默认插槽一般只有一个
-
-```vue
-<Todo>
-  <h1>我是默认插槽填充的结构</h1>
-</Todo>
-```
-
-**具名插槽：**
-
-顾名思义，此插槽带有名字在组件内部留多个指定名字的插槽。
-
-下面是一个子组件内部,模板中留两个插槽
-
-```vue
-<template>
-  <div>
-    <h1>todo</h1>
-    <slot name="a"></slot>
-    <slot name="b"></slot>
-  </div>
-</template>
-<script setup lang="ts"></script>
-
-<style scoped></style>
-```
-
-父组件内部向指定的具名插槽传递结构。需要注意 v-slot：可以替换为#
-
-```vue
-<template>
-  <div>
-    <h1>slot</h1>
-    <Todo>
-      <template v-slot:a>
-        //可以用#a替换
-        <div>填入组件A部分的结构</div>
-      </template>
-      <template v-slot:b>
-        //可以用#b替换
-        <div>填入组件B部分的结构</div>
-      </template>
-    </Todo>
-  </div>
-</template>
-
-<script setup lang="ts">
-import Todo from './Todo.vue'
-</script>
-<style scoped></style>
-```
-
-**作用域插槽**
-
-作用域插槽：可以理解为，子组件数据由父组件提供，但是子组件内部决定不了自身结构与外观(样式)
-
-子组件 Todo 代码如下:
-
-```vue
-<template>
-  <div>
-    <h1>todo</h1>
-    <ul>
-      <!--组件内部遍历数组-->
-      <li v-for="(item, index) in todos" :key="item.id">
-        <!--作用域插槽将数据回传给父组件-->
-        <slot :$row="item" :$index="index"></slot>
-      </li>
-    </ul>
-  </div>
-</template>
-<script setup lang="ts">
-defineProps(['todos']) //接受父组件传递过来的数据
-</script>
-<style scoped></style>
-```
-
-父组件内部代码如下:
-
-```vue
-<template>
-  <div>
-    <h1>slot</h1>
-    <Todo :todos="todos">
-      <template v-slot="{ $row, $index }">
-        <!--父组件决定子组件的结构与外观-->
-        <span :style="{ color: $row.done ? 'green' : 'red' }">{{ $row.title }}</span>
-      </template>
-    </Todo>
-  </div>
-</template>
-
-<script setup lang="ts">
-import Todo from './Todo.vue'
-import { ref } from 'vue'
-//父组件内部数据
-let todos = ref([
-  { id: 1, title: '吃饭', done: true },
-  { id: 2, title: '睡觉', done: false },
-  { id: 3, title: '打豆豆', done: true }
-])
-</script>
-<style scoped></style>
-```
-
-## 二、搭建后台管理系统模板
-
-### 2.1 项目初始化
+### 1.1 项目初始化
 
 今天来带大家从 0 开始搭建一个 vue3 版本的后台管理系统。一个项目要有统一的规范，需要使用 eslint+stylelint+prettier 来对我们的代码质量做检测和修复，需要使用 husky 来做 commit 拦截，需要使用 commitlint 来统一提交规范，需要使用 preinstall 来统一包管理工具。
 
 下面我们就用这一套规范来初始化我们的项目，集成一个规范的模版。
 
-#### 2.1.1 环境准备
+#### 1.1.1 环境准备
 
 - node v16.14.2
 - pnpm 8.0.0
 
-#### 2.1.2 初始化项目
+#### 1.1.2 初始化项目
 
 本项目使用 vite 进行构建，vite 官方中文文档参考：[cn.vitejs.dev/guide/](https://cn.vitejs.dev/guide/)
 
@@ -414,7 +38,7 @@ pnpm create vite
 
 运行完毕项目跑在http://127.0.0.1:5173/ ,可以访问你得项目啦
 
-### 2.2 项目配置
+### 1.2 项目配置
 
 #### 一、eslint 配置
 
@@ -473,7 +97,7 @@ module.exports = {
 }
 ```
 
-##### 2.1.1 vue3 环境代码校验插件
+##### 1.1.1 vue3 环境代码校验插件
 
 ```json
 # 让所有与prettier规则存在冲突的Eslint rules失效，并使用prettier进行代码检查
@@ -494,7 +118,7 @@ module.exports = {
 pnpm install -D eslint-plugin-import eslint-plugin-vue eslint-plugin-node eslint-plugin-prettier eslint-config-prettier eslint-plugin-node @babel/eslint-parser
 ```
 
-##### 2.1.2 修改.eslintrc.cjs 配置文件
+##### 1.1.2 修改.eslintrc.cjs 配置文件
 
 ```js
 // @see https://eslint.bootcss.com/docs/rules/
@@ -558,14 +182,14 @@ module.exports = {
 
 ```
 
-##### 2.1.3 .eslintignore 忽略文件
+##### 1.1.3 .eslintignore 忽略文件
 
 ```bash
 dist
 node_modules
 ```
 
-##### 1.4 运行脚本
+##### 1.1.4 运行脚本
 
 package.json 新增两个运行脚本
 
@@ -586,13 +210,13 @@ package.json 新增两个运行脚本
 
 总结起来，**eslint 和 prettier 这俩兄弟一个保证 js 代码质量，一个保证代码美观。**
 
-##### 2.2.1 安装依赖包
+##### 1.2.1 安装依赖包
 
 ```bash
 pnpm install -D eslint-plugin-prettier prettier eslint-config-prettier
 ```
 
-##### 2.2.2 .prettierrc.json 添加规则
+##### 1.2.2 .prettierrc.json 添加规则
 
 ```json
 {
@@ -606,7 +230,7 @@ pnpm install -D eslint-plugin-prettier prettier eslint-config-prettier
 }
 ```
 
-##### 2.2.3 .prettierignore 忽略文件
+##### 1.2.3 .prettierignore 忽略文件
 
 ```bash
 /dist/*
@@ -630,7 +254,7 @@ pnpm install -D eslint-plugin-prettier prettier eslint-config-prettier
 pnpm add sass sass-loader stylelint postcss postcss-scss postcss-html stylelint-config-prettier stylelint-config-recess-order stylelint-config-recommended-scss stylelint-config-standard stylelint-config-standard-vue stylelint-scss stylelint-order stylelint-config-standard-scss -D
 ```
 
-##### 2.3.1 `.stylelintrc.cjs`**配置文件**
+##### 1.3.1 `.stylelintrc.cjs`**配置文件**
 
 **官网:https://stylelint.bootcss.com/**
 
@@ -690,7 +314,7 @@ module.exports = {
 }
 ```
 
-##### 2.3.2  .stylelintignore 忽略文件
+##### 1.3.2  .stylelintignore 忽略文件
 
 ```bash
 /node_modules/*
@@ -699,7 +323,7 @@ module.exports = {
 /public/*
 ```
 
-##### 2.3.3 运行脚本
+##### 1.3.3 运行脚本
 
 ```json
 "scripts": {
@@ -868,9 +492,9 @@ if (!/pnpm/.test(process.env.npm_execpath || '')) {
 
 **当我们使用 npm 或者 yarn 来安装包的时候，就会报错了。原理就是在 install 的时候会触发 preinstall（npm 提供的生命周期钩子）这个文件里面的代码。**
 
-## 三、项目集成
+## 二、项目集成
 
-### 3.1 集成 element-plus
+### 2.1 集成 element-plus
 
 硅谷甄选运营平台,UI 组件库采用的 element-plus，因此需要集成 element-plus 插件！！！
 
@@ -906,7 +530,7 @@ app.use(ElementPlus, {
 
 配置完毕可以测试 element-plus 组件与图标的使用.
 
-### 3.2 src 别名的配置
+### 2.2 src 别名的配置
 
 在开发项目的时候文件与文件关系可能很复杂，因此我们需要给 src 文件夹配置一个别名！！！
 
@@ -939,7 +563,7 @@ export default defineConfig({
 }
 ```
 
-### 3.3 环境变量的配置
+### 2.3 环境变量的配置
 
 **项目开发过程中，至少会经历开发环境、测试环境和生产环境(即正式环境)三个阶段。不同阶段请求的状态(如接口地址等)不尽相同，若手动切换接口地址是相当繁琐且易出错的。于是环境变量配置的需求就应运而生，我们只需做简单的配置，把环境状态切换的工作交给代码。**
 
@@ -997,7 +621,7 @@ VITE_APP_BASE_API = '/test-api'
 
 通过 import.meta.env 获取环境变量
 
-### 3.4 SVG 图标配置
+### 2.4 SVG 图标配置
 
 在开发项目的时候经常会用到 svg 矢量图,而且我们使用 SVG 以后，页面上加载的不再是图片资源,
 
@@ -1034,7 +658,7 @@ export default () => {
 import 'virtual:svg-icons-register'
 ```
 
-#### 3.4.1 svg 封装为全局组件
+#### 2.4.1 svg 封装为全局组件
 
 因为项目很多模块需要使用图标,因此把它封装为全局组件！！！
 
@@ -1101,7 +725,7 @@ import gloablComponent from './components/index';
 app.use(gloablComponent);
 ```
 
-### 3.5 集成 sass
+### 2.5 集成 sass
 
 我们目前在组件内部已经可以使用 scss 样式,因为在配置 styleLint 工具的时候，项目当中已经安装过 sass sass-loader,因此我们再组件内可以使用 scss 语法！！！需要加上 lang="scss"
 
@@ -1147,7 +771,7 @@ export default defineConfig((config) => {
 
 配置完毕你会发现 scss 提供这些全局变量可以在组件样式中使用了！！！
 
-### 3.6 mock 数据
+### 2.6 mock 数据
 
 安装依赖:https://www.npmjs.com/package/vite-plugin-mock
 
@@ -1257,7 +881,7 @@ pnpm install axios
 
 最后通过 axios 测试接口！！！
 
-### 3.7 axios 二次封装
+### 2.7 axios 二次封装
 
 在开发项目的时候避免不了与后端进行交互,因此我们需要使用 axios 插件实现发送网络请求。在开发项目的时候
 
@@ -1316,7 +940,7 @@ request.interceptors.response.use((response) => {
 export default request;
 ```
 
-### 3.8 API 接口统一管理
+### 2.8 API 接口统一管理
 
 在开发项目的时候,接口可能很多需要统一管理。在 src 目录下去创建 api 文件夹去统一管理项目的接口；
 
