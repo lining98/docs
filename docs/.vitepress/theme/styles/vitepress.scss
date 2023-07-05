@@ -11,6 +11,12 @@
     var(--vp-c-brand-next)
   );
   --vp-home-hero-image-filter: blur(80px);
+  --vp-layout-max-width: 1640px;
+}
+.VPDoc.has-aside {
+  .content-container {
+    max-width: 850px !important;
+  }
 }
 
 .container p.text {

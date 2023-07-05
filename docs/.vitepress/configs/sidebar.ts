@@ -18,7 +18,7 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
 
   // visual 可视化
   '/visual/canvas': require('../../visual/canvas/sidebar'),
-  '/visual/svg': require('../../visual/svg/sidebar')
+  '/visual/pixiJs': require('../../visual/pixiJs/sidebar')
 
   // algorithms 算法
   // "/algorithms/": require("../../algorithms/sidebar"),
