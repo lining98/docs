@@ -50,10 +50,10 @@ export const nav: DefaultTheme.Config['nav'] = [
     activeMatch: '^/frontEnd'
   },
   {
-    text: '后端',
+    text: '服务端',
     items: [
-      { text: 'nodejs', link: '/backEnd/nodejs/', activeMatch: '^/backEnd/nodejs' },
-      { text: 'mysql', link: '/backEnd/mysql/', activeMatch: '^/backEnd/mysql' }
+      { text: 'Nodejs', link: '/backEnd/nodejs/', activeMatch: '^/backEnd/nodejs' },
+      // { text: 'Mysql', link: '/backEnd/mysql/', activeMatch: '^/backEnd/mysql' }
     ],
     activeMatch: '^/backEnd'
   },

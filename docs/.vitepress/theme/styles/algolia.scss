@@ -1,5 +1,8 @@
 // 搜索框样式
-.DocSearch-Button {
+.VPNavBarSearch {
+  flex: 1;
+
+  .DocSearch-Button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,6 +13,7 @@
     border-radius: 4px;
     background: transparent;
     transition: border-color 0.25s;
+    border: 1px solid transparent;
   }
   @media (min-width: 768px) {
     .DocSearch-Button {
@@ -34,5 +38,6 @@
   }
   .DocSearch-Button:hover {
     background-color: #f5f5f6;
-    border: 1px solid var(--vp-c-blue);
+    border: 1px solid var(--vp-c-brand);
   }
+}
