@@ -1,5 +1,5 @@
 ---
-layoutClass: m-nav-layout
+layoutClass: nav-layout
 outline: [2,3,4]
 ---
 

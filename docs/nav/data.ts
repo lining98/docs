@@ -48,12 +48,6 @@ export const NAV_DATA: NavData[] = [
         title: 'Mdn Web Docs',
         icon: 'https://developer.mozilla.org/favicon-48x48.cbbd161b.png',
         desc: '记录web技术的文档',
-        link: 'https://developer.mozilla.org/zh-CN/'
-      },
-      {
-        title: 'w3school',
-        icon: 'https://www.w3school.com.cn/ui2019/logo-32-red.png',
-        desc: '面向 Web 开发者的文档',
         link: 'https://developer.mozilla.org/zh-CN/docs/Web'
       },
       {
@@ -389,16 +383,16 @@ export const NAV_DATA: NavData[] = [
         link: 'https://chokcoco.github.io/CSS-Inspiration/#/'
       },
       {
-        icon: 'https://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg',
+        icon: 'https://sass-lang.com/favicon.ico',
         title: 'Sass',
         desc: '一个成熟，稳定，功能强大的专业级 CSS 扩展语言',
         link: 'https://sass-lang.com'
       },
       {
-        icon: 'https://www.tailwindcss.cn/apple-touch-icon.png',
+        icon: 'https://www.tailwindcss.cn/favicons/favicon-16x16.png?v=3',
         title: 'TailwindCSS 中文网',
         desc: '一个功能类优先的 CSS 框架',
-        link: 'https://www.tailwindcss.cn/docs'
+        link: 'https://www.tailwindcss.cn/'
       },
       {
         icon: 'https://angrytools.com/include/img/apple-touch-icon.png',
@@ -448,12 +442,6 @@ export const NAV_DATA: NavData[] = [
     items: [
       {
         icon: 'https://nodejs.org/static/images/favicons/favicon.png',
-        title: 'Node.js',
-        desc: 'Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境',
-        link: 'https://nodejs.org/zh-cn'
-      },
-      {
-        icon: 'https://nodejs.org/static/images/favicons/favicon.png',
         title: 'Node.Js中文网',
         desc: 'Node.js 是一个免费的、开源的、跨平台的 JavaScript 运行时环境，允许开发人员在浏览器之外编写命令行工具和服务器端脚本.',
         link: 'http://nodejs.p2hp.com/'
@@ -464,18 +452,18 @@ export const NAV_DATA: NavData[] = [
         desc: '基于 Node.js 平台，快速、开放、极简的 Web 开发框架',
         link: 'https://expressjs.com.cn'
       },
-      // {
-      //   icon: "https://nodejs.org/static/images/favicons/",
-      //   title: "Koa",
-      //   desc: "基于 Node.js 平台的下一代 web 开发框架",
-      //   link: "https://koajs.com",
-      // },
-      // {
-      //   icon: "https://www.eggjs.org/favicon.png",
-      //   title: "Egg",
-      //   desc: "为企业级框架和应用而生",
-      //   link: "https://www.eggjs.org/zh-CN",
-      // },
+      {
+        icon: "https://nodejs.org/static/images/favicons/",
+        title: "Koa",
+        desc: "基于 Node.js 平台的下一代 web 开发框架",
+        link: "https://koajs.com",
+      },
+      {
+        icon: "https://www.eggjs.org/favicon.png",
+        title: "Egg",
+        desc: "为企业级框架和应用而生",
+        link: "https://www.eggjs.org/zh-CN",
+      },
       {
         icon: 'https://d33wubrfki0l68.cloudfront.net/e937e774cbbe23635999615ad5d7732decad182a/26072/logo-small.ede75a6b.svg',
         title: 'Nest.js 中文文档',
