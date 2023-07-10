@@ -52,6 +52,7 @@ pnpm i eslint -D
 ```bash
 npx eslint --init
 ```
+![img](./images/eslint.png)
 
 **.eslintrc.cjs 配置文件**
 
