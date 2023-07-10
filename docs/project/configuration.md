@@ -1,26 +1,25 @@
 # vue3 项目配置文档
 
-涉及到技术栈包含**_:vue3+TypeScript+vue-router+pinia+element-plus+axios+echarts_**等技术栈。
 
 
 ## 一、搭建后台管理系统模板
 
 ### 1.1 项目初始化
 
-今天来带大家从 0 开始搭建一个 vue3 版本的后台管理系统。一个项目要有统一的规范，需要使用 eslint+stylelint+prettier 来对我们的代码质量做检测和修复，需要使用 husky 来做 commit 拦截，需要使用 commitlint 来统一提交规范，需要使用 preinstall 来统一包管理工具。
+搭建一个 vue3 版本的后台管理系统，一个项目要有统一的规范，需要使用 eslint+stylelint+prettier 来对我们的代码质量做检测和修复，需要使用 husky 来做 commit 拦截，需要使用 commitlint 来统一提交规范，需要使用 preinstall 来统一包管理工具。
 
-下面我们就用这一套规范来初始化我们的项目，集成一个规范的模版。
+>涉及到技术栈包含**_:vue3+TypeScript+vue-router+pinia+element-plus+axios+echarts_**等技术栈。
 
 #### 1.1.1 环境准备
 
-- node v16.14.2
-- pnpm 8.0.0
+- node 16+
+- pnpm 8.3.1
 
 #### 1.1.2 初始化项目
 
 本项目使用 vite 进行构建，vite 官方中文文档参考：[cn.vitejs.dev/guide/](https://cn.vitejs.dev/guide/)
 
-**pnpm:performant npm ，意味“高性能的 npm”。[pnpm](https://so.csdn.net/so/search?q=pnpm&spm=1001.2 101.3001.7020)由 npm/yarn 衍生而来，解决了 npm/yarn 内部潜在的 bug，极大的优化了性能，扩展了使用场景。被誉为“最先进的包管理工具”**
+**pnpm:performant npm ，意味“高性能的 npm”。`pnpm`由 `npm`/`yarn` 衍生而来，解决了 `npm`/`yarn` 内部潜在的 bug，极大的优化了性能，扩展了使用场景。被誉为“最先进的包管理工具”**
 
 pnpm 安装指令
 
@@ -36,7 +35,7 @@ pnpm create vite
 
 进入到项目根目录 pnpm install 安装全部依赖.安装完依赖运行程序:pnpm run dev
 
-运行完毕项目跑在http://127.0.0.1:5173/ ,可以访问你得项目啦
+运行完毕项目跑在http://localhost:5173/ ,可以访问你得项目啦
 
 ### 1.2 项目配置
 
@@ -128,7 +127,7 @@ module.exports = {
     browser: true,
     es2021: true,
     node: true,
-    jest: true,
+    jest: true
   },
   /* 指定如何解析语法 */
   parser: 'vue-eslint-parser',
@@ -139,15 +138,15 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     jsxPragma: 'React',
     ecmaFeatures: {
-      jsx: true,
-    },
+      jsx: true
+    }
   },
   /* 继承已有的规则 */
   extends: [
     'eslint:recommended',
     'plugin:vue/vue3-essential',
     'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
+    'plugin:prettier/recommended'
   ],
   plugins: ['vue', '@typescript-eslint'],
   /*
@@ -176,10 +175,9 @@ module.exports = {
     'vue/multi-word-component-names': 'off', // 要求组件名称始终为 “-” 链接的单词
     'vue/script-setup-uses-vars': 'error', // 防止<script setup>使用的变量<template>被标记为未使用
     'vue/no-mutating-props': 'off', // 不允许组件 prop的改变
-    'vue/attribute-hyphenation': 'off', // 对模板中的自定义组件强制执行属性命名样式
-  },
+    'vue/attribute-hyphenation': 'off' // 对模板中的自定义组件强制执行属性命名样式
+  }
 }
-
 ```
 
 ##### 1.1.3 .eslintignore 忽略文件
@@ -268,27 +266,19 @@ module.exports = {
     'stylelint-config-standard-scss', // 配置stylelint scss插件
     'stylelint-config-recommended-vue/scss', // 配置 vue 中 scss 样式格式化
     'stylelint-config-recess-order', // 配置stylelint css属性书写顺序插件,
-    'stylelint-config-prettier', // 配置stylelint和prettier兼容
+    'stylelint-config-prettier' // 配置stylelint和prettier兼容
   ],
   overrides: [
     {
       files: ['**/*.(scss|css|vue|html)'],
-      customSyntax: 'postcss-scss',
+      customSyntax: 'postcss-scss'
     },
     {
       files: ['**/*.(html|vue)'],
-      customSyntax: 'postcss-html',
-    },
+      customSyntax: 'postcss-html'
+    }
   ],
-  ignoreFiles: [
-    '**/*.js',
-    '**/*.jsx',
-    '**/*.tsx',
-    '**/*.ts',
-    '**/*.json',
-    '**/*.md',
-    '**/*.yaml',
-  ],
+  ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.tsx', '**/*.ts', '**/*.json', '**/*.md', '**/*.yaml'],
   /**
    * null  => 关闭该规则
    * always => 必须
@@ -307,14 +297,14 @@ module.exports = {
       // 不允许未知的选择器
       true,
       {
-        ignorePseudoClasses: ['global', 'v-deep', 'deep'], // 忽略属性，修改element默认样式的时候能使用到
-      },
-    ],
-  },
+        ignorePseudoClasses: ['global', 'v-deep', 'deep'] // 忽略属性，修改element默认样式的时候能使用到
+      }
+    ]
+  }
 }
 ```
 
-##### 1.3.2  .stylelintignore 忽略文件
+##### 1.3.2 .stylelintignore 忽略文件
 
 ```bash
 /node_modules/*
@@ -398,18 +388,7 @@ module.exports = {
     'type-enum': [
       2,
       'always',
-      [
-        'feat',
-        'fix',
-        'docs',
-        'style',
-        'refactor',
-        'perf',
-        'test',
-        'chore',
-        'revert',
-        'build',
-      ],
+      ['feat', 'fix', 'docs', 'style', 'refactor', 'perf', 'test', 'chore', 'revert', 'build']
     ],
     'type-case': [0],
     'type-empty': [0],
@@ -417,8 +396,8 @@ module.exports = {
     'scope-case': [0],
     'subject-full-stop': [0, 'never'],
     'subject-case': [0, 'never'],
-    'header-max-length': [0, 'always', 72],
-  },
+    'header-max-length': [0, 'always', 72]
+  }
 }
 ```
 
@@ -476,7 +455,7 @@ pnpm commitlint
 if (!/pnpm/.test(process.env.npm_execpath || '')) {
   console.warn(
     `\u001b[33mThis repository must using pnpm as the package manager ` +
-    ` for scripts to work properly.\u001b[39m\n`,
+      ` for scripts to work properly.\u001b[39m\n`
   )
   process.exit(1)
 }
@@ -507,12 +486,12 @@ pnpm install element-plus @element-plus/icons-vue
 **入口文件 main.ts 全局安装 element-plus,element-plus 默认支持语言英语设置为中文**
 
 ```js
-import ElementPlus from 'element-plus';
+import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 //@ts-ignore忽略当前文件ts类型的检测否则有红色提示(打包会失败)
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 app.use(ElementPlus, {
-    locale: zhCn
+  locale: zhCn
 })
 ```
 
@@ -536,16 +515,16 @@ app.use(ElementPlus, {
 
 ```ts
 // vite.config.ts
-import {defineConfig} from 'vite'
+import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
 export default defineConfig({
-    plugins: [vue()],
-    resolve: {
-        alias: {
-            "@": path.resolve("./src") // 相对路径别名配置，使用 @ 代替 src
-        }
+  plugins: [vue()],
+  resolve: {
+    alias: {
+      '@': path.resolve('./src') // 相对路径别名配置，使用 @ 代替 src
     }
+  }
 })
 ```
 
@@ -556,7 +535,8 @@ export default defineConfig({
 {
   "compilerOptions": {
     "baseUrl": "./", // 解析非相对模块的基地址，默认是当前目录
-    "paths": { //路径映射，相对于baseUrl
+    "paths": {
+      //路径映射，相对于baseUrl
       "@/*": ["src/*"]
     }
   }
@@ -645,9 +625,9 @@ export default () => {
         // Specify the icon folder to be cached
         iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
         // Specify symbolId format
-        symbolId: 'icon-[dir]-[name]',
-      }),
-    ],
+        symbolId: 'icon-[dir]-[name]'
+      })
+    ]
   }
 }
 ```
@@ -685,7 +665,7 @@ defineProps({
   //svg图标的颜色
   color: {
     type: String,
-    default: ""
+    default: ''
   },
   //svg宽度
   width: {
@@ -697,7 +677,6 @@ defineProps({
     type: String,
     default: '16px'
   }
-
 })
 </script>
 <style scoped></style>
@@ -706,23 +685,23 @@ defineProps({
 在 src 文件夹目录下创建一个 index.ts 文件：用于注册 components 文件夹内部全部全局组件！！！
 
 ```ts
-import SvgIcon from './SvgIcon/index.vue';
-import type { App, Component } from 'vue';
-const components: { [name: string]: Component } = { SvgIcon };
+import SvgIcon from './SvgIcon/index.vue'
+import type { App, Component } from 'vue'
+const components: { [name: string]: Component } = { SvgIcon }
 export default {
-    install(app: App) {
-        Object.keys(components).forEach((key: string) => {
-            app.component(key, components[key]);
-        })
-    }
+  install(app: App) {
+    Object.keys(components).forEach((key: string) => {
+      app.component(key, components[key])
+    })
+  }
 }
 ```
 
 在入口文件引入 src/index.ts 文件,通过 app.use 方法安装自定义插件
 
 ```ts
-import gloablComponent from './components/index';
-app.use(gloablComponent);
+import gloablComponent from './components/index'
+app.use(gloablComponent)
 ```
 
 ### 2.5 集成 sass
@@ -738,7 +717,7 @@ app.use(gloablComponent);
 在 src/styles 目录下创建一个 index.scss 文件，当然项目中需要用到清除默认样式，因此在 index.scss 引入 reset.scss
 
 ```scss
-@import reset.scss
+@import reset.scss;
 ```
 
 在入口文件引入
@@ -785,14 +764,14 @@ pnpm install -D vite-plugin-mock mockjs
 import { UserConfigExport, ConfigEnv } from 'vite'
 import { viteMockServe } from 'vite-plugin-mock'
 import vue from '@vitejs/plugin-vue'
-export default ({ command })=> {
+export default ({ command }) => {
   return {
     plugins: [
       vue(),
       viteMockServe({
-        localEnabled: command === 'serve',
-      }),
-    ],
+        localEnabled: command === 'serve'
+      })
+    ]
   }
 }
 ```
@@ -804,72 +783,70 @@ export default ({ command })=> {
 ```ts
 //用户信息数据
 function createUserList() {
-    return [
-        {
-            userId: 1,
-            avatar:
-                'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
-            username: 'admin',
-            password: '111111',
-            desc: '平台管理员',
-            roles: ['平台管理员'],
-            buttons: ['cuser.detail'],
-            routes: ['home'],
-            token: 'Admin Token',
-        },
-        {
-            userId: 2,
-            avatar:
-                'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
-            username: 'system',
-            password: '111111',
-            desc: '系统管理员',
-            roles: ['系统管理员'],
-            buttons: ['cuser.detail', 'cuser.user'],
-            routes: ['home'],
-            token: 'System Token',
-        },
-    ]
+  return [
+    {
+      userId: 1,
+      avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
+      username: 'admin',
+      password: '111111',
+      desc: '平台管理员',
+      roles: ['平台管理员'],
+      buttons: ['cuser.detail'],
+      routes: ['home'],
+      token: 'Admin Token'
+    },
+    {
+      userId: 2,
+      avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
+      username: 'system',
+      password: '111111',
+      desc: '系统管理员',
+      roles: ['系统管理员'],
+      buttons: ['cuser.detail', 'cuser.user'],
+      routes: ['home'],
+      token: 'System Token'
+    }
+  ]
 }
 
 export default [
-    // 用户登录接口
-    {
-        url: '/api/user/login',//请求地址
-        method: 'post',//请求方式
-        response: ({ body }) => {
-            //获取请求体携带过来的用户名与密码
-            const { username, password } = body;
-            //调用获取用户信息函数,用于判断是否有此用户
-            const checkUser = createUserList().find(
-                (item) => item.username === username && item.password === password,
-            )
-            //没有用户返回失败信息
-            if (!checkUser) {
-                return { code: 201, data: { message: '账号或者密码不正确' } }
-            }
-            //如果有返回成功信息
-            const { token } = checkUser
-            return { code: 200, data: { token } }
-        },
-    },
-    // 获取用户信息
-    {
-        url: '/api/user/info',
-        method: 'get',
-        response: (request) => {
-            //获取请求头携带token
-            const token = request.headers.token;
-            //查看用户信息是否包含有次token用户
-            const checkUser = createUserList().find((item) => item.token === token)
-            //没有返回失败的信息
-            if (!checkUser) {
-                return { code: 201, data: { message: '获取用户信息失败' } }
-            }
-            //如果有返回成功信息
-            return { code: 200, data: {checkUser} }
-        },
-    },
+  // 用户登录接口
+  {
+    url: '/api/user/login', //请求地址
+    method: 'post', //请求方式
+    response: ({ body }) => {
+      //获取请求体携带过来的用户名与密码
+      const { username, password } = body
+      //调用获取用户信息函数,用于判断是否有此用户
+      const checkUser = createUserList().find(
+        (item) => item.username === username && item.password === password
+      )
+      //没有用户返回失败信息
+      if (!checkUser) {
+        return { code: 201, data: { message: '账号或者密码不正确' } }
+      }
+      //如果有返回成功信息
+      const { token } = checkUser
+      return { code: 200, data: { token } }
+    }
+  },
+  // 获取用户信息
+  {
+    url: '/api/user/info',
+    method: 'get',
+    response: (request) => {
+      //获取请求头携带token
+      const token = request.headers.token
+      //查看用户信息是否包含有次token用户
+      const checkUser = createUserList().find((item) => item.token === token)
+      //没有返回失败的信息
+      if (!checkUser) {
+        return { code: 201, data: { message: '获取用户信息失败' } }
+      }
+      //如果有返回成功信息
+      return { code: 200, data: { checkUser } }
+    }
+  }
 ]
 ```
 
@@ -896,48 +873,50 @@ pnpm install axios
 在根目录下创建 utils/request.ts
 
 ```ts
-import axios from "axios";
-import { ElMessage } from "element-plus";
+import axios from 'axios'
+import { ElMessage } from 'element-plus'
 //创建axios实例
 let request = axios.create({
-    baseURL: import.meta.env.VITE_APP_BASE_API,
-    timeout: 5000
+  baseURL: import.meta.env.VITE_APP_BASE_API,
+  timeout: 5000
 })
 //请求拦截器
-request.interceptors.request.use(config => {
-    return config;
-});
+request.interceptors.request.use((config) => {
+  return config
+})
 //响应拦截器
-request.interceptors.response.use((response) => {
-    return response.data;
-}, (error) => {
+request.interceptors.response.use(
+  (response) => {
+    return response.data
+  },
+  (error) => {
     //处理网络错误
-    let msg = '';
-    let status = error.response.status;
+    let msg = ''
+    let status = error.response.status
     switch (status) {
-        case 401:
-            msg = "token过期";
-            break;
-        case 403:
-            msg = '无权访问';
-            break;
-        case 404:
-            msg = "请求地址错误";
-            break;
-        case 500:
-            msg = "服务器出现问题";
-            break;
-        default:
-            msg = "无网络";
-
+      case 401:
+        msg = 'token过期'
+        break
+      case 403:
+        msg = '无权访问'
+        break
+      case 404:
+        msg = '请求地址错误'
+        break
+      case 500:
+        msg = '服务器出现问题'
+        break
+      default:
+        msg = '无网络'
     }
     ElMessage({
-        type: 'error',
-        message: msg
+      type: 'error',
+      message: msg
     })
-    return Promise.reject(error);
-});
-export default request;
+    return Promise.reject(error)
+  }
+)
+export default request
 ```
 
 ### 2.8 API 接口统一管理
@@ -951,27 +930,21 @@ export default request;
 
 import request from '@/utils/request'
 
-import type {
- loginFormData,
- loginResponseData,
- userInfoReponseData,
-} from './type'
+import type { loginFormData, loginResponseData, userInfoReponseData } from './type'
 
 //项目用户相关的请求地址
 
 enum API {
- LOGIN_URL = '/admin/acl/index/login',
- USERINFO_URL = '/admin/acl/index/info',
- LOGOUT_URL = '/admin/acl/index/logout',
-
+  LOGIN_URL = '/admin/acl/index/login',
+  USERINFO_URL = '/admin/acl/index/info',
+  LOGOUT_URL = '/admin/acl/index/logout'
 }
 //登录接口
 export const reqLogin = (data: loginFormData) =>
- request.post<any, loginResponseData>(API.LOGIN_URL, data)
+  request.post<any, loginResponseData>(API.LOGIN_URL, data)
 //获取用户信息
 
-export const reqUserInfo = () =>
- request.get<any, userInfoReponseData>(API.USERINFO_URL)
+export const reqUserInfo = () => request.get<any, userInfoReponseData>(API.USERINFO_URL)
 
 //退出登录
 export const reqLogout = () => request.post<any, any>(API.LOGOUT_URL)
