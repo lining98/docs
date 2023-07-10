@@ -1,6 +1,6 @@
 # 创建Vue3项目
 
-## 1. 使用vue-cli创建
+## 一、 使用vue-cli创建
 ```bash
 ## 安装或者升级
 npm install -g @vue/cli
@@ -23,13 +23,13 @@ vue create my-project
 - Where do you prefer placing config for Babel, ESLint, etc.? - 直接回车
 - Save this as a preset for future projects? - 直接回车
 
-## 2. 使用vite创建(推荐)
+## 二、 使用vite创建(推荐)
 vite的优势
 - 冷服务   默认的构建目标浏览器是能 在 script 标签上支持原生 ESM 和 原生 ESM 动态导入
 - HMR  速度快到惊人的 模块热更新（HMR）
 - Rollup打包  它使用 Rollup 打包你的代码，并且它是预配置的 并且支持大部分rollup插件
 
-使用vite初始化一个项目
+### 1. 使用vite初始化一个项目
 ```bash
 # npm
 npm init vite@latest
@@ -54,3 +54,7 @@ yarn create vite
 
 (5).项目的目录结构
 ![img](./image/mljg.png)
+
+
+### 2. npm init vue@latest
+![img](./image/create.png)

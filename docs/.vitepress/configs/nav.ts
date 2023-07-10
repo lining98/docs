@@ -81,7 +81,7 @@ export const nav: DefaultTheme.Config['nav'] = [
     text: '项目',
     items: [
       { text: '项目配置', link: '/project/configuration', activeMatch: '^/project/configuration' },
-      { text: 'music', link: 'http://121.40.174.152/#/discover/recommend' }
+      { text: 'music', link: 'http://121.40.174.152/music' }
     ],
     activeMatch: '^/project'
   }
