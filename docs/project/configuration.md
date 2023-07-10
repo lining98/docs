@@ -1,14 +1,12 @@
 # vue3 项目配置文档
 
-
-
 ## 一、搭建后台管理系统模板
 
 ### 1.1 项目初始化
 
 搭建一个 vue3 版本的后台管理系统，一个项目要有统一的规范，需要使用 eslint+stylelint+prettier 来对我们的代码质量做检测和修复，需要使用 husky 来做 commit 拦截，需要使用 commitlint 来统一提交规范，需要使用 preinstall 来统一包管理工具。
 
->涉及到技术栈包含**_:vue3+TypeScript+vue-router+pinia+element-plus+axios+echarts_**等技术栈。
+> 涉及到技术栈包含**_:vue3+TypeScript+vue-router+pinia+element-plus+axios+echarts_**等技术栈。
 
 #### 1.1.1 环境准备
 
@@ -34,8 +32,6 @@ pnpm create vite
 ```
 
 进入到项目根目录 pnpm install 安装全部依赖.安装完依赖运行程序:pnpm run dev
-
-运行完毕项目跑在http://localhost:5173/ ,可以访问你得项目啦
 
 ### 1.2 项目配置
 
