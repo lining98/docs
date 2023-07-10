@@ -39,7 +39,7 @@ pnpm create vite
 
 **eslint 中文官网:http://eslint.cn/**
 
-ESLint 最初是由[Nicholas C. Zakas](http://nczonline.net/) 于 2013 年 6 月创建的开源项目。它的目标是提供一个插件化的**javascript 代码检测工具**
+ESLint 最初是由`Nicholas C. Zakas` 于 2013 年 6 月创建的开源项目。它的目标是提供一个插件化的**javascript 代码检测工具**
 
 首先安装 eslint
 
@@ -47,13 +47,13 @@ ESLint 最初是由[Nicholas C. Zakas](http://nczonline.net/) 于 2013 年 6 月
 pnpm i eslint -D
 ```
 
-生成配置文件:.eslint.cjs
+生成配置文件: .eslintrc.cjs
 
 ```bash
 npx eslint --init
 ```
 
-**.eslint.cjs 配置文件**
+**.eslintrc.cjs 配置文件**
 
 ```js
 module.exports = {
