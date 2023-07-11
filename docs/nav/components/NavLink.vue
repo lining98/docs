@@ -1,25 +1,3 @@
-<script setup lang="ts">
-import { computed } from 'vue'
-import { slugify } from '@mdit-vue/shared'
-import { NavLink } from './type'
-const props = defineProps<{
-  icon?: NavLink['icon']
-  title?: NavLink['title']
-  desc?: NavLink['desc']
-  link: NavLink['link']
-}>()
-const formatTitle = computed(() => {
-  if (!props.title) {
-    return ''
-  }
-  return slugify(props.title)
-})
-const svg = computed(() => {
-  if (typeof props.icon === 'object') return props.icon.svg
-  return ''
-})
-</script>
-
 <template>
   <a v-if="link" class="m-nav-link" :href="link" target="_blank" rel="noreferrer">
     <article class="box">
@@ -35,6 +13,28 @@ const svg = computed(() => {
   </a>
 </template>
 
+<script setup lang="ts">
+import { computed } from 'vue'
+import { slugify } from '@mdit-vue/shared'
+import { NavType } from './type'
+const props = defineProps<{
+  icon?: NavType['icon']
+  title?: NavType['title']
+  desc?: NavType['desc']
+  link: NavType['link']
+}>()
+const formatTitle = computed(() => {
+  if (!props.title) {
+    return ''
+  }
+  return slugify(props.title)
+})
+const svg = computed(() => {
+  if (typeof props.icon === 'object') return props.icon.svg
+  return ''
+})
+</script>
+
 <style lang="scss" scoped>
 .m-nav-link {
   --m-nav-icon-box-size: 40px;
@@ -48,7 +48,7 @@ const svg = computed(() => {
   transition: all 0.25s;
   &:hover {
     box-shadow: var(--vp-shadow-2);
-    border-color: #6495ed;
+    border-color: var(--vp-c-bland);
     text-decoration: initial;
     background-color: var(--vp-c-bg-soft-up);
   }

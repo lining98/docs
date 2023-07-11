@@ -1,11 +1,12 @@
-import type { NavLink } from './components/type'
+import type { NavType } from './components/type'
 
 type NavData = {
   title: string
-  items: NavLink[]
+  items: NavType[]
 }
 const base = '/docs/'
 export const NAV_DATA: NavData[] = [
+  // 常用工具
   {
     title: '常用工具',
     items: [
@@ -41,6 +42,8 @@ export const NAV_DATA: NavData[] = [
       }
     ]
   },
+
+  // 前端学习资料
   {
     title: '前端学习资料',
     items: [
@@ -71,15 +74,10 @@ export const NAV_DATA: NavData[] = [
     ]
   },
 
+  // 'Vue 生态
   {
     title: 'Vue 生态',
     items: [
-      {
-        title: 'Vue 3',
-        icon: 'https://cn.vuejs.org/logo.svg',
-        desc: '渐进式 JavaScript 框架',
-        link: 'https://cn.vuejs.org'
-      },
       {
         title: 'Vue 2',
         icon: 'https://cn.vuejs.org/logo.svg',
@@ -87,10 +85,16 @@ export const NAV_DATA: NavData[] = [
         link: 'https://v2.cn.vuejs.org'
       },
       {
-        title: 'Vue3 One Piece',
-        icon: 'https://static.vue-js.com/6280b990-ff19-11ea-85f6-6fac77c0c9b3.png',
-        desc: '更快，更轻，易维护，更多的原生支持',
-        link: 'https://vue3js.cn/'
+        title: 'Vue 3',
+        icon: 'https://cn.vuejs.org/logo.svg',
+        desc: '渐进式 JavaScript 框架',
+        link: 'https://cn.vuejs.org'
+      },
+      {
+        title: 'Vue-router',
+        icon: 'https://router.vuejs.org/logo.svg',
+        desc: '为 Vue.js 提供富有表现力、可配置的、方便的路由',
+        link: 'https://router.vuejs.org/zh/'
       },
       {
         title: 'Pinia',
@@ -103,6 +107,12 @@ export const NAV_DATA: NavData[] = [
         icon: 'https://cn.vuejs.org/logo.svg',
         desc: 'Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式 + 库。',
         link: 'https://vuex.vuejs.org/zh/'
+      },
+      {
+        title: 'Vue3 One Piece',
+        icon: 'https://static.vue-js.com/6280b990-ff19-11ea-85f6-6fac77c0c9b3.png',
+        desc: '更快，更轻，易维护，更多的原生支持',
+        link: 'https://vue3js.cn/'
       },
       {
         title: 'Nuxt.js中文网',
@@ -139,21 +149,11 @@ export const NAV_DATA: NavData[] = [
         icon: 'https://fastly.jsdelivr.net/npm/@vant/assets/logo.png',
         desc: '轻量、可定制的移动端 Vue 组件库',
         link: 'https://vant-ui.github.io/vant'
-      },
-      {
-        title: 'Cube UI',
-        icon: 'https://webapp.didistatic.com/static/webapp/shield/Cube-UI_logo.ico',
-        desc: '基于 Vue.js 实现的精致移动端组件库',
-        link: 'https://didi.github.io/cube-ui'
-      },
-      {
-        title: 'NutUI',
-        icon: 'https://img14.360buyimg.com/imagetools/jfs/t1/167902/2/8762/791358/603742d7E9b4275e3/e09d8f9a8bf4c0ef.png',
-        desc: '京东风格的轻量级移动端组件库',
-        link: 'https://nutui.jd.com'
       }
     ]
   },
+
+  // React 生态
   {
     title: 'React 生态',
     items: [
@@ -194,20 +194,20 @@ export const NAV_DATA: NavData[] = [
         link: 'https://mobile.ant.design'
       },
       // {
-        //   title: "Zustand",
-        //   icon: "https://docs.pmnd.rs/apple-touch-icon.png",
+      //   title: "Zustand",
+      //   icon: "https://docs.pmnd.rs/apple-touch-icon.png",
       //   desc: "一个小型、快速、可扩展的 React 状态管理解决方案",
       //   link: "https://docs.pmnd.rs/zustand/getting-started/introduction",
       // },
       // {
-        //   title: "Valtio",
-        //   icon: "https://valtio.pmnd.rs/favicon.ico",
+      //   title: "Valtio",
+      //   icon: "https://valtio.pmnd.rs/favicon.ico",
       //   desc: "makes proxy-state simple for React and Vanilla",
       //   link: "https://valtio.pmnd.rs",
       // },
       // {
-        //   title: "Jotai",
-        //   icon: "https://jotai.org/favicon.svg",
+      //   title: "Jotai",
+      //   icon: "https://jotai.org/favicon.svg",
       //   desc: "primitive and flexible state management for React",
       //   link: "https://jotai.org",
       // },
@@ -231,8 +231,10 @@ export const NAV_DATA: NavData[] = [
       }
     ]
   },
+
+  // 文档&类库
   {
-    title: '类库',
+    title: '文档&类库',
     items: [
       {
         title: 'axios中文文档',
@@ -245,6 +247,12 @@ export const NAV_DATA: NavData[] = [
         icon: 'https://www.lodashjs.com/img/favicon.ico',
         desc: 'Lodash 是一个一致性、模块化、高性能的 JavaScript 实用工具库。',
         link: 'https://github.com/cdoco/learn-regex-zh'
+      },
+      {
+        title: 'TypeScript中文网',
+        icon: 'https://www.tslang.cn/assets/images/icons/favicon.ico',
+        desc: 'TypeScript是JavaScript类型的超集，它可以编译成纯JavaScript。TypeScript可以在任何浏览器、任何计算机和任何操作系统上运行',
+        link: 'https://www.tslang.cn/index.html'
       },
       // {
       //   title:"jquery",
@@ -287,26 +295,30 @@ export const NAV_DATA: NavData[] = [
         icon: 'https://animejs.com/documentation/assets/img/favicon.png',
         desc: 'js动画库',
         link: 'https://animejs.com/'
-      },
-    ]
-  },
-  {
-    title: '文档',
-    items: [
-      {
-        title: 'TypeScript中文网',
-        icon: 'https://www.tslang.cn/assets/images/icons/favicon.ico',
-        desc: 'TypeScript是JavaScript类型的超集，它可以编译成纯JavaScript。TypeScript可以在任何浏览器、任何计算机和任何操作系统上运行',
-        link: 'https://www.tslang.cn/index.html'
       }
-      // {
-      //   title:"",
-      //   icon: "",
-      //   desc: "",
-      //   link: "",
-      // },
     ]
   },
+
+  // 文档
+  // {
+  //   title: '文档',
+  //   items: [
+  //     {
+  //       title: 'TypeScript中文网',
+  //       icon: 'https://www.tslang.cn/assets/images/icons/favicon.ico',
+  //       desc: 'TypeScript是JavaScript类型的超集，它可以编译成纯JavaScript。TypeScript可以在任何浏览器、任何计算机和任何操作系统上运行',
+  //       link: 'https://www.tslang.cn/index.html'
+  //     }
+  //     // {
+  //     //   title:"",
+  //     //   icon: "",
+  //     //   desc: "",
+  //     //   link: "",
+  //     // },
+  //   ]
+  // },
+
+  // JavaScript
   {
     title: 'JavaScript学习',
     items: [
@@ -355,6 +367,8 @@ export const NAV_DATA: NavData[] = [
       // https://github.com/sorrycc/awesome-javascript
     ]
   },
+
+  // CSS
   {
     title: 'CSS 相关',
     items: [
@@ -402,6 +416,27 @@ export const NAV_DATA: NavData[] = [
       }
     ]
   },
+
+  // 图标
+  {
+    title: '图标库',
+    items: [
+      {
+        title: 'iconfont',
+        icon: 'https://img.alicdn.com/imgextra/i4/O1CN01XZe8pH1USpiUNT1QN_!!6000000002517-2-tps-114-114.png',
+        desc: '国内功能很强大且图标内容很丰富的矢量图标库，提供矢量图标下载、在线存储、格式转换等功能',
+        link: 'https://www.iconfont.cn'
+      },
+      {
+        title: 'Font Awesome',
+        icon: 'https://fontawesome.dashgame.com/assets/ico/favicon.ico',
+        desc: '一套绝佳的图标字体库和CSS框架',
+        link: 'https://fontawesome.dashgame.com/'
+      }
+    ]
+  },
+
+  // 可视化
   {
     title: '可视化图表库',
     items: [
@@ -437,6 +472,8 @@ export const NAV_DATA: NavData[] = [
       }
     ]
   },
+
+  // Node
   {
     title: 'Node 相关',
     items: [
@@ -453,16 +490,16 @@ export const NAV_DATA: NavData[] = [
         link: 'https://expressjs.com.cn'
       },
       {
-        icon: "https://nodejs.org/static/images/favicons/",
-        title: "Koa",
-        desc: "基于 Node.js 平台的下一代 web 开发框架",
-        link: "https://koajs.com",
+        icon: 'https://nodejs.org/static/images/favicons/',
+        title: 'Koa',
+        desc: '基于 Node.js 平台的下一代 web 开发框架',
+        link: 'https://koajs.com'
       },
       {
-        icon: "https://www.eggjs.org/favicon.png",
-        title: "Egg",
-        desc: "为企业级框架和应用而生",
-        link: "https://www.eggjs.org/zh-CN",
+        icon: 'https://www.eggjs.org/favicon.png',
+        title: 'Egg',
+        desc: '为企业级框架和应用而生',
+        link: 'https://www.eggjs.org/zh-CN'
       },
       {
         icon: 'https://d33wubrfki0l68.cloudfront.net/e937e774cbbe23635999615ad5d7732decad182a/26072/logo-small.ede75a6b.svg',
@@ -472,6 +509,8 @@ export const NAV_DATA: NavData[] = [
       }
     ]
   },
+
+  // 编译&构建&打包
   {
     title: '编译&构建&打包',
     items: [
@@ -525,23 +564,8 @@ export const NAV_DATA: NavData[] = [
       // },
     ]
   },
-  {
-    title: '图标库',
-    items: [
-      {
-        title: 'iconfont',
-        icon: 'https://img.alicdn.com/imgextra/i4/O1CN01XZe8pH1USpiUNT1QN_!!6000000002517-2-tps-114-114.png',
-        desc: '国内功能很强大且图标内容很丰富的矢量图标库，提供矢量图标下载、在线存储、格式转换等功能',
-        link: 'https://www.iconfont.cn'
-      },
-      {
-        title: 'Font Awesome',
-        icon: 'https://fontawesome.dashgame.com/assets/ico/favicon.ico',
-        desc: '一套绝佳的图标字体库和CSS框架',
-        link: 'https://fontawesome.dashgame.com/'
-      },
-    ]
-  },
+
+  // 社区
   {
     title: '社区',
     items: [
@@ -596,6 +620,8 @@ export const NAV_DATA: NavData[] = [
       }
     ]
   },
+
+  // 算法
   {
     title: '算法',
     items: [
@@ -619,6 +645,8 @@ export const NAV_DATA: NavData[] = [
       }
     ]
   },
+
+  // 其他
   {
     title: '其他',
     items: [
@@ -633,7 +661,7 @@ export const NAV_DATA: NavData[] = [
         icon: 'https://lp-pwa.gitee.io/pwa-genicon/favicon.ico',
         desc: 'RGB转16进制工具',
         link: 'https://c.runoob.com/front-end/55/'
-      },
+      }
     ]
-  },
+  }
 ]
