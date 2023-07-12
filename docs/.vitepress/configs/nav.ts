@@ -28,22 +28,9 @@ export const nav: DefaultTheme.Config['nav'] = [
       {
         text: '框架',
         items: [
-          { text: 'vue', link: '/frontEnd/vue/v3/' },
+          { text: 'Vue', link: '/frontEnd/vue/v3/' },
           // { text: 'vue3', link: '/frontEnd/vue3/' },
-          { text: 'react', link: '/frontEnd/react/' }
-        ]
-      },
-      {
-        text: '其他',
-        items: [
-          { text: 'axios', link: '/frontEnd/axios/', activeMatch: '^/frontEnd/axios' },
-          {
-            text: 'TypeScript',
-            link: '/frontEnd/TypeScript/',
-            activeMatch: '^/frontEnd/TypeScript'
-          }
-          // { text: "webpack", link: "/frontEnd/webpack/index" },
-          // { text: "vite", link: "/frontEnd/vite/index" },
+          { text: 'React', link: '/frontEnd/react/' }
         ]
       }
     ],
@@ -52,29 +39,36 @@ export const nav: DefaultTheme.Config['nav'] = [
   {
     text: '服务端',
     items: [
-      { text: 'Nodejs', link: '/backEnd/nodejs/', activeMatch: '^/backEnd/nodejs' },
+      { text: 'Nodejs', link: '/backEnd/nodejs/', activeMatch: '^/backEnd/nodejs' }
       // { text: 'Mysql', link: '/backEnd/mysql/', activeMatch: '^/backEnd/mysql' }
     ],
     activeMatch: '^/backEnd'
+  },
+  {
+    text: '其他',
+    items: [
+      { text: 'Git', link: '/others/git/install', activeMatch: '^/others/git' },
+      { text: 'Axios', link: '/others/axios/', activeMatch: '^/others/axios' },
+      {
+        text: 'TypeScript',
+        link: '/others/TypeScript/',
+        activeMatch: '^/others/TypeScript'
+      }
+      // { text: "webpack", link: "/others/webpack/index" },
+      // { text: "vite", link: "/others/vite/index" },
+    ],
+    activeMatch: '^/others'
   },
   {
     text: '可视化',
     items: [
       { text: 'Canvas', link: '/visual/canvas/base/初识Canvas', activeMatch: '^/visual/canvas' },
       { text: 'Svg', link: '/visual/svg/', activeMatch: '^/visual/svg' },
-      { text: 'PixiJs', link: '/visual/pixiJs/初识PixiJs', activeMatch: '^/visual/pixi' },
+      { text: 'PixiJs', link: '/visual/pixiJs/初识PixiJs', activeMatch: '^/visual/pixi' }
       // { text: 'Echarts', link: '/visual/echarts/', activeMatch: '^/visual/echarts' },
       // { text: "threejs", link: "/frontEnd/threejs/base" },
     ],
     activeMatch: '^/visual'
-  },
-  {
-    text: '其他',
-    items: [
-      { text: 'git', link: '/others/git/install', activeMatch: '^/others/git' }
-      // { text: "threejs", link: "/frontEnd/threejs/index" },
-    ],
-    activeMatch: '^/others'
   },
   // { text: '算法', link: '/algorithms/', activeMatch: '^/algorithms' },
   {

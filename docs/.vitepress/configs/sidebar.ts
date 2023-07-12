@@ -6,8 +6,6 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
   '/frontEnd/css3/': require('../../frontEnd/css3/sidebar'),
   '/frontEnd/JavaScript/': require('../../frontEnd/JavaScript/sidebar'),
   '/frontEnd/vue/': require('../../frontEnd/vue/sidebar'),
-  '/frontEnd/axios/': require('../../frontEnd/axios/sidebar'),
-  '/frontEnd/TypeScript/': require('../../frontEnd/TypeScript/sidebar'),
 
   // backEnd 后端
   '/backEnd/nodejs/': require('../../backEnd/nodejs/sidebar'),
@@ -15,6 +13,8 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
 
   // others 其他
   '/others/git': require('../../others/git/sidebar'),
+  '/others/axios/': require('../../others/axios/sidebar'),
+  '/others/TypeScript/': require('../../others/TypeScript/sidebar'),
 
   // visual 可视化
   '/visual/canvas': require('../../visual/canvas/sidebar'),
