@@ -4,8 +4,14 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
   // frontEnd 前端
   '/frontEnd/html5/': require('../../frontEnd/html5/sidebar'),
   '/frontEnd/css3/': require('../../frontEnd/css3/sidebar'),
-  '/frontEnd/JavaScript/': require('../../frontEnd/JavaScript/sidebar'),
   '/frontEnd/vue/': require('../../frontEnd/vue/sidebar'),
+
+  // js
+  '/JavaScript/base/': require('../../JavaScript/sidebar'),
+  // '/JavaScript/base/': require('../../JavaScript/base/sidebar'),
+  // '/JavaScript/core/': require('../../JavaScript/core/sidebar'),
+  // '/JavaScript/Dom/': require('../../JavaScript/Dom/sidebar'),
+  // '/JavaScript/Bom/': require('../../JavaScript/Bom/sidebar'),
 
   // backEnd 后端
   '/backEnd/nodejs/': require('../../backEnd/nodejs/sidebar'),

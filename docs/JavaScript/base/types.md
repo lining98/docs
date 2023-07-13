@@ -1,4 +1,4 @@
-# 数据类型
+# JavaScript 数据类型
 
 ## 一、基本类型
 
@@ -187,7 +187,110 @@ let sum = (num1, num2) => {
 
 除了上述说的三种之外，还包括`Date`、`RegExp`、`Map`、`Set`等......
 
-## 三、存储区别
+## 三、类型转换
+
+类型转换指将一种数据类型转换为其他类型
+
+### 转换为字符串
+
+```js
+// 1. 把数字转换为字符串型 变量.toString()
+var num = 10
+var str = num.toString()
+console.log(typeof str, str) // string '10'
+
+// 2. 利用String(变量)
+console.log(String(num)) // '10'
+
+// 3. 利用 + 拼接字符串的方法实现转换效果 隐式转换
+console.log(num + '')
+```
+
+### 转换为数字型
+
+> 将其他的数据类型转换为数值
+
+使用 Number()函数来将其他类型转换为数值
+转换的情况：
+
+- 字符串：
+  - 如果字符串是一个合法的数字，则会自动转换为对应的数字
+  - 如果字符串不是合法数字，则转换为 NaN
+  - 如果字符串是空串或纯空格的字符串，则转换为 0
+- 布尔值： - true 转换为 1，false 转换为 0
+- null 转换为 0
+- undefined 转换为 NaN
+
+```js
+let a = '123' // 123
+a = 'abc' // NaN
+a = '3.1415926' // 3.1415926
+a = '11px' // NaN
+a = '' // 0
+a = '    ' // 0
+
+a = true // 1
+a = false // 0
+
+a = null // 0
+a = undefined // NaN
+
+// console.log(typeof a, a)
+
+a = Number(a)
+// console.log(typeof a, a)
+```
+
+专门用来将字符串转换为数值的两个方法
+
+- parseInt() —— 将一个字符串转换为一个整数
+  - 解析时，会自左向右读取一个字符串，直到读取到字符串中所有的有效的整数
+  - 也可以使用 parseInt()来对一个数字进行取整
+- parseFloat() —— 将一个字符串转换为浮点数 - 解析时，会自左向右读取一个字符串，直到读取到字符串中所有的有效的小数
+
+```js
+let b = '123px'
+b = 'a123'
+b = '123.45'
+// b = 456.123
+console.log(typeof b, b)
+
+b = parseInt(b)
+console.log(typeof b, b)
+```
+
+### 转换为布尔型
+
+使用 Boolean()函数来将其他类型转换为布尔值
+
+- 转换的情况：
+
+  数字：
+
+  - 0 和 NaN 转换为 false
+  - 其余是 true
+
+  字符串：
+  - 空串 转换为 false
+  - 其余是 true
+
+  null 和 undefined 都转换为 false
+
+  对象：对象会转换为 true
+
+- 所有表示空性的没有的错误的值都会转换为 false：
+  0、NaN、空串、null、undefined、false
+
+```js
+// 只用这5种情况，其他都为true
+console.log(Boolean('')) // false
+console.log(Boolean(0)) // false
+console.log(Boolean(NaN)) // false
+console.log(Boolean(null)) // false
+console.log(Boolean(undefined)) // false
+```
+
+## 四、存储区别
 
 基本数据类型和引用数据类型存储在内存中的位置不同：
 

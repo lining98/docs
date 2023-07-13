@@ -17,12 +17,7 @@ export const nav: DefaultTheme.Config['nav'] = [
         text: '基础',
         items: [
           { text: 'HTML5', link: '/frontEnd/html5/audio_video', activeMatch: '^/frontEnd/html5' },
-          { text: 'CSS3', link: '/frontEnd/css3/base/css选择器', activeMatch: '^/frontEnd/css3' },
-          {
-            text: 'JavaScript',
-            link: '/frontEnd/JavaScript/',
-            activeMatch: '^/frontEnd/JavaScript'
-          }
+          { text: 'CSS3', link: '/frontEnd/css3/base/css选择器', activeMatch: '^/frontEnd/css3' }
         ]
       },
       {
@@ -37,10 +32,23 @@ export const nav: DefaultTheme.Config['nav'] = [
     activeMatch: '^/frontEnd'
   },
   {
+    text: 'JavaScript',
+    items: [
+      {
+        text: 'JS基础',
+        items: [
+          { text: '数据类型', link: '/JavaScript/base/types', activeMatch: '^/JavaScript/base' }
+        ]
+      }
+    ],
+    activeMatch: '^/JavaScript'
+  },
+  {
     text: '服务端',
     items: [
       { text: 'Nodejs', link: '/backEnd/nodejs/', activeMatch: '^/backEnd/nodejs' }
-      // { text: 'Mysql', link: '/backEnd/mysql/', activeMatch: '^/backEnd/mysql' }
+      // { text: 'Mysql', link: '/backEnd/mysql/', activeMatch: '^/backEnd/mysql' },
+      // { text: 'Linux', link: '/backEnd/linux/', activeMatch: '^/backEnd/linux' },
     ],
     activeMatch: '^/backEnd'
   },
@@ -75,7 +83,8 @@ export const nav: DefaultTheme.Config['nav'] = [
     text: '项目',
     items: [
       { text: '项目配置', link: '/project/configuration', activeMatch: '^/project/configuration' },
-      { text: 'music', link: 'http://121.40.174.152/music' }
+      { text: 'music', link: 'http://121.40.174.152/music' },
+      { text: 'vue3-template-admin', link: 'http://121.40.174.152/vue3-template-admin' }
     ],
     activeMatch: '^/project'
   }
