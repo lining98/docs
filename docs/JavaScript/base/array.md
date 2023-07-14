@@ -1,4 +1,59 @@
-# 数组方法
+# JavaScript 数组
+
+**数组：**(Array)是一种可以按顺序保存数据的数据类型
+
+**使用场景**：如果有多个数据可以用数组保存起来，然后放到一个变量中，管理非常方便
+
+- 数组中可以存放任意类型的数据，例如字符串，数字，布尔值等。
+
+## 创建
+
+创建数组有两种方式
+
+- 利用 new 创建数组
+- 利用数组字面量创建数组
+  - 数组的字面量是方括号 [ ]
+  - 声明数组并赋值称为数组的初始化
+  - 这种字面量方式也是最多的使用方式
+
+```js
+// 利用new 创建数组
+var arr = new Array() // 创建了一个空的数组
+
+// 利用数组字面量创建数组 []
+var arr1 = [] // 创建了一个空的数组
+var arr2 = [1, 2, 'abc', true]
+```
+
+## 获取数组元素
+
+**数组的长度**
+使用`数组名.length`可以访问数组元素的数量（数组长度）
+
+**数组的索引**
+`索引 (下标)` ：用来访问数组元素的序号（数组下标从 0 开始）。
+
+- 数组可以通过索引来访问、设置、修改对应的数组元素，我们可以通过数组名[索引]的形式来获取数组中的元素
+
+```js
+let arr = ['aa', 'bb', 'cc', 'dd', 'ee']
+
+console.log(arr.length) // 5
+
+console.log(arr[0]) // aa
+console.log(arr[1]) // bb
+console.log(arr[2]) // cc
+console.log(arr[3]) // dd
+
+arr[99] = 'zzz'
+// 其他元素都是undefined
+console.log(arr) //  ['aa', 'bb', 'cc', 'dd', 'ee', 空属性 × 94, 'zzz']
+console.log(arr[50]) // undefined
+console.log(arr.length) // 100
+```
+
+
+<!-- ## 数组方法 -->
 
 ## 一、操作方法
 
@@ -35,7 +90,7 @@ let count = colors.unshift('red', 'blue') // 从数组开头推入两项
 console.log(count) // 2
 ```
 
-#### splice
+#### splice()
 
 传入三个参数，分别是开始位置、0（要删除的元素数量）、插入的元素，返回空数组
 
@@ -99,7 +154,7 @@ console.log(colors) // green,blue
 console.log(removed) // red，只有一个元素的数组
 ```
 
-### slice()
+#### slice()
 
 slice() 用于创建一个包含原有数组中一个或多个元素的新数组，不会影响原始数组
 
@@ -112,7 +167,7 @@ concole.log(colors2) // green,blue,yellow,purple
 concole.log(colors3) // green,blue,yellow
 ```
 
-#### 改
+### 改
 
 即修改原来数组的内容，常用`splice`
 
@@ -127,7 +182,7 @@ console.log(colors) // red,red,purple,blue
 console.log(removed) // green，只有一个元素的数组
 ```
 
-#### 查
+### 查
 
 即查找元素，返回元素坐标或者元素值
 

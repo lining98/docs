@@ -7,7 +7,7 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
   '/frontEnd/vue/': require('../../frontEnd/vue/sidebar'),
 
   // js
-  '/JavaScript/base/': require('../../JavaScript/sidebar'),
+  '/JavaScript/': require('../../JavaScript/sidebar'),
   // '/JavaScript/base/': require('../../JavaScript/base/sidebar'),
   // '/JavaScript/core/': require('../../JavaScript/core/sidebar'),
   // '/JavaScript/Dom/': require('../../JavaScript/Dom/sidebar'),

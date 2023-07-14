@@ -37,7 +37,11 @@ export const nav: DefaultTheme.Config['nav'] = [
       {
         text: 'JS基础',
         items: [
-          { text: '数据类型', link: '/JavaScript/base/types', activeMatch: '^/JavaScript/base' }
+          { text: 'JavaScript 基础', link: '/JavaScript/base/types', activeMatch: '^/JavaScript/base' },
+          { text: 'JavaScript 进阶', link: '/JavaScript/core/closure', activeMatch: '^/JavaScript/core/closure' },
+          { text: '内置对象', link: '/JavaScript/内置对象/', activeMatch: '^/JavaScript/内置对象/' },
+          { text: 'Dom', link: '/JavaScript/Dom/', activeMatch: '^/JavaScript/Dom' },
+          { text: 'Bom', link: '/JavaScript/Bom/', activeMatch: '^/JavaScript/Bom' },
         ]
       }
     ],
