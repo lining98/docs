@@ -1,0 +1,1 @@
+import{d as e,o as _,c as n,t as s,_ as o}from"./framework.b3911a66.js";const a={class:"btn"},c=e({__name:"CBtn",props:["text"],setup(t){return(p,r)=>(_(),n("button",a,s(t.text),1))}});const i=o(c,[["__scopeId","data-v-379a71b8"]]);export{i as C};
