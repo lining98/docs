@@ -8,14 +8,11 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
 
   // js
   '/JavaScript/': require('../../JavaScript/sidebar'),
-  // '/JavaScript/base/': require('../../JavaScript/base/sidebar'),
-  // '/JavaScript/core/': require('../../JavaScript/core/sidebar'),
-  // '/JavaScript/Dom/': require('../../JavaScript/Dom/sidebar'),
-  // '/JavaScript/Bom/': require('../../JavaScript/Bom/sidebar'),
 
   // backEnd 后端
-  '/backEnd/nodejs/': require('../../backEnd/nodejs/sidebar'),
-  '/backEnd/mysql/': require('../../backEnd/mysql/sidebar'),
+  '/backEnd/': require('../../backEnd/sidebar'),
+  // '/backEnd/nodejs/': require('../../backEnd/nodejs/sidebar'),
+  // '/backEnd/mysql/': require('../../backEnd/mysql/sidebar'),
 
   // others 其他
   '/others/git': require('../../others/git/sidebar'),
