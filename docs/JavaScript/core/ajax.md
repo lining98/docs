@@ -1,6 +1,6 @@
-# Ajax
+# JavaScript Ajax
 
-## 是什么
+## Ajax简介
 
 `AJAX `全称(Async Javascript and XML)
 
@@ -103,7 +103,9 @@ request.open('POST', 'http://xxxx')
 request.send()
 ```
 
-## 三、封装
+## 三、封装与使用
+
+### 封装
 
 通过上面对`XMLHttpRequest `对象的了解，下面来封装一个简单的`ajax`请求
 
@@ -141,6 +143,8 @@ function ajax(options) {
     }
 }
 ```
+
+### 使用
 
 使用方式如下
 

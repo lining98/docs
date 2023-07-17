@@ -18,13 +18,15 @@ module.exports = [
     collapsed: false,
     items: [
       { text: '闭包', link: '/JavaScript/core/closure' },
+      { text: '函数柯里化', link: '/JavaScript/core/currying' },
+      { text: '作用域', link: '/JavaScript/core/scope' },
+      { text: '节流和防抖', link: '/JavaScript/core/debounce' },
+      { text: '深拷贝', link: '/JavaScript/core/copy' },
+      { text: 'promise', link: '/JavaScript/core/promise' },
       { text: '数组去重', link: '/JavaScript/core/duplicate' },
       { text: '数组扁平化', link: '/JavaScript/core/flattening' },
-      { text: '节流和防抖', link: '/JavaScript/core/debounce' },
-      { text: '深拷贝', link: '/JavaScript/core/deepCopy' },
-      { text: 'promise', link: '/JavaScript/core/promise' },
 
-      { text: 'Ajax', link: '/JavaScript/base/ajax' }
+      { text: 'Ajax', link: '/JavaScript/core/ajax' }
       // https://zhuanlan.zhihu.com/p/485338593
     ]
   },
@@ -47,6 +49,7 @@ module.exports = [
       { text: 'DOM介绍', link: '/JavaScript/DOM/' },
       { text: '获取和修改元素', link: '/JavaScript/DOM/获取和修改元素' },
       { text: '创建和操作元素', link: '/JavaScript/DOM/创建和操作元素' },
+      { text: 'DOM节点', link: '/JavaScript/DOM/DOM节点' },
       { text: '事件处理', link: '/JavaScript/DOM/事件处理' },
       { text: '样式和类操作', link: '/JavaScript/DOM/样式和类操作' }
     ]
@@ -59,9 +62,18 @@ module.exports = [
       { text: 'window对象', link: '/JavaScript/BOM/window' },
       { text: 'document对象', link: '/JavaScript/BOM/document' },
       { text: 'location对象', link: '/JavaScript/BOM/location' },
-      { text: 'histoty对象', link: '/JavaScript/BOM/histoty' },
+      { text: 'histoty对象', link: '/JavaScript/BOM/history' },
       { text: 'navigator对象', link: '/JavaScript/BOM/navigator' },
       { text: 'screen对象', link: '/JavaScript/BOM/screen' }
     ]
-  }
+  },
+  {
+    text: '本地存储',
+    collapsed: false,
+    items: [
+      { text: 'localStorage', link: '/JavaScript/storage/localStorage' },
+      { text: 'sessionStorage', link: '/JavaScript/storage/sessionStorage' },
+      { text: 'cookie', link: '/JavaScript/storage/cookie' },
+    ]
+  },
 ]

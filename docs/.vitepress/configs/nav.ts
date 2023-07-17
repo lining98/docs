@@ -38,10 +38,11 @@ export const nav: DefaultTheme.Config['nav'] = [
         text: 'JS基础',
         items: [
           { text: 'JavaScript 基础', link: '/JavaScript/base/types', activeMatch: '^/JavaScript/base' },
-          { text: 'JavaScript 进阶', link: '/JavaScript/core/closure', activeMatch: '^/JavaScript/core/closure' },
-          { text: '内置对象', link: '/JavaScript/内置对象/', activeMatch: '^/JavaScript/内置对象/' },
-          { text: 'Dom', link: '/JavaScript/Dom/', activeMatch: '^/JavaScript/Dom' },
-          { text: 'Bom', link: '/JavaScript/Bom/', activeMatch: '^/JavaScript/Bom' },
+          { text: 'JavaScript 进阶', link: '/JavaScript/core/closure', activeMatch: '^/JavaScript/core' },
+          { text: '内置对象', link: '/JavaScript/内置对象/', activeMatch: '^/JavaScript/内置对象' },
+          { text: 'DOM', link: '/JavaScript/DOM/', activeMatch: '^/JavaScript/DOM' },
+          { text: 'BOM', link: '/JavaScript/BOM/', activeMatch: '^/JavaScript/BOM' },
+          { text: '本地存储', link: '/JavaScript/storage/localStorage', activeMatch: '^/JavaScript/storage' },
         ]
       }
     ],
