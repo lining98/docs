@@ -73,6 +73,8 @@ yarn docs:dev
 yarn docs:build
 ```
 
+![img](./public/img/init.png)
+
 ## 二、 基本配置
 
 ### 目录结构
@@ -129,6 +131,7 @@ features:
     details: 功能/特点 3 具体描述信息。
 ---
 ```
+![img](./public/img/index.png)
 
 ### 2. 配置网站
 
@@ -138,11 +141,11 @@ features:
 
 ```js
 export default defineConfig({
-  base: '/docs/',
-  title: "lemon's blog",
+  base: '/docs/', // 和github项目名称保持一致
+  title: '标题',
   description: '描述',
   themeConfig: {
-    siteTitle: "lemon's blog", //左上角的
+    siteTitle: '标题', //左上角的
     logo: '/img/logo.png', //左上角的logo,注意：它的路径是从public文件夹开始的，所以这里引用的是public/logo.jpg这张图
     nav: [
       //右上角的导航栏
@@ -185,6 +188,7 @@ themeConfig: {
 }
 
 ```
+![img](./public/img/nav.png)
 
 ## 三、 部署到 github.io
 
@@ -241,4 +245,3 @@ settings -> Pages
 会有一个地址，这个地址就是部署之后的地址了。
 
 这个项目是实时更新的不需要你重新部署操作，你要做的就是更新你的 master 分支即可
-
