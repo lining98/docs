@@ -10,6 +10,15 @@ module.exports = [
     ]
   },
   {
+    text: 'NPM',
+    items: [
+      { text: 'npm', link: '/backEnd/npm/' },
+      { text: '发布一个包', link: '/backEnd/npm/publish' },
+      { text: 'yarn的安装与使用', link: '/backEnd/npm/yarn' },
+      { text: 'npm与yarn的命令对比', link: '/backEnd/npm/command' },
+    ]
+  },
+  {
     text: 'MySQL数据库',
     items: [
       { text: '数据库概述', link: '/backEnd/mysql/' },

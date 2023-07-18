@@ -37,12 +37,24 @@ export const nav: DefaultTheme.Config['nav'] = [
       {
         text: 'JS基础',
         items: [
-          { text: 'JavaScript 基础', link: '/JavaScript/base/types', activeMatch: '^/JavaScript/base' },
-          { text: 'JavaScript 进阶', link: '/JavaScript/core/closure', activeMatch: '^/JavaScript/core' },
+          {
+            text: 'JavaScript 基础',
+            link: '/JavaScript/base/types',
+            activeMatch: '^/JavaScript/base'
+          },
+          {
+            text: 'JavaScript 进阶',
+            link: '/JavaScript/core/closure',
+            activeMatch: '^/JavaScript/core'
+          },
           { text: '内置对象', link: '/JavaScript/内置对象/', activeMatch: '^/JavaScript/内置对象' },
           { text: 'DOM', link: '/JavaScript/DOM/', activeMatch: '^/JavaScript/DOM' },
           { text: 'BOM', link: '/JavaScript/BOM/', activeMatch: '^/JavaScript/BOM' },
-          { text: '本地存储', link: '/JavaScript/storage/localStorage', activeMatch: '^/JavaScript/storage' },
+          {
+            text: '本地存储',
+            link: '/JavaScript/storage/localStorage',
+            activeMatch: '^/JavaScript/storage'
+          }
         ]
       }
     ],
@@ -51,8 +63,18 @@ export const nav: DefaultTheme.Config['nav'] = [
   {
     text: '服务端',
     items: [
-      { text: 'Nodejs', link: '/backEnd/nodejs/', activeMatch: '^/backEnd/nodejs' },
-      { text: 'MySQL', link: '/backEnd/mysql/', activeMatch: '^/backEnd/mysql' },
+      {
+        text: 'Node',
+        items: [
+          { text: 'NodeJs', link: '/backEnd/nodejs/', activeMatch: '^/backEnd/nodejs' },
+          { text: 'NPM', link: '/backEnd/nodejs/npm', activeMatch: '^/backEnd/npm' }
+        ]
+      },
+      {
+        text: '数据库',
+        items: [{ text: 'MySQL', link: '/backEnd/mysql/', activeMatch: '^/backEnd/mysql' }]
+      }
+
       // { text: 'Linux', link: '/backEnd/linux/', activeMatch: '^/backEnd/linux' },
     ],
     activeMatch: '^/backEnd'

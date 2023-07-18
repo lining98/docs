@@ -71,6 +71,14 @@
   color: var(--vp-c-brand);
 }
 
+// 导航样式
+.VPMenuGroup {
+  p.title {
+    color: #000;
+    font-weight: bolder;
+  }
+}
+
 :root {
   --vp-custom-block-tip-border: var(--vp-c-brand);
   --vp-custom-block-tip-text: var(--vp-c-brand-darker);
