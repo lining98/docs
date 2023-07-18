@@ -67,7 +67,7 @@ export const nav: DefaultTheme.Config['nav'] = [
         text: 'Node',
         items: [
           { text: 'NodeJs', link: '/backEnd/nodejs/', activeMatch: '^/backEnd/nodejs' },
-          { text: 'NPM', link: '/backEnd/nodejs/npm', activeMatch: '^/backEnd/npm' }
+          { text: 'NPM', link: '/backEnd/npm/', activeMatch: '^/backEnd/npm' }
         ]
       },
       {
