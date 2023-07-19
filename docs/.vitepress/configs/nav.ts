@@ -23,9 +23,9 @@ export const nav: DefaultTheme.Config['nav'] = [
       {
         text: '框架',
         items: [
-          { text: 'Vue', link: '/frontEnd/vue/v3/' },
+          { text: 'Vue', link: '/frontEnd/vue/base/', activeMatch: '^/frontEnd/vue' },
           // { text: 'vue3', link: '/frontEnd/vue3/' },
-          { text: 'React', link: '/frontEnd/react/' }
+          { text: 'React', link: '/frontEnd/react/', activeMatch: '^/frontEnd/react' }
         ]
       }
     ],
