@@ -10,13 +10,15 @@ export const nav: DefaultTheme.Config['nav'] = [
   //     { text: "操作系统", link: "" },
   //   ],
   // },
+
+  // 前端 frontEnd
   {
     text: '前端',
     items: [
       {
         text: '基础',
         items: [
-          { text: 'HTML5', link: '/frontEnd/html5/audio_video', activeMatch: '^/frontEnd/html5' },
+          { text: 'HTML5', link: '/frontEnd/html5/base/', activeMatch: '^/frontEnd/html5' },
           { text: 'CSS3', link: '/frontEnd/css3/base/css选择器', activeMatch: '^/frontEnd/css3' }
         ]
       },
@@ -31,6 +33,8 @@ export const nav: DefaultTheme.Config['nav'] = [
     ],
     activeMatch: '^/frontEnd'
   },
+
+  // JavaScript
   {
     text: 'JavaScript',
     items: [
@@ -61,6 +65,8 @@ export const nav: DefaultTheme.Config['nav'] = [
     ],
     activeMatch: '^/JavaScript'
   },
+
+  // 服务端 backEnd
   {
     text: '服务端',
     items: [
@@ -80,6 +86,8 @@ export const nav: DefaultTheme.Config['nav'] = [
     ],
     activeMatch: '^/backEnd'
   },
+
+  // 其他 others
   {
     text: '其他',
     items: [
@@ -95,6 +103,8 @@ export const nav: DefaultTheme.Config['nav'] = [
     ],
     activeMatch: '^/others'
   },
+
+  // 可视化 visual
   {
     text: '可视化',
     items: [
@@ -106,7 +116,11 @@ export const nav: DefaultTheme.Config['nav'] = [
     ],
     activeMatch: '^/visual'
   },
+
+  // 算法 algorithms
   // { text: '算法', link: '/algorithms/', activeMatch: '^/algorithms' },
+
+  // 项目 project
   {
     text: '项目',
     items: [
@@ -128,6 +142,7 @@ export const nav: DefaultTheme.Config['nav'] = [
     ],
     activeMatch: '^/project'
   }
+
   // { text: '关于', link: '/about/', activeMatch: '^/about' },
   // {
   //   text: '关于',

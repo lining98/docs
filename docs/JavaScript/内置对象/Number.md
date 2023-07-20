@@ -1,100 +1,52 @@
-# 内置对象 Number 和 Math
+# 内置对象 Number
 
-## Number
+## 属性
 
-### 数字方法
+1. `Number.MAX_VALUE`：表示 JavaScript 中能表示的最大数值，约为 1.79 × 10^308。
+2. `Number.MIN_VALUE`：表示 JavaScript 中能表示的最小正数值，约为 5 × 10^-324。
+3. `Number.POSITIVE_INFINITY`：表示正无穷大，当一个数超过了`Number.MAX_VALUE`时，将返回`Infinity`。
+4. `Number.NEGATIVE_INFINITY`：表示负无穷大，当一个负数超过了`-Number.MAX_VALUE`时，将返回`-Infinity`。
+5. `Number.NaN`：表示非数值（Not-a-Number），当进行非法的数学运算时，将返回`NaN`。
 
-| **方法**             | **描述**                                                 |
-| -------------------- | -------------------------------------------------------- |
-| Number.parseFloat()  | 将字符串转换成浮点数，和全局方法 parseFloat() 作用一致。 |
-| Number.parseInt()    | 将字符串转换成整型数字，和全局方法 parseInt() 作用一致。 |
-| Number.isFinite      | 判断传递的参数是否为有限数字。                           |
-| Number.isInteger     | 判断传递的参数是否为整数。                               |
-| Number.isNaN         | 判断传递的参数是否为 isNaN()。                           |
-| Number.isSafeInteger | 判断传递的参数是否为安全整数。                           |
+## 方法
 
-- toFixed()
-  返回指定小数位数的表示形式。
+1. `Number.isNaN(num)`：判断给定的值是否为`NaN`（非数值）。如果是`NaN`，则返回`true`，否则返回`false`。
 
-```js
-a = 2
-a.toFixed(2) // '2.00'
+2. `Number.isFinite(num)`：判断给定的值是否为有限数值。如果是有限数值，即不是`Infinity`、`-Infinity`或`NaN`，则返回`true`，否则返回`false`。
 
-a = 1.975
-a.toFixed(2) // '1.98'
-```
+3. `Number.parseInt(string, radix)`：将字符串转换为整数，`radix`表示进制数（可选，默认为 10）。
 
-## Math
+4. `Number.parseFloat(string)`：将字符串转换为浮点数。
 
-`Math` 是 JavaScript 中内置的对象，称为数学对象，这个对象下即包含了属性，也包含了许多的方法。
+5. `Number.prototype.toFixed(digits)`：将数值转换为指定小数位数的字符串表示。`digits`表示保留的小数位数。
 
-### 属性
+6. `Number.prototype.toPrecision(precision)`：将数值转换为指定精度的字符串表示。`precision`表示有效位数。
 
-- Math.PI，获取圆周率
+7. `Number.prototype.toString(radix)`：将数值转换为字符串。`radix`表示进制数（可选，默认为 10）。
+
+8. `Number.prototype.valueOf()`：返回`Number`对象的原始数值。
+
+示例代码：
 
 ```javascript
-// 圆周率
-console.log(Math.PI)
+const num = 42.345
+console.log(Number.MAX_VALUE) // 输出：1.7976931348623157e+308
+console.log(Number.MIN_VALUE) // 输出：5e-324
+console.log(Number.POSITIVE_INFINITY) // 输出：Infinity
+console.log(Number.NEGATIVE_INFINITY) // 输出：-Infinity
+console.log(Number.NaN) // 输出：NaN
+
+console.log(Number.isNaN(num)) // 输出：false
+console.log(Number.isFinite(num)) // 输出：true
+
+console.log(Number.parseInt('42')) // 输出：42
+console.log(Number.parseFloat('42.345')) // 输出：42.345
+
+console.log(num.toFixed(2)) // 输出：42.35
+console.log(num.toPrecision(4)) // 输出：42.35
+console.log(num.toString(2)) // 输出：101010.0101111011011001
+
+console.log(num.valueOf()) // 输出：42.345
 ```
 
-### 方法
-
-- Math.random，生成 0 到 1 间的随机数
-
-```javascript
-// 0 ~ 1 之间的随机数, 包含 0 不包含 1
-Math.random()
-```
-
-- Math.ceil，数字向上取整
-
-```javascript
-// 舍弃小数部分，整数部分加1
-Math.ceil(3.4)
-```
-
-- Math.floor，数字向下取整
-
-```javascript
-// 舍弃小数部分，整数部分不变
-Math.floor(4.68)
-```
-
-- Math.round，四舍五入取整
-
-```javascript
-// 取整，四舍五入原则
-Math.round(5.46539)
-Math.round(4.849)
-```
-
-- Math.max，在一组数中找出最大的
-
-```javascript
-// 找出最大值
-Math.max(10, 21, 7, 24, 13)
-```
-
-- Math.min，在一组数中找出最小的
-
-```javascript
-// 找出最小值
-Math.min(24, 18, 6, 19, 21)
-```
-
-- Math.pow，幂方法
-
-```javascript
-// 求某个数的多少次方
-Math.pow(4, 2) // 求 4 的 2 次方
-Math.pow(2, 3) // 求 2 的 3 次方
-```
-
-- Math.sqrt，平方根
-
-```javascript
-// 求某数的平方根
-Math.sqrt(16)
-```
-
-数学对象提供了比较多的方法，这里不要求强记，通过演示数学对象的使用，加深对对象的理解。
+这些是`Number`对象的一些常用属性和方法。通过使用这些属性和方法，可以在 JavaScript 中更方便地处理数字和数值相关的操作。

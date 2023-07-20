@@ -26,7 +26,10 @@ module.exports = [
       { text: '数组去重', link: '/JavaScript/core/duplicate' },
       { text: '数组扁平化', link: '/JavaScript/core/flattening' },
 
-      { text: 'Ajax', link: '/JavaScript/core/ajax' }
+      { text: 'Ajax', link: '/JavaScript/core/ajax' },
+
+      { text: '详解数组中的reduce方法', link: '/JavaScript/core/reduce' }
+
       // https://zhuanlan.zhihu.com/p/485338593
     ]
   },
@@ -36,7 +39,8 @@ module.exports = [
     items: [
       { text: '内置对象', link: '/JavaScript/内置对象/' },
       { text: '内置对象: String', link: '/JavaScript/内置对象/String' },
-      { text: '内置对象: Number和Math', link: '/JavaScript/内置对象/Number' },
+      { text: '内置对象: Number', link: '/JavaScript/内置对象/Number' },
+      { text: '内置对象: Math', link: '/JavaScript/内置对象/Math' },
       { text: '内置对象: Date', link: '/JavaScript/内置对象/Date' },
       { text: '内置对象: RegExp', link: '/JavaScript/内置对象/RegExp' }
     ]
@@ -51,7 +55,7 @@ module.exports = [
       { text: '继承、封装和多态', link: '/JavaScript/面向对象/char' },
       { text: 'this 关键字', link: '/JavaScript/面向对象/this' },
       { text: '原型和原型链', link: '/JavaScript/面向对象/prototype' },
-      { text: '严格模式', link: '/JavaScript/面向对象/strict' },
+      { text: '严格模式', link: '/JavaScript/面向对象/strict' }
     ]
   },
 
@@ -86,7 +90,7 @@ module.exports = [
     items: [
       { text: 'localStorage', link: '/JavaScript/storage/localStorage' },
       { text: 'sessionStorage', link: '/JavaScript/storage/sessionStorage' },
-      { text: 'cookie', link: '/JavaScript/storage/cookie' },
+      { text: 'cookie', link: '/JavaScript/storage/cookie' }
     ]
-  },
+  }
 ]

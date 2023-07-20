@@ -2,19 +2,21 @@
 
 音视频标签中的资源除了可以用 src 属性来指定外，还可以用 source 标签，而且可以指定多个，可以用来解决某些兼容问题。
 
+````html
 ```html
-<audio controls="controls">
-  <source src="filename.ogg" type="audio/ogg" />
-  <source src="filename.mp3" type="audio/mpeg" />
-  Your browser does not support the audio tag.
+
+<h2>音频示例</h2>
+<audio id="audioPlayer" controls>
+  <source src="example.mp3" type="audio/mpeg" />
+  您的浏览器不支持音频播放。
 </audio>
 
-<video controls>
-  <!-- src引入本地媒体文件 -->
-  <source src="resource/3.mp4" />
-  <source src="resource/e3a.mp4" />
+<h2>视频示例</h2>
+<video id="videoPlayer" controls width="400">
+  <source src="example.mp4" type="video/mp4" />
+  您的浏览器不支持视频播放。
 </video>
-```
+````
 
 control 属性供添加播放、暂停和音量控件。
 
@@ -84,36 +86,11 @@ control 属性供添加播放、暂停和音量控件。
 
 ### audio 音频
 
-```js
-    // ......html、css部分...........
-    //获取
-    let v = document.querySelector("#video");
-    //在视频被重新加载时触发。
-    v.onabort = function () {
-      console.log(1);
-    }
-    //播放结束后触发
-    v.onended = function(){
-      //播放完成后，播放下一个 视频
-      v.src = "resource/2.mp4";
-      v.play();
-    }
-    //播放暂停触发
-    v.onpause = function () {
-      alert("已经暂停")
-    }
-    //开始播放时触发
-    v.onplay = function(){
-      console.log("play");
-    }
-    // 已经开始播放时触发   (开始时，暂停恢复后，结束后重新开始)   都会触发。
-    v.onplaying = function(){
-      console.log("正在播放，不要眨眼");
-    }
-    //时间轴时间改变
-    v.ontimeupdate = function(){
-      console.log("时间改变了");
-    }
+```html
+<audio controls>
+  <source src="https://www.runoob.com/try/demo_source/horse.ogg" type="audio/ogg" />
+  您的浏览器不支持 audio 元素。
+</audio>
 ```
 
 ### video 视频
@@ -126,8 +103,7 @@ control 属性供添加播放、暂停和音量控件。
   <button onclick="makeNormal()">普通</button>
   <br />
   <video id="video1" width="420">
-    <source src="mov_bbb.mp4" type="video/mp4" />
-    <source src="mov_bbb.ogg" type="video/ogg" />
+    <source src="https://www.runoob.com/try/demo_source/movie.mp4" type="video/mp4" />
     您的浏览器不支持 HTML5 video 标签。
   </video>
 </div>
