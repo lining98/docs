@@ -1,7 +1,7 @@
 module.exports = [
   {
     text: 'JavaScript 基础',
-    collapsed: false,
+    collapsed: true,
     items: [
       { text: '基本语法', link: '/JavaScript/base/' },
       { text: '变量', link: '/JavaScript/base/variable' },
@@ -15,7 +15,7 @@ module.exports = [
   },
   {
     text: 'JavaScript 进阶',
-    collapsed: false,
+    collapsed: true,
     items: [
       { text: '闭包', link: '/JavaScript/core/closure' },
       { text: '函数柯里化', link: '/JavaScript/core/currying' },
@@ -32,19 +32,32 @@ module.exports = [
   },
   {
     text: '内置对象',
-    collapsed: false,
+    collapsed: true,
     items: [
-      { text: '内置对象简介', link: '/JavaScript/内置对象/' },
+      { text: '内置对象', link: '/JavaScript/内置对象/' },
       { text: '内置对象: String', link: '/JavaScript/内置对象/String' },
       { text: '内置对象: Number和Math', link: '/JavaScript/内置对象/Number' },
       { text: '内置对象: Date', link: '/JavaScript/内置对象/Date' },
       { text: '内置对象: RegExp', link: '/JavaScript/内置对象/RegExp' }
     ]
   },
+  {
+    text: '面向对象',
+    collapsed: true,
+    items: [
+      { text: '面向对象概念', link: '/JavaScript/面向对象/' },
+      { text: '实例对象与方法', link: '/JavaScript/面向对象/new' },
+      { text: '类和构造函数', link: '/JavaScript/面向对象/class' },
+      { text: '继承、封装和多态', link: '/JavaScript/面向对象/char' },
+      { text: 'this 关键字', link: '/JavaScript/面向对象/this' },
+      { text: '原型和原型链', link: '/JavaScript/面向对象/prototype' },
+      { text: '严格模式', link: '/JavaScript/面向对象/strict' },
+    ]
+  },
 
   {
     text: 'DOM',
-    collapsed: false,
+    collapsed: true,
     items: [
       { text: 'DOM介绍', link: '/JavaScript/DOM/' },
       { text: '获取和修改元素', link: '/JavaScript/DOM/获取和修改元素' },
@@ -56,7 +69,7 @@ module.exports = [
   },
   {
     text: 'BOM',
-    collapsed: false,
+    collapsed: true,
     items: [
       { text: 'BOM介绍', link: '/JavaScript/BOM/' },
       { text: 'window对象', link: '/JavaScript/BOM/window' },
@@ -69,7 +82,7 @@ module.exports = [
   },
   {
     text: '本地存储',
-    collapsed: false,
+    collapsed: true,
     items: [
       { text: 'localStorage', link: '/JavaScript/storage/localStorage' },
       { text: 'sessionStorage', link: '/JavaScript/storage/sessionStorage' },

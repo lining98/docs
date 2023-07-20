@@ -48,6 +48,7 @@ export const nav: DefaultTheme.Config['nav'] = [
             activeMatch: '^/JavaScript/core'
           },
           { text: '内置对象', link: '/JavaScript/内置对象/', activeMatch: '^/JavaScript/内置对象' },
+          { text: '面向对象', link: '/JavaScript/面向对象/', activeMatch: '^/JavaScript/面向对象' },
           { text: 'DOM', link: '/JavaScript/DOM/', activeMatch: '^/JavaScript/DOM' },
           { text: 'BOM', link: '/JavaScript/BOM/', activeMatch: '^/JavaScript/BOM' },
           {
@@ -109,9 +110,21 @@ export const nav: DefaultTheme.Config['nav'] = [
   {
     text: '项目',
     items: [
-      { text: '项目配置', link: '/project/configuration', activeMatch: '^/project/configuration' },
-      { text: 'music', link: 'http://121.40.174.152/music' },
-      { text: 'vue3-template-admin', link: 'http://121.40.174.152/vue3-template-admin' }
+      {
+        items: [
+          {
+            text: '项目配置',
+            link: '/project/configuration',
+            activeMatch: '^/project/configuration'
+          }
+        ]
+      },
+      {
+        items: [
+          { text: 'music', link: 'http://121.40.174.152/music' },
+          { text: 'vue3-template-admin', link: 'http://121.40.174.152/vue3-template-admin' }
+        ]
+      }
     ],
     activeMatch: '^/project'
   }
