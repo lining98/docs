@@ -65,6 +65,23 @@ export const nav: DefaultTheme.Config['nav'] = [
     activeMatch: '^/JavaScript'
   },
 
+  // ECMAScript
+  {
+    text: 'ECMAScript',
+    items: [
+      {
+        text: 'ES6',
+        items: [
+          { text: 'ECMAScript 的介绍', link: '/ECMAScript/es6/' },
+          { text: '解构赋值', link: '/ECMAScript/es6/解构赋值' }
+        ],
+        activeMatch: '^/ECMAScript/es6'
+      },
+      { text: 'ES7', link: '/ECMAScript/es7', activeMatch: '^/ECMAScript/es7' }
+    ],
+    activeMatch: '^/ECMAScript'
+  },
+
   // 服务端 server
   {
     text: '服务端',

@@ -9,7 +9,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
   // js
   '/JavaScript/': require('../../JavaScript/sidebar'),
 
-  // server 后端
+  // js
+  '/ECMAScript/': require('../../ECMAScript/sidebar'),
+
+  // server 服务端
   '/server/': require('../../server/sidebar'),
   // '/server/nodejs/': require('../../server/nodejs/sidebar'),
   // '/server/mysql/': require('../../server/mysql/sidebar'),
