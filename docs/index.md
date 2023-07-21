@@ -16,10 +16,9 @@ hero:
     - theme: alt
       text: 前端导航
       link: /nav/
-    # - theme: alt
-    #   text: 其他
-    #   link: /aaa
-
+    - theme: alt
+      text: 云音乐
+      link: http://121.40.174.152/music
 
 features:
   - icon: ⚡️

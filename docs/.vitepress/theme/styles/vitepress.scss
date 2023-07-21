@@ -71,6 +71,12 @@
   color: var(--vp-c-brand);
 }
 
+.actions .action:nth-child(3) a {
+  border-color: var(--vp-button-brand-border);
+  background-color: #39c6ad;
+  color: var(--vp-button-brand-text);
+}
+
 // 导航样式
 .VPMenuGroup {
   p.title {
