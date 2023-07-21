@@ -26,7 +26,6 @@ export const nav: DefaultTheme.Config['nav'] = [
         text: '框架',
         items: [
           { text: 'Vue', link: '/frontEnd/vue/base/', activeMatch: '^/frontEnd/vue' },
-          // { text: 'vue3', link: '/frontEnd/vue3/' },
           { text: 'React', link: '/frontEnd/react/', activeMatch: '^/frontEnd/react' }
         ]
       }
@@ -66,25 +65,25 @@ export const nav: DefaultTheme.Config['nav'] = [
     activeMatch: '^/JavaScript'
   },
 
-  // 服务端 backEnd
+  // 服务端 server
   {
     text: '服务端',
     items: [
       {
         text: 'Node',
         items: [
-          { text: 'NodeJs', link: '/backEnd/nodejs/', activeMatch: '^/backEnd/nodejs' },
-          { text: 'NPM', link: '/backEnd/npm/', activeMatch: '^/backEnd/npm' }
+          { text: 'NodeJs', link: '/server/nodejs/', activeMatch: '^/server/nodejs' },
+          { text: 'NPM', link: '/server/npm/', activeMatch: '^/server/npm' }
         ]
       },
       {
         text: '数据库',
-        items: [{ text: 'MySQL', link: '/backEnd/mysql/', activeMatch: '^/backEnd/mysql' }]
+        items: [{ text: 'MySQL', link: '/server/mysql/', activeMatch: '^/server/mysql' }]
       }
 
-      // { text: 'Linux', link: '/backEnd/linux/', activeMatch: '^/backEnd/linux' },
+      // { text: 'Linux', link: '/server/linux/', activeMatch: '^/server/linux' },
     ],
-    activeMatch: '^/backEnd'
+    activeMatch: '^/server'
   },
 
   // 其他 others
