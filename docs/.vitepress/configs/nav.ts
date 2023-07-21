@@ -73,11 +73,13 @@ export const nav: DefaultTheme.Config['nav'] = [
         text: 'ES6',
         items: [
           { text: 'ECMAScript 的介绍', link: '/ECMAScript/es6/' },
-          { text: '解构赋值', link: '/ECMAScript/es6/解构赋值' }
+          { text: '模板字符串', link: '/ECMAScript/es6/模板字符串' },
+          { text: '解构赋值', link: '/ECMAScript/es6/解构赋值' },
+          { text: '箭头函数', link: '/ECMAScript/es6/箭头函数' },
         ],
         activeMatch: '^/ECMAScript/es6'
       },
-      { text: 'ES7', link: '/ECMAScript/es7', activeMatch: '^/ECMAScript/es7' }
+      // { text: 'ES7', link: '/ECMAScript/es7', activeMatch: '^/ECMAScript/es7' }
     ],
     activeMatch: '^/ECMAScript'
   },

@@ -15,9 +15,9 @@ module.exports = [
       //   { text: '模块化', link: '/ECMAScript/es6/模块化' },
     ]
   },
-  {
-    text: 'ES7',
-    link: '/ECMAScript/es7'
-    // items: [{ text: 'ES7', link: '/ECMAScript/es7' }]
-  }
+  // {
+  //   text: 'ES7',
+  //   link: '/ECMAScript/es7'
+  //   // items: [{ text: 'ES7', link: '/ECMAScript/es7' }]
+  // }
 ]
