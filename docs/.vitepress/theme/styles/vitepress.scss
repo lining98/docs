@@ -72,9 +72,13 @@
 }
 
 .actions .action:nth-child(3) a {
-  border-color: var(--vp-button-brand-border);
+  border-color: #77c5b7;
   background-color: #39c6ad;
   color: var(--vp-button-brand-text);
+  &:hover {
+    color: #f0f0f0;
+    background-color: #118671d5;
+  }
 }
 
 // 导航样式
