@@ -38,7 +38,6 @@ module.exports = [
     collapsed: true,
     items: [
       { text: '内置对象', link: '/JavaScript/内置对象/' },
-      { text: '内置对象: String', link: '/JavaScript/内置对象/String' },
       { text: '内置对象: Number', link: '/JavaScript/内置对象/Number' },
       { text: '内置对象: Math', link: '/JavaScript/内置对象/Math' },
       { text: '内置对象: Date', link: '/JavaScript/内置对象/Date' },

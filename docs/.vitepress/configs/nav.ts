@@ -1,5 +1,7 @@
 import type { DefaultTheme } from 'vitepress'
 
+import ES6 from '../../ECMAScript/sidebar'
+
 export const nav: DefaultTheme.Config['nav'] = [
   { text: '导航', link: '/nav/' },
   // {
@@ -68,19 +70,20 @@ export const nav: DefaultTheme.Config['nav'] = [
   // ECMAScript
   {
     text: 'ECMAScript',
-    items: [
-      {
-        text: 'ES6',
-        items: [
-          { text: 'ECMAScript 的介绍', link: '/ECMAScript/es6/' },
-          { text: '模板字符串', link: '/ECMAScript/es6/模板字符串' },
-          { text: '解构赋值', link: '/ECMAScript/es6/解构赋值' },
-          { text: '箭头函数', link: '/ECMAScript/es6/箭头函数' },
-        ],
-        activeMatch: '^/ECMAScript/es6'
-      },
-      // { text: 'ES7', link: '/ECMAScript/es7', activeMatch: '^/ECMAScript/es7' }
-    ],
+    items: ES6,
+    // [
+    //   {
+    //     text: 'ES6',
+    //     items: [
+    //       { text: 'ECMAScript 的介绍', link: '/ECMAScript/es6/' },
+    //       { text: '模板字符串', link: '/ECMAScript/es6/模板字符串' },
+    //       { text: '解构赋值', link: '/ECMAScript/es6/解构赋值' },
+    //       { text: '箭头函数', link: '/ECMAScript/es6/箭头函数' },
+    //     ],
+    //     activeMatch: '^/ECMAScript/es6'
+    //   },
+    //   // { text: 'ES7', link: '/ECMAScript/es7', activeMatch: '^/ECMAScript/es7' }
+    // ],
     activeMatch: '^/ECMAScript'
   },
 
