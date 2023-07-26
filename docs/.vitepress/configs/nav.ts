@@ -131,9 +131,9 @@ export const nav: DefaultTheme.Config['nav'] = [
     items: [
       { text: 'Canvas', link: '/visual/canvas/base/初识Canvas', activeMatch: '^/visual/canvas' },
       { text: 'Svg', link: '/visual/svg/', activeMatch: '^/visual/svg' },
-      { text: 'PixiJs', link: '/visual/pixiJs/初识PixiJs', activeMatch: '^/visual/pixi' }
+      { text: 'PixiJs', link: '/visual/pixiJs/初识PixiJs', activeMatch: '^/visual/pixi' },
       // { text: 'Echarts', link: '/visual/echarts/', activeMatch: '^/visual/echarts' },
-      // { text: "threejs", link: "/frontEnd/threejs/base" },
+      { text: 'ThreeJs', link: '/visual/threejs/', activeMatch: '^/visual/threejs' }
     ],
     activeMatch: '^/visual'
   },

@@ -30,5 +30,8 @@
       "prettier --write"
     ]
   },
-  "prettier": "@femm/prettier"
+  "prettier": "@femm/prettier",
+  "dependencies": {
+    "three": "^0.154.0"
+  }
 }
