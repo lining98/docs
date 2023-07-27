@@ -32,7 +32,7 @@ onMounted(() => {
   // 创建几何体
   const cubeGeometry = new THREE.BoxGeometry(1, 1, 1)
   // 创建材质
-  const cubeMaterial = new THREE.MeshBasicMaterial({ color: 0xffc0cb })
+  const cubeMaterial = new THREE.MeshBasicMaterial({ color: 0xffaa00 })
   // 根据几何体和材质创建物体
   const cube = new THREE.Mesh(cubeGeometry, cubeMaterial)
 
@@ -48,7 +48,7 @@ onMounted(() => {
   })
 
   // 设置背景色
-  renderer.setClearColor(0x10b981, 0.1)
+  renderer.setClearColor(0x007fff, 0.2)
 
   // 设置画布的宽高
   renderer.setSize(parseInt(getComputedStyle(canvas.value).width), window.innerHeight)
@@ -57,7 +57,7 @@ onMounted(() => {
   renderer.render(scene, camera)
 })
 </script>
-<style lang="scss" scoped>
+<style scoped>
 canvas {
   width: 100%;
   height: 100vh;

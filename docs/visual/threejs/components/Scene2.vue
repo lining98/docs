@@ -1,12 +1,3 @@
-# 渲染第一个场景和物体
-
-## 示例
-
-<Scene1 />
-
-## 代码
-
-```vue
 <template>
   <div>
     <canvas ref="canvas" />
@@ -14,8 +5,9 @@
 </template>
 
 <script setup lang="ts">
-import * as THREE from 'three'
 import { ref, onMounted } from 'vue'
+import * as THREE from 'three'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
 const canvas = ref()
 
@@ -62,18 +54,25 @@ onMounted(() => {
   // 设置画布的宽高
   renderer.setSize(parseInt(getComputedStyle(canvas.value).width), window.innerHeight)
 
-  // 使用渲染器，通过场景，相机来渲染
-  renderer.render(scene, camera)
+  // 创建轨道控制器
+  // 要控制的相机，canvas元素
+  const controls = new OrbitControls(camera, renderer.domElement)
+
+  function render() {
+    //如果后期需要控制器带有阻尼效果，或者自动旋转等效果，就需要加入controls.update()
+    controls.update()
+    // 使用渲染器，通过场景，相机来渲染
+    renderer.render(scene, camera)
+    //   渲染下一帧的时候就会调用render函数
+    requestAnimationFrame(render)
+  }
+
+  render()
 })
 </script>
-<style lang="scss" scoped>
+<style scoped>
 canvas {
   width: 100%;
   height: 100vh;
 }
 </style>
-```
-
-<script setup>
-import Scene1 from './components/Scene1.vue'
-</script>
