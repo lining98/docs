@@ -16,11 +16,17 @@ function add(a) {
 var increment = add(1) // 返回一个新函数，用于增加 1
 console.log(increment(5)) // 输出：6
 
-var multiply = add(2) // 返回一个新函数，用于乘以 2
+function take(a) {
+  return function (b) {
+    return a + b
+  }
+}
+
+var multiply = take(2) // 返回一个新函数，用于乘以 2
 console.log(multiply(4)) // 输出：8
 ```
 
-在上述示例中，`add` 函数接收一个参数 `a`，并返回一个新的匿名函数。新函数接收参数 `b`，并返回 `a + b` 的结果。通过调用 `add(1)`，我们获得一个新函数 `increment`，它将传递的参数与 1 相加。同样，通过调用 `add(2)`，我们获得一个新函数 `multiply`，它将传递的参数与 2 相乘。
+在上述示例中，`add` 函数接收一个参数 `a`，并返回一个新的匿名函数。新函数接收参数 `b`，并返回 `a + b` 的结果。通过调用 `add(1)`，我们获得一个新函数 `increment`，它将传递的参数与 1 相加。同样，通过调用 `take(2)`，我们获得一个新函数 `multiply`，它将传递的参数与 2 相乘。
 
 ## 函数柯里化的优点和应用场景
 
