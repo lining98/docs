@@ -5,6 +5,7 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
   '/frontEnd/html5/': require('../../frontEnd/html5/sidebar'),
   '/frontEnd/css3/': require('../../frontEnd/css3/sidebar'),
   '/frontEnd/vue/': require('../../frontEnd/vue/sidebar'),
+  '/frontEnd/react/': require('../../frontEnd/react/sidebar'),
 
   // js
   '/JavaScript/': require('../../JavaScript/sidebar'),

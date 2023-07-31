@@ -20,7 +20,7 @@ class Person {
 
   // 类的方法
   sayHello() {
-    console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`)
+    console.log(`你好, 我的名字是${this.name}并且我${this.age} 岁了。`)
   }
 }
 ```
@@ -33,8 +33,8 @@ class Person {
 const person1 = new Person('John', 30)
 const person2 = new Person('Alice', 25)
 
-person1.sayHello() // Hello, my name is John and I am 30 years old.
-person2.sayHello() // Hello, my name is Alice and I am 25 years old.
+person1.sayHello() // 你好, 我的名字是John并且我30岁了。
+person2.sayHello() // 你好, 我的名字是Alice并且我25岁了。
 ```
 
 ## 类的继承
@@ -50,7 +50,7 @@ class Student extends Person {
 
   // 子类的方法
   introduce() {
-    console.log(`I am a student majoring in ${this.major}.`)
+    console.log(`我是一名${this.major}专业的学生。`)
   }
 }
 ```
@@ -65,7 +65,7 @@ class Student extends Person {
 
   // 重写父类的方法
   sayHello() {
-    console.log(`Hello, I am a student named ${this.name} and I am ${this.age} years old.`)
+    console.log(`你好，我叫${this.name}，我${this.age}岁了。`)
   }
 }
 ```
@@ -107,7 +107,7 @@ class Circle {
   // Setter
   set radius(value) {
     if (value < 0) {
-      throw new Error('Radius cannot be negative.')
+      throw new Error('半径不能是负的。')
     }
     this._radius = value
   }
