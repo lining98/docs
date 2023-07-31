@@ -13,6 +13,12 @@
   --vp-home-hero-image-filter: blur(80px);
   --vp-layout-max-width: 1640px;
 }
+
+.content-body nav{
+  min-width: 670px;
+}
+
+
 .content-container {
   max-width: 870px !important;
 }
