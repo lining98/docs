@@ -256,6 +256,8 @@ class MyComponent extends React.Component {
 }
 ```
 
-## 总结
+::: tip 总结
 
 React 生命周期是组件在不同阶段经历的一系列方法调用，通过这些方法，我们可以在特定时间点执行代码，控制组件的行为，并进行必要的操作。在组件创建阶段，我们可以在 constructor 中初始化状态和绑定方法，在 componentDidMount 中进行副作用操作。在组件更新阶段，我们可以在 shouldComponentUpdate 中判断是否需要重新渲染，在 componentDidUpdate 中进行副作用操作。在组件销毁阶段，我们可以在 componentWillUnmount 中进行清理操作。
+
+:::

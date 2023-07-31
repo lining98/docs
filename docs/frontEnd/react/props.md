@@ -225,6 +225,8 @@ ReactDOM.render(<MyComponent />, document.getElementById('root'))
 
 在上面的例子中，如果没有传递 count 属性，MyComponent 将使用默认值 0。
 
-## 总结
+::: tip 总结
 
 Props 是 React 中用于向组件传递数据的机制，它允许组件接收外部传入的数据，并根据数据的变化进行动态渲染和交互。通过使用 Props，我们可以将数据从父组件传递到子组件，实现组件之间的数据传递和通信。Props 是只读的，组件无法修改接收到的 Props，这有助于确保组件的数据流向更加可预测和可维护。同时，我们可以使用 PropTypes 对 Props 进行验证，增加代码的健壮性和可维护性。Props 是 React 组件开发中非常重要和常用的一部分。
+
+:::
