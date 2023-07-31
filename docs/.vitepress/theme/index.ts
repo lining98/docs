@@ -5,7 +5,7 @@ import Theme from "vitepress/theme";
 import Visitor from './components/Visitor.vue'
 import Copyright from './components/Copyright.vue'
 import toTop from './components/toTop.vue'
-// import Live2d from './components/Live2d.vue'
+import Live2d from './components/Live2d.vue'
 
 import "./styles/index.scss";
 
@@ -26,7 +26,7 @@ export default Object.assign({}, Theme, {
        * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/Layout.vue
        */
        'aside-top': () => h(toTop),
-      //  'aside-bottom': () => h(Live2d),
+       'aside-bottom': () => h(Live2d),
        'nav-bar-title-after': () => h(Visitor),
        'doc-after': () => h(Copyright),
     });

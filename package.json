@@ -13,6 +13,7 @@
     "@mdit-vue/shared": "^0.12.0",
     "@tomiaa/live2d": "^0.0.1",
     "@types/node": "^18.13.0",
+    "@types/three": "^0.154.0",
     "cross-env": "^7.0.3",
     "flexsearch": "^0.7.31",
     "husky": "^8.0.3",

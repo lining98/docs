@@ -7,17 +7,18 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import * as THREE from 'three'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+// import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
 const canvas = ref()
 
-onMounted(() => {
+onMounted(async () => {
+  const { OrbitControls } = await import('three/examples/jsm/controls/OrbitControls')
   // 创建一个场景
   const scene = new THREE.Scene()
 
   // 创建一个相机(透视相机)
   // 角度，宽高比, 进端， 远端
-  const camera = new THREE.PerspectiveCamera(
+  const camera: any = new THREE.PerspectiveCamera(
     75,
     parseInt(getComputedStyle(canvas.value).width) / window.innerHeight,
     0.1,
