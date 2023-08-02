@@ -1,12 +1,3 @@
-# 渲染第一个场景和物体
-
-## 示例
-
-<Scene1 />
-
-## 代码
-
-```vue
 <template>
   <div>
     <canvas ref="canvas" />
@@ -16,16 +7,19 @@
 <script setup lang="ts">
 import * as THREE from 'three'
 import { ref, onMounted } from 'vue'
+// import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
 const canvas = ref()
 
-onMounted(() => {
+onMounted(async () => {
+  const { OrbitControls } = await import('three/examples/jsm/controls/OrbitControls')
+
   // 创建一个场景
   const scene = new THREE.Scene()
 
   // 创建一个相机(透视相机)
   // 角度，宽高比, 进端， 远端
-  const camera = new THREE.PerspectiveCamera(
+  const camera: any = new THREE.PerspectiveCamera(
     75,
     parseInt(getComputedStyle(canvas.value).width) / window.innerHeight,
     0.1,
@@ -55,25 +49,35 @@ onMounted(() => {
     // 允许透明
     alpha: true
   })
-
   // 设置背景色
   renderer.setClearColor(0x007fff, 0.2)
-
-  // 设置画布的宽高
+  // 设置渲染的尺寸大小
   renderer.setSize(parseInt(getComputedStyle(canvas.value).width), window.innerHeight)
 
-  // 使用渲染器，通过场景，相机来渲染
-  renderer.render(scene, camera)
+  // 创建轨道控制器
+  // 要控制的相机，canvas元素
+  const controls = new OrbitControls(camera, renderer.domElement)
+
+  function render() {
+    //如果后期需要控制器带有阻尼效果，或者自动旋转等效果，就需要加入controls.update()
+    controls.update()
+    // 使用渲染器，通过场景，相机来渲染
+    renderer.render(scene, camera)
+    //   渲染下一帧的时候就会调用render函数
+    requestAnimationFrame(render)
+  }
+  render()
+
+  // #region snippet
+  // 添加坐标轴辅助器
+  const axesHelper = new THREE.AxesHelper(6)
+  scene.add(axesHelper)
+  // #endregion snippet
 })
 </script>
-<style lang="scss" scoped>
+<style scoped>
 canvas {
   width: 100%;
   height: 100vh;
 }
 </style>
-```
-
-<script setup>
-import Scene1 from './components/Scene1.vue'
-</script>

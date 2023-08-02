@@ -16,7 +16,7 @@ onMounted(() => {
 
   // 创建一个相机(透视相机)
   // 角度，宽高比, 进端， 远端
-  const camera = new THREE.PerspectiveCamera(
+  const camera: any = new THREE.PerspectiveCamera(
     75,
     parseInt(getComputedStyle(canvas.value).width) / window.innerHeight,
     0.1,
@@ -57,6 +57,7 @@ onMounted(() => {
   renderer.render(scene, camera)
 })
 </script>
+
 <style scoped>
 canvas {
   width: 100%;
