@@ -1,0 +1,1 @@
+import{u as _,v as s,b as e,X as n,_ as a}from"./framework.814cacce.js";const o={class:"btn"},c=_({__name:"CBtn",props:["text"],setup(t){return(p,r)=>(s(),e("button",o,n(t.text),1))}});const b=a(c,[["__scopeId","data-v-379a71b8"]]);export{b as C};
