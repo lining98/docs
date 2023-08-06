@@ -18,7 +18,7 @@ hero:
       link: /nav/
     - theme: alt
       text: 云音乐
-      link: http://121.40.174.152/music
+      link: http://111.229.203.202/music
 
 features:
   - icon: ⚡️
