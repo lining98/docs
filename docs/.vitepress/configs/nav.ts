@@ -155,8 +155,8 @@ export const nav: DefaultTheme.Config['nav'] = [
       },
       {
         items: [
-          { text: 'music', link: 'http://121.40.174.152/music' },
-          { text: 'vue3-template-admin', link: 'http://121.40.174.152/vue3-template-admin' }
+          { text: 'music', link: 'http://111.229.203.202/music' },
+          { text: 'vue3-template-admin', link: 'http://111.229.203.202/vue3-template-admin' }
         ]
       }
     ],
