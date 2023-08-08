@@ -28,7 +28,8 @@ module.exports = [
 
       { text: 'Ajax', link: '/JavaScript/core/ajax' },
 
-      { text: '详解数组中的reduce方法', link: '/JavaScript/core/reduce' }
+      { text: '详解数组中的reduce方法', link: '/JavaScript/core/reduce' },
+      { text: '手写轮播图', link: '/JavaScript/core/carousel' }
 
       // https://zhuanlan.zhihu.com/p/485338593
     ]

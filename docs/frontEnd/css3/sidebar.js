@@ -12,6 +12,7 @@ module.exports = [
     text: 'CSS技巧',
     items: [
       { text: '水平垂直居中', link: '/frontEnd/css3/tricks/center' },
+      { text: '绘制三角形', link: '/frontEnd/css3/tricks/triangle' },
       { text: '滚动条样式', link: '/frontEnd/css3/tricks/scrollbar' },
       { text: '文本溢出隐藏', link: '/frontEnd/css3/tricks/ellipsis' },
       // { text: '滚动条样式', link: '/frontEnd/css3/traick/scrollbar' }
