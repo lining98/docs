@@ -1,9 +1,5 @@
 # ES6 class
 
-当描述 ES6 中的类（Class）时，使用 Markdown 格式如下：
-
-# ES6 中的类（Class）
-
 在 ECMAScript 2015（ES6）中，引入了类（Class）的概念，允许我们以一种更面向对象的方式来创建和管理对象。
 
 ## 创建类
