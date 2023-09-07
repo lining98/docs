@@ -19,6 +19,7 @@ module.exports = [
     items: [
       { text: '闭包', link: '/JavaScript/core/closure' },
       { text: '函数柯里化', link: '/JavaScript/core/currying' },
+      { text: '原型', link: '/JavaScript/core/prototype' },
       { text: '作用域', link: '/JavaScript/core/scope' },
       { text: '节流和防抖', link: '/JavaScript/core/debounce' },
       { text: '深拷贝', link: '/JavaScript/core/copy' },
