@@ -12,12 +12,7 @@ module.exports = [
       { text: '对象的扩展', link: '/ECMAScript/es6/对象的扩展' },
       { text: '函数的扩展', link: '/ECMAScript/es6/函数的扩展' },
       { text: 'class', link: '/ECMAScript/es6/class' },
-      { text: '模块化', link: '/ECMAScript/es6/module' }
-    ]
-  }
-  // {
-  //   text: 'ES7',
-  //   link: '/ECMAScript/es7'
-  //   // items: [{ text: 'ES7', link: '/ECMAScript/es7' }]
-  // }
+      { text: '模块化', link: '/ECMAScript/es6/module' },
+    ],
+  },
 ]

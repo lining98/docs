@@ -1,5 +1,6 @@
 import type { DefaultTheme } from 'vitepress'
 
+import JS from '../../JavaScript/sidebar'
 import ES6 from '../../ECMAScript/sidebar'
 
 export const nav: DefaultTheme.Config['nav'] = [
@@ -20,58 +21,38 @@ export const nav: DefaultTheme.Config['nav'] = [
       {
         text: '基础',
         items: [
-          { text: 'HTML5', link: '/frontEnd/html5/base/', activeMatch: '^/frontEnd/html5' },
-          { text: 'CSS3', link: '/frontEnd/css3/base/css选择器', activeMatch: '^/frontEnd/css3' }
-        ]
+          {
+            text: 'HTML5',
+            link: '/frontEnd/html5/base/',
+            // items: HTML5,
+            activeMatch: '^/frontEnd/html5',
+          },
+          { text: 'CSS3', link: '/frontEnd/css3/base/css选择器', activeMatch: '^/frontEnd/css3' },
+        ],
       },
       {
         text: '框架',
         items: [
           { text: 'Vue', link: '/frontEnd/vue/base/', activeMatch: '^/frontEnd/vue' },
-          { text: 'React', link: '/frontEnd/react/', activeMatch: '^/frontEnd/react' }
-        ]
-      }
+          { text: 'React', link: '/frontEnd/react/', activeMatch: '^/frontEnd/react' },
+        ],
+      },
     ],
-    activeMatch: '^/frontEnd'
+    activeMatch: '^/frontEnd',
   },
 
   // JavaScript
   {
     text: 'JavaScript',
-    items: [
-      {
-        text: 'JS基础',
-        items: [
-          {
-            text: 'JavaScript 基础',
-            link: '/JavaScript/base/types',
-            activeMatch: '^/JavaScript/base'
-          },
-          {
-            text: 'JavaScript 进阶',
-            link: '/JavaScript/core/closure',
-            activeMatch: '^/JavaScript/core'
-          },
-          { text: '内置对象', link: '/JavaScript/内置对象/', activeMatch: '^/JavaScript/内置对象' },
-          { text: '面向对象', link: '/JavaScript/面向对象/', activeMatch: '^/JavaScript/面向对象' },
-          { text: 'DOM', link: '/JavaScript/DOM/', activeMatch: '^/JavaScript/DOM' },
-          { text: 'BOM', link: '/JavaScript/BOM/', activeMatch: '^/JavaScript/BOM' },
-          {
-            text: '本地存储',
-            link: '/JavaScript/storage/localStorage',
-            activeMatch: '^/JavaScript/storage'
-          }
-        ]
-      }
-    ],
-    activeMatch: '^/JavaScript'
+    items: JS as [],
+    activeMatch: '^/JavaScript',
   },
 
   // ECMAScript
   {
     text: 'ECMAScript',
-    items: ES6,
-    activeMatch: '^/ECMAScript'
+    items: ES6 as [],
+    activeMatch: '^/ECMAScript',
   },
 
   // 服务端 server
@@ -82,17 +63,17 @@ export const nav: DefaultTheme.Config['nav'] = [
         text: 'Node',
         items: [
           { text: 'NodeJs', link: '/server/nodejs/', activeMatch: '^/server/nodejs' },
-          { text: 'NPM', link: '/server/npm/', activeMatch: '^/server/npm' }
-        ]
+          { text: 'NPM', link: '/server/npm/', activeMatch: '^/server/npm' },
+        ],
       },
       {
         text: '数据库',
-        items: [{ text: 'MySQL', link: '/server/mysql/', activeMatch: '^/server/mysql' }]
-      }
+        items: [{ text: 'MySQL', link: '/server/mysql/', activeMatch: '^/server/mysql' }],
+      },
 
       // { text: 'Linux', link: '/server/linux/', activeMatch: '^/server/linux' },
     ],
-    activeMatch: '^/server'
+    activeMatch: '^/server',
   },
 
   // 其他 others
@@ -104,12 +85,12 @@ export const nav: DefaultTheme.Config['nav'] = [
       {
         text: 'TypeScript',
         link: '/others/TypeScript/',
-        activeMatch: '^/others/TypeScript'
-      }
+        activeMatch: '^/others/TypeScript',
+      },
       // { text: "webpack", link: "/others/webpack/index" },
       // { text: "vite", link: "/others/vite/index" },
     ],
-    activeMatch: '^/others'
+    activeMatch: '^/others',
   },
 
   // 可视化 visual
@@ -122,19 +103,21 @@ export const nav: DefaultTheme.Config['nav'] = [
           {
             text: 'Canvas',
             link: '/visual/canvas/base/初识Canvas',
-            activeMatch: '^/visual/canvas'
+            activeMatch: '^/visual/canvas',
           },
           { text: 'Svg', link: '/visual/svg/', activeMatch: '^/visual/svg' },
-          { text: 'PixiJs', link: '/visual/pixiJs/初识PixiJs', activeMatch: '^/visual/pixi' }
+          { text: 'PixiJs', link: '/visual/pixiJs/初识PixiJs', activeMatch: '^/visual/pixi' },
           // { text: 'Echarts', link: '/visual/echarts/', activeMatch: '^/visual/echarts' },
-        ]
+        ],
       },
       {
         text: '3d',
-        items: [{ text: 'ThreeJs', link: '/visual/threejs/base/', activeMatch: '^/visual/threejs' }]
-      }
+        items: [
+          { text: 'ThreeJs', link: '/visual/threejs/base/', activeMatch: '^/visual/threejs' },
+        ],
+      },
     ],
-    activeMatch: '^/visual'
+    activeMatch: '^/visual',
   },
 
   // 算法 algorithms
@@ -149,19 +132,19 @@ export const nav: DefaultTheme.Config['nav'] = [
           {
             text: '项目配置',
             link: '/project/configuration',
-            activeMatch: '^/project/configuration'
-          }
-        ]
+            activeMatch: '^/project/configuration',
+          },
+        ],
       },
       {
         items: [
           { text: 'music', link: 'http://111.229.203.202/music' },
-          { text: 'vue3-template-admin', link: 'http://111.229.203.202/vue3-template-admin' }
-        ]
-      }
+          { text: 'vue3-template-admin', link: 'http://111.229.203.202/vue3-template-admin' },
+        ],
+      },
     ],
-    activeMatch: '^/project'
-  }
+    activeMatch: '^/project',
+  },
 
   // { text: '关于', link: '/about/', activeMatch: '^/about' },
   // {
