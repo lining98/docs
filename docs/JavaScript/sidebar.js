@@ -28,8 +28,9 @@ module.exports = [
       { text: '数组扁平化', link: '/JavaScript/core/flattening' },
 
       { text: 'Ajax', link: '/JavaScript/core/ajax' },
-
       { text: '详解数组中的reduce方法', link: '/JavaScript/core/reduce' },
+
+      { text: ' Event Loop 事件循环机制', link: '/JavaScript/core/eventLoop' },
       // { text: '手写轮播图', link: '/JavaScript/core/carousel' }
 
       // https://zhuanlan.zhihu.com/p/485338593
