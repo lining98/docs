@@ -120,6 +120,16 @@ export const nav: DefaultTheme.Config['nav'] = [
     activeMatch: '^/visual',
   },
 
+  // 小程序 small program
+  // {
+  //   text: '小程序',
+  //   items: [
+  //     { text: 'uniapp', link: '/smallProgram/uniapp/', activeMatch: '^/smallProgram/uniapp' },
+  //     // { text: 'flutter', link: '/smallProgram/flutter/', activeMatch: '^/smallProgram/flutter' },
+  //   ],
+  //   activeMatch: '^/smallProgram',
+  // },
+
   // 算法 algorithms
   // { text: '算法', link: '/algorithms/', activeMatch: '^/algorithms' },
 
